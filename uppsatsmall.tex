@@ -9,11 +9,21 @@
 %\usepackage[utf8]{inputenc} % depends on system character encoding, most Linux use utf8, your mileage may vary!
 \usepackage[T1]{fontenc} % Use this character encoding with Overleaf (www.overleaf.com)!
 
+% For the picture
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
 
+% section related stuff
 \usepackage{titlesec}
+% First level sections on new page
 \newcommand{\sectionbreak}{\clearpage}
+% Paragraph is forth level section
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 
 \usepackage{float}
 
@@ -590,6 +600,24 @@ mellan backend och användaren.
     \label{fig:overviewflow}
 \end{figure}
 
+När en användare skickar in en rapport till frontend skickas den direkt vidare till backend för analys.
+Ifall rapporten är felfri meddelas användaren om detta men rapporten innehöll fel öppnas en modal dialog för användaren där listan på fel
+visas samt den analyserade rapporten i sin helhet som referens. Klickar användaren på något av felen i listan så markeras felet i referensrapporten vilket gör rättningsproccessen intuitiv och snabb. Felmeddelande är utformade så att användaren ska lära sig att undvika felen i framtiden, detta är viktigt eftersom de tänkta användarna är elever som ska lära sig skriva rapporter. Detta är anledningen till att vi inte har skapat ett system som automatiskt korrigerar felen i rapporterna. Om fel hittas som användaren inte kan eller vill korrigera ges möjligheten att skicka in rapporten utan att rätta felen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.74\textwidth]{frontendstart.png}
+    \caption{Inlämningsdelen av frontend}
+    \label{fig:frontendstart}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{bilder/frontenderrors.png}
+    \caption{Frontend presenterar felen som hittades när rapporten analyserades}
+    \label{fig:frontenderrors}
+\end{figure}
+
 \subsubsection{Backend}
 
 Backend utvecklades i Python och webbramverket Flask för att ta emot och skicka
@@ -626,8 +654,8 @@ enbart för att den enskilde läsaren ska förstå hur applikationen fungerar ut
 även för att göra det enklare för eventuella framtida utvecklare att
 vidareutveckla applikationen. Följande rubriker beskriver vilka beroendena är
 och varför vi använder dem. 
-\\[1PC]
-\textbf{Sparv} \newline
+
+\paragraph{Sparv}
 Sparv är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
 för att annotera texter. Vår applikation konverterar rapporterna till ett
 specialanpassat XML-format som den sedan skickar vidare till Sparv för
@@ -645,7 +673,8 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
 \item \textbf{Läsbarhetsindex (LIX)}: Ett mått som kan användas för att få en
   uppfattning om hur svår eller lätt en text är att läsa.
 \end{itemize}
-\textbf{Stava} \newline
+
+\paragraph{Stava}
 Stava är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
 Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
@@ -672,8 +701,8 @@ använder mycket mer datorkraft relativt mot att bara köra standardkontrollerna
 men vi tog beslutat att det var värt det eftersom flaskpositiva och missade
 stavfel minskar korrektheten och rättsäkerheten i rapporterna som lämnas in med
 applikationen.
-\\[1PC]
-\textbf{Python beroenden}\newline
+
+\paragraph{Python beroenden}
 % [Lista varför och vilka Python bibliotek vi använder (de som har betydelse för analyserna)]
 
 \subsubsection{Textanalys av rapporter}
