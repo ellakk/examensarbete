@@ -289,39 +289,77 @@ antagande är också att studenter genom de felmeddelanden som applikationen
 för polisrapporter. Artefakten varpå vi vill rättfärdiga dessa teorier är
 applikationen vi byggt, konstruktionen av denna beskrivs i avsnittet Utveckling.
 
-Precis som ramverket rekommenderar en iterativ process i utvecklingen och utvärderandet av artefakten, så har arbetet i detta projekt kommit att bestå av fyra stora iterationer:
+Precis som ramverket rekommenderar en iterativ process i utvecklingen och
+utvärderandet av artefakten, så har arbetet i detta projekt kommit att bestå av
+fyra stora iterationer:
 
 \begin{enumerate}
-\item Den första utgick från vårt initiala möte med Per Esbjörnsson och konkretiserades genom den kravinsamling som kom att bli resultatet av denna. Utifrån de önskemål och krav på artefakten som beskrevs av Per samt det officiella polismaterial som relaterar till hur rapportskrivning ska se ut kunde vi sätta upp ramar kring omfattningen av vårt problemområde. I samband med mötet fick vi också reda på var och hur artefakten ska integreras och kunde därför börja skissa på en tidig design.
-\item Den andra iterationen bestod av den litteraturstudie vi gjorde för att undersöka existerande forskningen som gjorts inom området, och som finns närmare beskrivet i avsnitten Relaterad forskning samt Språkteknologi [ref]. Utifrån denna studie kunde vi justera våra forskningsmål i enlighet med det empiriska material vi fann. Dessa resultaten ledde också till en insikt kring hur implementeringen av de olika reglerna för rapportskrivning kunde ske.
-\item Den tredje iterationen bestod av en första instansiering av artefakten, vilket var i form av en tidig prototyp av webbapplikationen och APIet [bild]. Under den inledande fasen av iterationen fick vi tillgång till övningsmaterial bestående av uppgiftsbeskrivningar och cirka 400 anonymiserade rapporter, där 80 redan var godkända av lärare och resten hade inte hade rättats. Vi testade rapporterna mot vårt textanalysverktyg för att identifiera fel som inte beskrivs i den officiella polisdokumentationen, så som felformatteringar och inkorrekta filformat, samt eventuella buggar i applikationen. Här kunde de godkända rapporterna också hjälpa oss att identifiera de gränsvärden som var användbara för vår tonalitetsanalys och läsbarhetsanalys. 
-\item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig instansiering av applikationen. Denna versionen var ett resultat av de ändringar som gjortsvid utvärderingen efter användarstudien, vilka beskrivs i avsnittet Önskvärda funktionalitet [ref], och beskrivs i sin helhet i avsnittet Applikation [ref].
+\item Den första utgick från vårt initiala möte med Per Esbjörnsson och
+  konkretiserades genom den kravinsamling som kom att bli resultatet av denna.
+  Utifrån de önskemål och krav på artefakten som beskrevs av Per samt det
+  officiella polismaterial som relaterar till hur rapportskrivning ska se ut
+  kunde vi sätta upp ramar kring omfattningen av vårt problemområde. I samband
+  med mötet fick vi också reda på var och hur artefakten ska integreras och
+  kunde därför börja skissa på en tidig design.
+\item Den andra iterationen bestod av den litteraturstudie vi gjorde för att
+  undersöka existerande forskningen som gjorts inom området, och som finns
+  närmare beskrivet i avsnitten Relaterad forskning samt Språkteknologi [ref].
+  Utifrån denna studie kunde vi justera våra forskningsmål i enlighet med det
+  empiriska material vi fann. Dessa resultaten ledde också till en insikt kring
+  hur implementeringen av de olika reglerna för rapportskrivning kunde ske.
+\item Den tredje iterationen bestod av en första instansiering av artefakten,
+  vilket var i form av en tidig prototyp av webbapplikationen och APIet [bild].
+  Under den inledande fasen av iterationen fick vi tillgång till övningsmaterial
+  bestående av uppgiftsbeskrivningar och cirka 400 anonymiserade rapporter, där
+  80 redan var godkända av lärare och resten hade inte hade rättats. Vi testade
+  rapporterna mot vårt textanalysverktyg för att identifiera fel som inte
+  beskrivs i den officiella polisdokumentationen, så som felformatteringar och
+  inkorrekta filformat, samt eventuella buggar i applikationen. Här kunde de
+  godkända rapporterna också hjälpa oss att identifiera de gränsvärden som var
+  användbara för vår tonalitetsanalys och läsbarhetsanalys.
+\item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig
+  instansiering av applikationen. Denna versionen var ett resultat av de
+  ändringar som gjortsvid utvärderingen efter användarstudien, vilka beskrivs i
+  avsnittet Önskvärda funktionalitet [ref], och beskrivs i sin helhet i
+  avsnittet Applikation [ref].
 \end{enumerate}
 
-Mindre iterationer förekom i samtliga av de iterationer som beskrivs ovan. Ju längre in i processens skede vi kom desto mer frekventa blev dessa mindre iterationer då vi bland annat genom instansieringarna kunde identifiera fler nödvändiga funktionaliteter. 
-Kunskapsbasen som presenteras i ramverket består av fundament och metodologier.
-Sammansatt gör dessa komponenter att forskningen kan uppnås. Medan fundamentet
-skapar teorier, ramverk, instrument, konstruktioner, modeller, metoder och
-instanser som används under utvecklingsfasen i forskningsstudien skapar
-metodologier riktlinjer som används i berättigande- och utvärderingsfasen.
-Metoden för denna process som vi ser det är tillämpningen av språkstrategi i
-utformningen av polisrapporter medan är instansieringen ett arbetssystem som
-visar användningen av metoden, i detta fall den applikation vi konstruerar.
-Vidare finner vi våra teorier som är genomgående i fundament och metodologier i
-den vetenskapliga litteratur vi tillskansat oss genom litteraturstudien som
-beskrivs i nedanstående avsnitt. Under utvecklingen har vi tillgång till en rad
-anonymiserade studentrapporter som vi kör genom applikationen för att finna
-vanliga fel, detta ser vi som dataanalysteknik som den definieras i
-metodologifältet.
+Mindre iterationer förekom i samtliga av de iterationer som beskrivs ovan. Ju
+längre in i processens skede vi kom desto mer frekventa blev dessa mindre
+iterationer då vi bland annat genom instansieringarna kunde identifiera fler
+nödvändiga funktionaliteter. Kunskapsbasen som presenteras i ramverket består av
+fundament och metodologier. Sammansatt gör dessa komponenter att forskningen kan
+uppnås. Medan fundamentet skapar teorier, ramverk, instrument, konstruktioner,
+modeller, metoder och instanser som används under utvecklingsfasen i
+forskningsstudien skapar metodologier riktlinjer som används i berättigande- och
+utvärderingsfasen. Metoden för denna process som vi ser det är tillämpningen av
+språkstrategi i utformningen av polisrapporter medan är instansieringen ett
+arbetssystem som visar användningen av metoden, i detta fall den applikation vi
+konstruerar. Vidare finner vi våra teorier som är genomgående i fundament och
+metodologier i den vetenskapliga litteratur vi tillskansat oss genom
+litteraturstudien som beskrivs i nedanstående avsnitt. Under utvecklingen har vi
+tillgång till en rad anonymiserade studentrapporter som vi kör genom
+applikationen för att finna vanliga fel, detta ser vi som dataanalysteknik som
+den definieras i metodologifältet.
 
 Stabilitet för vår forskning skapas genom att tillämpa fundament med metodologi.
 Då beteendevetenskap och designvetenskap tillämpas på ett företagets behov
 bidrar de också samtidigt till innehållet i kunskapsbasen för vidare framtida
 forskning \cite{hevner:2004}.
 
-Det finns andra alternativa metoder som kunde använts för att underbygga vårt arbetet, men som samtidigt av olika anledningar inte heller framstått lika passande som Information Systems Research Framework.
+Det finns andra alternativa metoder som kunde använts för att underbygga vårt
+arbetet, men som samtidigt av olika anledningar inte heller framstått lika
+passande som Information Systems Research Framework.
 
-En av dem är så kallad action research, en metod som kännetecknas av att den genomförs under en pågående utbildningssession. Detta är en iterativ metod där forskaren, i detta fallet en lärare, ständigt utforskar strategier och medvetet analyserar resultat med avsikt att göra justeringar samtidigt som utbildningen fortskrider \citep{clement:2004}. Då vårt arbete innefattar faktiska lärare och sker inom kontexten av en utbildning kan action research i teorin ses som ett passande alternativ för denna studie. Rent praktiskt inser vi dock att det vore svårt rent logistiskt och tidsmässigt att samordna en sådan utbildningssession som samtidigt också hade varit användbar för vår forskning.
+En av dem är så kallad action research, en metod som kännetecknas av att den
+genomförs under en pågående utbildningssession. Detta är en iterativ metod där
+forskaren, i detta fallet en lärare, ständigt utforskar strategier och medvetet
+analyserar resultat med avsikt att göra justeringar samtidigt som utbildningen
+fortskrider \citep{clement:2004}. Då vårt arbete innefattar faktiska lärare och
+sker inom kontexten av en utbildning kan action research i teorin ses som ett
+passande alternativ för denna studie. Rent praktiskt inser vi dock att det vore
+svårt rent logistiskt och tidsmässigt att samordna en sådan utbildningssession
+som samtidigt också hade varit användbar för vår forskning.
 
 \subsection{Litteraturstudie}
 
