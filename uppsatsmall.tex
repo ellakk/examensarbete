@@ -600,9 +600,17 @@ mellan backend och användaren.
     \label{fig:overviewflow}
 \end{figure}
 
-När en användare skickar in en rapport till frontend skickas den direkt vidare till backend för analys.
-Ifall rapporten är felfri meddelas användaren om detta men rapporten innehöll fel öppnas en modal dialog för användaren där listan på fel
-visas samt den analyserade rapporten i sin helhet som referens. Klickar användaren på något av felen i listan så markeras felet i referensrapporten vilket gör rättningsproccessen intuitiv och snabb. Felmeddelande är utformade så att användaren ska lära sig att undvika felen i framtiden, detta är viktigt eftersom de tänkta användarna är elever som ska lära sig skriva rapporter. Detta är anledningen till att vi inte har skapat ett system som automatiskt korrigerar felen i rapporterna. Om fel hittas som användaren inte kan eller vill korrigera ges möjligheten att skicka in rapporten utan att rätta felen.
+När en användare skickar in en rapport till frontend skickas den direkt vidare
+till backend för analys. Ifall rapporten är felfri meddelas användaren om detta
+men rapporten innehöll fel öppnas en modal dialog för användaren där listan på
+fel visas samt den analyserade rapporten i sin helhet som referens. Klickar
+användaren på något av felen i listan så markeras felet i referensrapporten
+vilket gör rättningsproccessen intuitiv och snabb. Felmeddelande är utformade så
+att användaren ska lära sig att undvika felen i framtiden, detta är viktigt
+eftersom de tänkta användarna är elever som ska lära sig skriva rapporter. Detta
+är anledningen till att vi inte har skapat ett system som automatiskt korrigerar
+felen i rapporterna. Om fel hittas som användaren inte kan eller vill korrigera
+ges möjligheten att skicka in rapporten utan att rätta felen.
 
 \begin{figure}[H]
     \centering
