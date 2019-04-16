@@ -49,26 +49,21 @@
 \maketitle % This constructs MaU title page from info above
 
 \begin{sammanfattning}
-  Språkteknologi är ett forskningsområde där det ständigt görs nya framsteg. En
-  betydande del av den textanalys som sker inom detta fält har målet att uppnå
-  en fullgod tillämpning kring dialogen mellan människa och dator. I denna
-  studie vill vi istället fokusera på vilken inverkan språkteknologi kan ha på
-  den mänskliga inlärningsprocessen. Vårt praktiska testområde har samtidigt en
-  framtida inverkan för en av de mest grundläggande förutsättningarna för ett
-  rättssäkert samhälle, nämligen den polisiära rapportskrivningen.
+  Språkteknologi är ett forskningsområde vari det ständigt görs nya framsteg. En betydande del av den textanalys som sker inom detta fält har dock målet att uppnå en fullgod tillämpning kring dialogen mellan människa och dator. I denna studie vill vi istället fokusera på den inverkan språkteknologi kan ha på den mänskliga inlärningsprocessen. Vårt praktiska testområde har samtidigt en framtida inverkan för en av de mest grundläggande förutsättningarna för ett rättssäkert samhälle, nämligen den polisiära rapportskrivningen.
 
-  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av både
-  språkteknologi liksom officiell polisrapportskrivning och därefter
-  implementera den i en pedagogisk webbplattform ämnad för polisstudenter är vi
-  av uppfattningen att vår forskning tillför något nytt inom det
-  datavetenskapliga respektive sociologiska fälten.
+  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av både språkteknologi liksom officiell polisrapportskrivning och därefter implementera den i en pedagogisk webbplattform ämnad för polisstudenter är vi av uppfattningen att vår forskning tillför något nytt inom det datavetenskapliga respektive sociologiska fälten.
 
-  Syftet med arbetet är att verka som de första stegen mot en webbapplikation
-  som understödjer svensk polisdokumentationen.
+  Syftet med arbetet är att verka som de första stegen mot webbapplikation som understödjer svensk polisdokumentationen.
 \end{sammanfattning}
 
 \begin{abstract}
-Text in English\ldots
+Natural language processing is a research area where new advances are constantly being made. A significant part of text analyses that takes place in this field has the aim of achieving a satisfactory application in the dialogue between man and computer. In this study, we instead want to focus on which impact natural language processing can have on the human learning process.
+
+At the same time, the context for our research have a future impact on one of the most basic principles for a legally secure society, namely the writing of the police report.
+
+By creating a theoretical foundation of ideas that combines aspects of natural language processing as well as official police report writing and then implementing them in an educational web platform intended for police students, we are of the opinion that our research adds something new in the computer science and sociological fields.
+
+The purpose of this work is to act as the first steps towards a web application that supports the Swedish police documentation.
 \end{abstract}
 
 % This is sort of magic, do not touch
@@ -78,7 +73,13 @@ Text in English\ldots
 \startpagecount
 
 \section{Inledning}
+Med datorns intåg i det mänskliga medvetandet föddes också strävan att användas dess möjligheter som ett potentiellt verktyg för behandling av språk. Dels för att utveckla nya teorier inom detta fält men också som en automatisering och ett hjälpmedel för vår egen språkutveckling. Även om applikationer som berör språkbehandling länge varit mer långsamma i sin utvecklingen än annan jämförbar digital teknik har detta område ökat markant på senare år inte minst tack vare spridningen av korpusar, samlingar av texter som är lagrade i elektroniskt maskinläsbara format \citep{nugues:2014}. Genom de språkteknologiska framstegen som gjorts på senare år har korpusbaserad språkinlärning också blivit allt vanligare. Samtidigt är de flesta korpusverktyg utformade för språklig forskning, och inte pedagogiska syften \cite{zhu:2015}.
 
+Det finns flera anledningar att se närmare på detta utvecklingsområde. Att fylla ett vakuum hade inte bara lett till ett berikande av det språkteknologiska fältet utan hade även kunnat fungera som praktiskt stöd i undervisningssyften. En applikation med denna typ av funktionalitet kan utöver  lingvistiska analyser också fungera som hjälpmedel för att kontrollera att direktiv av olika slag implementerats i texten.
+
+Vid den nyinrättade polisutbildningen i Malmö och sett till aspekten av dess lärares upplevda problematik med studenternas rapportskrivning finns en praktiskt lämplig kontext för detta forskningsområde. På just polisrapporter ställs det höga krav att de är skrivna enligt det som den svenska polismyndighetens fastställt som korrekt vis, samtidigt som en automatiserad kontroll av rapporter också kan tänkas underlätta lärarnas arbetsbörda.
+
+De slutgiltiga målen för en applikation av detta slag är dels att bidra till teoriutveckling och vidare språkteknologisk forskning, samt att hjälpa till att öka rättssäkerheten i svensk polisdokumentation.
 \subsection{Forskningsmål}
 
 Syftet med projektet är att undersöka om en applikation för textanalys kan
@@ -145,7 +146,7 @@ tonaliteten samt att undvika nedsättande termer i rapporterna. För lärarna vi
 polisutbildningen i Malmö blev rättningsprocessen av polisrapporterna en
 tidskrävande uppgift som stal tid från annan viktig utbildning.
 
-\subsection{Relaterad forskning}
+\subsection{Relaterad forskning}\label{relateradforskning}
 
 Det finns två särskilda studier som har ägt rum inom dessa områden under det
 senaste decenniet och som är av intresse för oss.
@@ -173,7 +174,7 @@ annat att belysa grammatiska fel för att öka elevernas förmåga att rätta pr
 som hällde grundläggande meningsstruktur. Text X-Ray mätte även och visade
 komplexiteten i en skriftlig mening sett till dess längd.
 
-\subsection{Språkteknologi}
+\subsection{Språkteknologi}\label{språkteknologi}
 
 Då lingvistik definieras som studien av mänskliga språk kan datalingvistik ses
 som teorierna och modellerna av detta område i en maskinell representation. Det
@@ -313,12 +314,12 @@ fyra stora iterationer:
   kunde därför börja skissa på en tidig design.
 \item Den andra iterationen bestod av den litteraturstudie vi gjorde för att
   undersöka existerande forskningen som gjorts inom området, och som finns
-  närmare beskrivet i avsnitten Relaterad forskning samt Språkteknologi [ref].
+  närmare beskrivet i avsnitten \ref{relateradforskning} samt \ref{språkteknologi}.
   Utifrån denna studie kunde vi justera våra forskningsmål i enlighet med det
   empiriska material vi fann. Dessa resultaten ledde också till en insikt kring
   hur implementeringen av de olika reglerna för rapportskrivning kunde ske.
 \item Den tredje iterationen bestod av en första instansiering av artefakten,
-  vilket var i form av en tidig prototyp av webbapplikationen och APIet [bild].
+  vilket var i form av en tidig prototyp av APIet och webbapplikationen, se figur \ref{fig:tidigprototyp}.
   Under den inledande fasen av iterationen fick vi tillgång till övningsmaterial
   bestående av uppgiftsbeskrivningar och cirka 400 anonymiserade rapporter, där
   80 redan var godkända av lärare och resten hade inte hade rättats. Vi testade
@@ -330,9 +331,16 @@ fyra stora iterationer:
 \item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig
   instansiering av applikationen. Denna versionen var ett resultat av de
   ändringar som gjortsvid utvärderingen efter användarstudien, vilka beskrivs i
-  avsnittet Önskvärda funktionalitet [ref], och beskrivs i sin helhet i
-  avsnittet Applikation [ref].
+  avsnitt \ref{önskvärdafunktioner}, och beskrivs i sin helhet i
+  avsnitt \ref{applikationen}.
 \end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{tidigprototyp.png}
+    \caption{Tidig prototyp av användargränssnittet i webbapplikationen}
+    \label{fig:tidigprototyp}
+\end{figure}
 
 Mindre iterationer förekom i samtliga av de iterationer som beskrivs ovan. Ju
 längre in i processens skede vi kom desto mer frekventa blev dessa mindre
@@ -527,13 +535,7 @@ indirekt sätt måste vara observerbara samt att de kan omvandlas till ett tal
 eller räknas ihop i ett numeriskt format \citep{tullis:2013}. Av denna anledning
 bestämde vi oss för att använda oss av The System Usability Scale (SUS) för att
 deltagarna ska betygsätta sina erfarenheter under testet. SUS beskrivs av
-\citep{laubheimer:2018} som det mest välkända frågeformuläret i UX-sammanhang. Det
-består av tio frågor enligt en likertskala som deltagaren får besvara efter att
-användbarhetstest är avklarat. SUS har en poängskala från 0-100, där det
-slutgiltiga resultatet räknas ut genom att ta bort 1 från poängen för varje av
-de udda numrerade frågorna samt genom att ta bort 5 för varje av de jämn
-numrerade frågorna. De nya värdena läggs sedan till det totala värdet och
-multipliceras med 2,5.
+\citep{laubheimer:2018} som det mest välkända frågeformuläret i UX-sammanhang.
 
 För att än mer tydliggöra vad som kan förbättras med applikationen bestämde vi
 oss för att kombinera SUS med att deltagarna också ombads att besvara ett par
@@ -541,24 +543,18 @@ frågor kring systemet.
 
 \subsection{Hot mot validitet}
 
-Även om vårt mål är att producera så fullständiga och reproducerbara resultat
-som möjligt finns det också begränsningar av slutsatserna som vi kommer att
-kunna dra av vår forskning.
+Även om vårt mål är att producera så fullständiga och reproducerbara resultat som möjligt finns det också begränsningar av slutsatserna som vi kommer kunna dra av vår forskning.
 
-Som det framgått i denna uppsats är vår studie nära knuten till det
-språkteknologiska forskningsområdet. Sett till det empiriska material som vi
-funnit under sökprocessen i vår litteraturanalys finns det en mängd betydliga
-studier gjorda inom detta fält. Däremot har vi märkt ett underskott på
-relaterade studier av just den sortens processer, språkteknologi i kombination
-med skriftligt utlärande, som vi själva utvecklar i detta projekt. Däremot
-hoppas vi att vår forskning ska kunna ligga till grund för liknande studier inom
-dessa fält.
-%*för få användartester-objekt, kanske även fokusera på lärare. kort tid för utveckling, ev. missar krav pga. detta.*
+Som det framgått i denna uppsats är vår studie nära knuten till det språkteknologiska forskningsområdet. Sett till det empiriska material som vi funnit under sökprocessen i vår litteraturanalys finns det en mängd betydliga studier gjorda inom detta fält. Däremot har vi märkt ett underskott på relaterade studier av just den sortens processer, språkteknologi i kombination med skriftligt utlärande, som vi själva utvecklar i detta projekt. Däremot hoppas vi att vår forskning ska kunna ligga till grund för liknande studier inom dessa fält.
+
+För att bedöma och utvärdera vår artefakt valde vi i detta arbete att använda oss av ett användartest där fem studenter vid polisutbildningen i Malmö fick utföra ett antal uppgifter på applikationen och därefter fylla i ett SUS-formulär samt besvara ett antal frågor om användarupplevelsen. Vi har ponerat risken att vi använt oss av för få subjekt av vid användartestet, samt att gruppen med testanvändare även kunde ha inkluderat lärare vid utbildningen. I hänvisning till antalet deltagare i användartestet kan vi dock motivera detta urval genom vårt empiriska material där väl underbyggda forskningsstudier lett i bevis att just fem användare behövs för att generera ett optimalt test. Vi menar också att då testgruppen består av fem så specifika slutanvändare av artefakten ger detta en god rigiditet till testet. Till detta påstår vi också att som användartestet var utformat, inlämning samt rättning av rapporten, så hade detta inte speglat den kontext i vilket en lärare kan tänkas använda systemet vilket också underminerar antagandet att en lärare som testsubjekt skulle bidragit till våra observationer av testet.
+
+Som vi skriver i avsnittet Avgränsning [ref] har vi tilldelats drygt 11 veckor för utveckling av artefakten. Det finns en risk att denna tidsram kan vara alltför snäv och att vi till följd av detta missar att  implementera kraven på artefakten som vi samlat in genom kravinsamlingen. Som vi ser det är denna risk är återkommande vid varje större utvecklingsprojekt och således svår att hämma annat än genom noggrannhet i arbetet och god framförhållning till projektets slutdatum. Aspekter som vi också försökt anamma under arbetets gång.
 
 
 \section{Resultat}
 % motivera
-\subsection{Applikationen}
+\subsection{Applikationen}\label{applikationen}
 
 Applikationen utvecklades i två olika delar. Vi utvecklade en backend som hanterar
 analysen av rapporterna och en frontend som är en webbapplikation med ett
@@ -621,7 +617,7 @@ ges möjligheten att skicka in rapporten utan att rätta felen.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{bilder/frontenderrors.png}
+    \includegraphics[width=0.75\textwidth]{frontenderrors.png}
     \caption{Frontend presenterar felen som hittades när rapporten analyserades}
     \label{fig:frontenderrors}
 \end{figure}
@@ -712,11 +708,13 @@ applikationen.
 
 \paragraph{Python beroenden}
 % [Lista varför och vilka Python bibliotek vi använder (de som har betydelse för analyserna)]
+WORKINP
 
 \subsubsection{Textanalys av rapporter}
 % [Lista på de olika analyserna vi kör på rapporterna med referens till varifrån vi har tagit reglerna de bygger på]
 % [Beskriv algoritmerna vi använder för att komma fram till resultat av analyserna..]
 % [Användarguide som bilaga]
+WORKINP
 
 \begin{table}[H]
 \centering
@@ -784,11 +782,12 @@ var därefter avslutat.
 
 \subsubsection{SUS}
 
-Efter testet fick deltagarna skriftligen fylla i SUS-formuläret. Vår uträkning
-visade att det slutgiltiga värdet blev 83,5 poäng av 101 möjliga. Resultatet får
-ses som ett gott omdöme då det är en god bit över det genomsnittliga värdet på
-68, samt över 80 poäng vilket enligt \cite{laubheimer:2018} enbart tio procent av
-webbsidor hamnar i.
+Deltagarna fick skriftligen fylla i ett SUS-formulär, vilket
+består av tio frågor enligt en likertskala som deltagare får besvara efter att användbarhetstest är avklarat. SUS har en poängskala från 0-100, där det slutgiltiga resultatet räknas ut genom att ta bort 1 från poängen för varje av de udda numrerade frågorna samt genom att ta bort 5 för varje av de jämnt
+numrerade frågorna. De nya värdena läggs sedan till det totala värdet och
+multipliceras med 2,5.
+
+Vår uträkning visade att det slutgiltiga värdet blev 83,5 poäng av 101 möjliga. Resultatet får således ses som ett gott omdöme då det är en god bit över det genomsnittliga värdet på 68, samt över 80 poäng vilket enligt \cite{laubheimer:2018} enbart tio procent av webbsidor hamnar i.
 
 \subsubsection{Intervju}
 
@@ -812,12 +811,12 @@ ett jättestort hjälp till de som inte är bra på att skriva” samt att progr
 ”kan vara bra på att hitta vanliga talspråksfel”. Fyra av fem deltagare
 kommenterade att applikationen var tydlig som något särskilt bra.
 
-\subsubsection{Önskvärda funktioner}
+\subsubsection{Önskvärda funktioner}\label{önskvärdafunktioner}
 
-Två deltagare förde fram önskan att två eller flera intilliggande nedsättande
+Två deltagare förde fram önskan att två eller flera intilliggande känsliga
 termer enbart skulle resultera i ett enda felmeddelande så att det blir tydligt
 att dessa ska omgärdas av samma citattecken. Vår applikation avger också
-felmeddelanden om gammeldags ord och uttryck, vilket en deltagare gärna hade
+felmeddelanden om gammaldags ord och uttryck, vilket en deltagare gärna hade
 sett en motivering till varför sådana ska undvikas. Samma deltagare skulle också
 vilja att felmeddelande visades i en kronologisk ordning utifrån vart i
 dokumentet de återfanns, samt att olika färgkoder skulle kunna användas för att
@@ -825,7 +824,74 @@ gradera hur pass allvarliga de var. Personen såg även att vyn automatiskt
 scrollade ner till det aktuella felet efter att deltagaren klickat på felet
 utöver att bara markera dess plats i texten. Två deltagare hade velat kunna
 kopiera text i felmeddelandena, och då i synnerhet när det fanns
-rättningsförslag, för att effektivisera korrigeringsprocessen.
+rättningsförslag, för att effektivisera korrigeringsprocessen. De ville att man
+skulle kunna ändra direkt i webbgränssnittet samt att applikationen identifierar
+var i rapporten den saknade tiden eller platsbeskrivningen ska föras in. I
+nuläget markeras enbart rubriken där dessa saknas.
+
+Vi valde att implementera följande funktionalitet baserat på
+användarintervjuerna:
+
+\begin{itemize}
+\item \textbf{Det ska inte gå att ta bort Modalrutan av misstag}: Detta är ett
+  självklart fel i användargränssnittet. Skrollknappen som man navigerar
+  rapport och felmeddelanden med ligger så pass nära gränsen för modalrutan att
+  det är väldigt lätt att missa och trycka precis utanför modalrutan och stänga
+  ner den av misstag. Lösningen blev att låsa modalrutan och enbart stänga ner
+  den ifall användaren trycker på stäng knappen. När vi utvecklade frontend
+  använde vi en stationär dator med mus vilket gör det lättare att göra precisions
+\item \textbf{Felmeddelande i kronologisk ordning}: Felmeddelandenas ordning var
+  baserad på ordning som analyserna kördes i backend. Detta ledde till att alla
+  rubriksfel hamnade först, sedan kom alla stavfel och så vidare. Det blir mer
+  intuitivt för användaren att rätta rapporten ifall felmeddelanden sorteras
+  efter den ordning de dyker upp i rapporten. Lösningen blev att sortera felen
+  efter den position de dyker upp i rapporten när backend skickar analysen till
+  frontend.
+\item \textbf{Dela inte upp intilliggande känsliga termer}: När känsliga termer
+  hittades i texten så skapade vi ett felmeddelande per känslig term som
+  meddelade användaren att termen bara är tillåten i citat. Ifall det kommer
+  flera känsliga termer på rad i en rapport ska dessa förstås ligga i ett och
+  samma citat vilket inte var uppenbart när de genererar flera felmeddelanden.
+  Vi har löst detta genom att kolla ifall de känsliga termer ligger bredvid
+  varandra och då genereras bara ett felmeddelande som nämner bägge termerna.
+\end{itemize}
+
+De andra önskemålen implementerades inte med följande motiveringar:
+
+\begin{itemize}
+\item \textbf{Kopierbara felmeddelanden}: Det var vår mening att göra så att
+  felmeddelandena inte går att kopiera eftersom användarna då bara kan kopiera
+  och klistra våra rättningsförslag. Det är viktigt att engagera användaren i
+  rättningen av rapporten eftersom ett av målen med applikationen är att lära ut
+  rapportskrivning, ifall användaren bara kopierar och klistra in alla
+  rättningsförslagen så blir rapporten korrekt men han lär sig troligtvis inte
+  så mycket. [Kanske REF]
+\item \textbf{Rätta rapporten i webbapplikationen}: Användaren får en lista på
+  fel i webbapplikationen men måste använda sin egna ordbehandlare för att rätta
+  felen. Att låta användaren rätta rapporten direkt i webbapplikationen ligger
+  utan vårt scope, kravet på applikationen var att den skulle kunna analysera en
+  rapport i docx format. Det hade faktiskt varit en bra feature att ha men vi
+  hade helt enkelt inte tid att implementera en ordbehandlare i
+  webbapplikationen full kompatibilitet med Microsoft Word och LibreOffice som
+  är de verktyg eleverna använder när de skriver rapporter på sina egna datorer.
+\item \textbf{Exakt position där platsbeskrivning och tidpunkt saknas}: Vi kan
+  identifiera under vilken rubrik de saknas men inte med full säkerhet
+  identifiera exakt var i texten. I de flesta rapporter som vi analyserat kan
+  man inte ens som människa inte säga exakt var i texten de ska in eftersom de
+  ofta passar in på flera ställen. Vi tror att det är bättre ifall vi överlåter
+  ansvaret till användaren att bestämma hur dessa fel ska korrigeras.
+\item \textbf{Motivera gammaldags ord och uttryck}: För att användargränssnittet
+  ska vara effektivt kan vi inte ha långa utläggningar i felmeddelandena som
+  motiverar varför polisen inte vill att man använder gammaldags ord och uttryck
+  i polisrapporter. Det får räcka med att användarna får veta att de inte är
+  tillåtna i rapporter, vill man sedan veta exakt motivation är det upp till
+  användaren att ta reda på det själv. De tänkta användarna är dessutom
+  polisstudenter och har redan fått en genomgång av reglerna som gäller vid
+  rapportskrivning. När vi utvecklade applikationen skapade vi felmeddelandena
+  så att de är så korta och lättförståeliga som möjligt eftersom det är svårt
+  att presentera långa felmeddelanden i ett användargränssnitt på ett snyggt och
+  lättläst sätt, speciellt när det är många fel som visas.
+\end{itemize}
 
 \section{Analys}
 
