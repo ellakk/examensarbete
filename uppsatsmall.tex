@@ -32,7 +32,7 @@
 \begin{document}
 
 \swedishtitle{Rättsäker Textanalys}
-\englishtitle{Title in English}
+\englishtitle{Legal Tenable Text Analysis}
 
 \author{Kalle Lindqvist \and Henrik Svensson}
 
@@ -49,11 +49,11 @@
 \maketitle % This constructs MaU title page from info above
 
 \begin{sammanfattning}
-  Språkteknologi är ett forskningsområde vari det ständigt görs nya framsteg. En betydande del av den textanalys som sker inom detta fält har dock målet att uppnå en fullgod tillämpning kring dialogen mellan människa och dator. I denna studie vill vi istället fokusera på den inverkan språkteknologi kan ha på den mänskliga inlärningsprocessen. Vårt praktiska testområde har samtidigt en framtida inverkan för en av de mest grundläggande förutsättningarna för ett rättssäkert samhälle, nämligen den polisiära rapportskrivningen.
+  Språkteknologi är ett forskningsområde vari det ständigt görs nya framsteg. En betydande del av den textanalys som sker inom detta fält har dock målet att uppnå en fullgod tillämpning kring dialogen mellan människa och dator. I denna studie vill vi istället fokusera på den inverkan språkteknologi kan ha på den mänskliga inlärningsprocessen. Vårt praktiska testområde har samtidigt en framtida inverkan på en av de mest grundläggande förutsättningarna för ett rättssäkert samhälle, nämligen den polisiära rapportskrivningen.
 
-  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av både språkteknologi liksom officiell polisrapportskrivning och därefter implementera den i en pedagogisk webbplattform ämnad för polisstudenter är vi av uppfattningen att vår forskning tillför något nytt inom det datavetenskapliga respektive sociologiska fälten.
+  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av både språkteknologi liksom officiell polisrapportskrivning och därefter implementera dem i en pedagogisk webbplattform ämnad för polisstudenter är vi av uppfattningen att vår forskning tillför något nytt inom det datavetenskapliga respektive det sociologiska fälten.
 
-  Syftet med arbetet är att verka som de första stegen mot webbapplikation som understödjer svensk polisdokumentationen.
+  Syftet med arbetet är att verka som de första stegen mot en webbapplikation som understödjer svensk polisdokumentationen.
 \end{sammanfattning}
 
 \begin{abstract}
@@ -693,7 +693,7 @@ förklarar:
 
 Ett annat irriterande problem med rättstavningsprogram är att felstavningar av
 vissa ord kan leda till att det blir ett nytt ord som är korrekt stavat men ändå
-är fel i sammanhanget, dessa fel upptäcks inte av rättstavningsprogram som
+fel i sammanhanget, dessa fel upptäcks inte av rättstavningsprogram som
 enbart jämför ord mot ett lexikon. Stava har löst båda dessa problemen genom att
 utföra en mosfologisk analys av texten och kan därmed tolka varje enskilt ords
 betydelse i sammanhangen. Stava kommer med ett standardlexikon men tillåter
@@ -705,10 +705,6 @@ använder mycket mer datorkraft relativt mot att bara köra standardkontrollerna
 men vi tog beslutat att det var värt det eftersom flaskpositiva och missade
 stavfel minskar korrektheten och rättsäkerheten i rapporterna som lämnas in med
 applikationen.
-
-\paragraph{Python beroenden}
-% [Lista varför och vilka Python bibliotek vi använder (de som har betydelse för analyserna)]
-WORKINP
 
 \subsubsection{Textanalys av rapporter}
 % [Lista på de olika analyserna vi kör på rapporterna med referens till varifrån vi har tagit reglerna de bygger på]
@@ -734,9 +730,40 @@ Stavning                             & Ja           & Ja               &        
 Grammatik                            & Ja           & Ja               &          \\ \hline
 Tonalitet                            & Nej          & Ja               &          \\ \hline
 \end{tabular}
-\caption{Lista på reglerna vi har implementerat}
+\caption{Lista regler för rapportskrivning vi har implementerat}
 \label{rulestable}
 \end{table}
+
+\paragraph{Korrekt rubrik}
+% Fixa referens till polisen i Växjös lista på rapportrubriker
+En polisrapport ska vara uppdelade i olika fördefinerade rubriker. \cite{durtva:2017} har en lista på valida rubriker för en polisrapport och ifall en rubrik i en rapport inte matchar dem markeras rubriken som felaktig.
+
+\paragraph{Rubrikers beroende}
+En rubrik i en polisrapport kan vara beroenda av andra rubriker, t.ex ifall rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också finns i rapporten. Vi har under ett möte med \cite{perintervju:2019} tagit fram en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande som beskriver vilken rubrik som saknas.
+
+\paragraph{Rubrikers ordning}
+En del av de rubriker som får användas i en polisrapport har en förutbestämd ordning \citep{durtva:2017}, t.ex ska INLEDNING alltid vara först, BILAGOR sist och HÄNDELSEFÖRLOPP ska alltid komma efter HÄNDELSE eller BROTT. När analysverktyget upptäcker att rubriker är i oordning genereras felmeddelande som meddelar användaren vilka dessa rubriker är.
+
+\paragraph{Namnigenkänning}
+
+....
+
+\paragraph{Läsbarhet}
+
+Under första mötet med \cite{perintervju:2019} berättade han att en del av rapporterna var svårlästa. Han framförde en önskan om att vårt
+analysverktyg skulle kunna identifiera dessa rapporter.
+
+\cite{abrahamsson:2011} har i sitt arbete som behandlar hur man kan göra texter mer lättlästa tittat närmre på följande tre sätt att kvantitativt mäta läsbarhet av text som ger ett numeriskt värde på läsbarheten:
+
+\begin{itemize}
+\item \textbf{Nominalkvot (NK)}: Mäter informationstätheten i text med följande formel: (substantiv + prepositioner + particip) / (pronomen + verb + adverb). \cite{abrahamsson:2011} skriver att normalvärdet för NK ligger på 100 vilket kan jämföras med en tidningstext. Desto högre NK är desto mer informationstät är texten vilket innebär att den är svårare att läsa.
+\item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i texten med formeln: unika ord / ord *100. Enligt \cite{abrahamsson:2011} är det svårt att tolka värdet formelen resulterar i eftersom det helt beror på textens längd. En text på fem unika ord som är lättläst är lättläst men kommer ändå få ett väldigt högt OVIX värde medans en längre svårläst text på 20000 ord varav 2000 är unika kommer få ett lägre värde.
+\item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med följande formel där långa ord är ord med med fler än 6 bokstäver: (ord / meningar) + (långa ord * 100 / ord). Ett resultat under 25 är barnboksnivå, 25-30 är enkla texter, 30-40 är normaltext, 40-50 är saktext, 50-60 är facktext och över 60 är svåra facktexter \citep{abrahamsson:2011}.
+\end{itemize}
+
+OVIX värdets beroende av längden på texten gör att det inte är lämpligt eftersom rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi bestämde oss för att använda LIX eftersom \cite{abrahamsson:2011} skrivar att det är det vanligaste sättet i Sverige att mäta läsbarhet.
+
+För att komma fram till värdena för en LIX intervall som är godkänd i en rapport undersökte vi LIX värdet i 80 godkända polisrapporter. Medelvärdet på LIX för dessa rapporter var 44.6 som hamnar ungefär i mitten av saktext intervallen. Vi har därför valt saktext intervallen som gränsen för när vi varnar om att en text har för hög eller lågt LIX värde.
 
 \subsubsection{Verktyg och utvecklingsmiljö}
 
@@ -894,11 +921,12 @@ De andra önskemålen implementerades inte med följande motiveringar:
 \end{itemize}
 
 \section{Analys}
-
+Vi beskriver vad textanalyserna av rapporterna genererat sett till felvärden.
+En uppföljning med studenterna som utförde användartestet över applikationen som nu uppdaterats efter en fjärde iteration.
 \section{Diskussion}
-
+Hur väl har vi uppnått våra forskningsmål och frågeställningar? 
 \section{Slutsatser och vidare forskning}
-
+Då kravinsamlingen som gjordes med Per Esbjörnsson genererade fler önskemål än vad som bedöms görbara inom vår avgränsning tänker vi skriva lite om möjliga infallsvinklar kring detta.
 
 %
 % Do not change
