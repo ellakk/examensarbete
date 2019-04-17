@@ -62,7 +62,7 @@
   språkteknologi liksom officiell polisrapportskrivning och därefter
   implementera dem i en pedagogisk webbplattform ämnad för polisstudenter är vi
   av uppfattningen att vår forskning tillför något nytt inom det
-  datavetenskapliga respektive det sociologiska fälten.
+  datavetenskapliga respektive det samhällsvetenskapliga fälten.
 
   Syftet med arbetet är att verka som de första stegen mot en webbapplikation
   som understödjer svensk polisdokumentationen.
@@ -736,7 +736,7 @@ enbart för att den enskilde läsaren ska förstå hur applikationen fungerar ut
 vidareutveckla applikationen. Följande rubriker beskriver vilka beroendena är
 och varför vi använder dem. 
 
-\paragraph{Sparv}
+\paragraph*{Sparv}
 Sparv är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
 för att annotera texter. Vår applikation konverterar rapporterna till ett
 specialanpassat XML-format som den sedan skickar vidare till Sparv för
@@ -752,10 +752,10 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
   fördefinierade kategorier så som geografiska platser, föremål, tidpunkter och
   många fler
 \item \textbf{Läsbarhetsindex (LIX)}: Ett mått som kan användas för att få en
-  uppfattning om hur svår eller lätt en text är att läsa.
+  uppfattning om hur svår eller lätt en text är att läsa
 \end{itemize}
 
-\paragraph{Stava}
+\paragraph*{Stava}
 Stava är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
 Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
@@ -807,35 +807,38 @@ Stavning                                    & Ja           & Ja               & 
 Grammatik                                   & Ja           & Ja               &          \\ \hline
 Tonalitet                                   & Nej          & Ja               &          \\ \hline
 \end{tabular}
-\caption{Lista regler för rapportskrivning vi har implementerat}
+\caption{Lista över regler för rapportskrivning vi har implementerat}
 \label{rulestable}
 \end{table}
 
-\paragraph{Korrekt rubrik}
+\paragraph*{Korrekt rubrik}
 % Fixa referens till polisen i Växjös lista på rapportrubriker
-En polisrapport ska vara uppdelade i olika fördefinierade rubriker.
-\cite{durtva:2017} har en lista på valida rubriker för en polisrapport och ifall
-en rubrik i en rapport inte matchar dem markeras rubriken som felaktig.
+En polisrapport ska uppdelad i olika fördefinierade rubriker \citep{durtva:2017}. 
+Om en rubrik som inte finns med i listan på de fördefinerade rubrikerna hittas skapas ett felmeddelande som 
+beskriver felet och ett rättningsförslag på en rubrik som kan användas istället.
+Rättningsförslaget är tas fram genom jämföra Levenshteinavståndet mellan den 
+felaktiga rubriken med var och en av de fördefinerade rubrikerna. Den fördefinerade rubrik som har kortast avstånd
+till den felaktiga rubriken blir rättningsförslaget.
 
-\paragraph{Rubrikers beroende}
+\paragraph*{Rubrikers beroende}
 En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
 rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också
 finns i rapporten. Vi har under ett möte med \cite{perintervju:2019} tagit fram
 en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande
 som beskriver vilken rubrik som saknas.
 
-\paragraph{Rubrikers ordning}
+\paragraph*{Rubrikers ordning}
 En del av de rubriker som får användas i en polisrapport har en förutbestämd
 ordning \citep{durtva:2017}, t.ex ska INLEDNING alltid vara först, BILAGOR sist
 och HÄNDELSEFÖRLOPP ska alltid komma efter HÄNDELSE eller BROTT. När
 analysverktyget upptäcker att rubriker är i oordning genereras felmeddelande som
 meddelar användaren vilka dessa rubriker är.
 
-\paragraph{Namnigenkänning}
+\paragraph*{Namnigenkänning}
 
 ....
 
-\paragraph{Läsbarhet}
+\paragraph*{Läsbarhet}
 
 Under första mötet med \cite{perintervju:2019} berättade han att en del av
 rapporterna var svårlästa. Han framförde en önskan om att vårt analysverktyg
@@ -853,7 +856,7 @@ av text som ger ett numeriskt värde på läsbarheten:
   är texten vilket innebär att den är svårare att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
   texten med formeln: unika ord / ord *100. Enligt \cite{abrahamsson:2011} är
-  det svårt att tolka värdet formlen resulterar i eftersom det helt beror på
+  det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst är lättläst men kommer
   ändå få ett väldigt högt OVIX värde medans en längre svårläst text på 20 000
   ord varav 2000 är unika kommer få ett lägre värde.
@@ -864,7 +867,7 @@ av text som ger ett numeriskt värde på läsbarheten:
   och över 60 är svåra facktexter \citep{abrahamsson:2011}.
 \end{itemize}
 
-OVIX värdets beroende av längden på texten gör att det inte är lämpligt eftersom
+Eftersom OVIX är delvis baserat på textens längd är det inte ett lämpligt mått då
 rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi bestämde
 oss för att använda LIX eftersom \cite{abrahamsson:2011} skriver att det är det
 vanligaste sättet i Sverige att mäta läsbarhet.
@@ -1046,6 +1049,7 @@ Hur väl har vi uppnått våra forskningsmål och frågeställningar?
 Då kravinsamlingen som gjordes med Per Esbjörnsson genererade fler önskemål än
 vad som bedöms görbara inom vår avgränsning tänker vi skriva lite om möjliga
 infallsvinklar kring detta.
+Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (bättre) sätt att kolla på det.
 
 %
 % Do not change
