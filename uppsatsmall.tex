@@ -911,7 +911,7 @@ fel som vi observerat utifrån dessa. Felen inkluderade bland annat oriktiga
 rubriker, nedsättande termer utan citationstecken och geografisk information som
 utelämnats.
 
-Efter en kort introduktion om projektet ombads deltagarna att ladda upp den
+Efter en kort introduktion till projektet ombads deltagarna att ladda upp den
 aktuella polisrapporten de hade framför sig till applikationen och sedan
 korrigera texten utifrån de felmeddelanden som visades. Datorn var kopplad till
 en tv-skärm som var belägen precis bakom deltagarna, detta för att vi som
@@ -926,7 +926,7 @@ var därefter avslutat.
 \subsubsection{SUS}
 
 Deltagarna fick skriftligen fylla i ett SUS-formulär, vilket består av tio
-frågor enligt en Likertskala som deltagare får besvara efter att
+frågor enligt en Likertskala som deltagarna får besvara efter att
 användbarhetstest är avklarat. SUS har en poängskala från 0-100, där det
 slutgiltiga resultatet räknas ut genom att ta bort 1 från poängen för varje av
 de udda numrerade frågorna samt genom att ta bort 5 för varje av de jämnt
@@ -983,12 +983,12 @@ användarintervjuerna:
 
 \begin{itemize}
 \item \textbf{Det ska inte gå att ta bort Modalrutan av misstag}: Detta är ett
-  självklart fel i användargränssnittet. Skrollknappen som man navigerar
-  rapport och felmeddelanden med ligger så pass nära gränsen för modalrutan att
-  det är väldigt lätt att missa och trycka precis utanför modalrutan och stänga
-  ner den av misstag. Lösningen blev att låsa modalrutan och enbart stänga ner
-  den ifall användaren trycker på stäng knappen. När vi utvecklade frontend
-  använde vi en stationär dator med mus vilket gör det lättare att göra precisions
+  självklart fel i användargränssnittet. Skrollknappen som man navigerar rapport
+  och felmeddelanden med ligger så pass nära gränsen för modalrutan att det är
+  väldigt lätt att missa och trycka precis utanför modalrutan och stänga ner den
+  av misstag. Lösningen blev att låsa modalrutan och enbart stänga ner den ifall
+  användaren trycker på stäng knappen. När vi utvecklade frontend använde vi en
+  stationär dator med mus vilket gör det lättare att göra precisions klick.
 \item \textbf{Felmeddelande i kronologisk ordning}: Felmeddelandenas ordning var
   baserad på ordning som analyserna kördes i backend. Detta ledde till att alla
   rubriksfel hamnade först, sedan kom alla stavfel och så vidare. Det blir mer
@@ -1019,10 +1019,10 @@ De andra önskemålen implementerades inte med följande motiveringar:
   fel i webbapplikationen men måste använda sin egen ordbehandlare för att rätta
   felen. Att låta användaren rätta rapporten direkt i webbapplikationen ligger
   utan vårt scope, kravet på applikationen var att den skulle kunna analysera en
-  rapport i docx format. Det hade faktiskt varit en bra feature att ha men vi
+  rapport i docx-format. Det hade faktiskt varit en bra feature att ha men vi
   hade helt enkelt inte tid att implementera en ordbehandlare i
   webbapplikationen full kompatibilitet med Microsoft Word och LibreOffice som
-  är de ordbehandlare eleverna använder när de skriver rapporter.
+  är de ordbehandlare studenterna använder när de skriver rapporter.
 \item \textbf{Exakt position där platsbeskrivning och tidpunkt saknas}: Vi kan
   identifiera under vilken rubrik de saknas men inte med full säkerhet
   identifiera exakt var i texten. I de flesta rapporter som vi analyserat kan
