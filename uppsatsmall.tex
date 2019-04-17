@@ -632,18 +632,18 @@ slutdatum. Aspekter som vi också försökt anamma under arbetets gång.
 % motivera
 \subsection{Applikationen}\label{applikationen}
 
-Applikationen utvecklades i två olika delar. Vi utvecklade en backend som hanterar
-analysen av rapporterna och en frontend som är en webbapplikation med ett
-användargränssnitt som studenterna ska använda för att lämna in
-rapporter och få dem analyserade. Båda delarna utvecklades iterativt, i
-början utvecklade vi applikationen baserat på de önskemål som framkommit under
-de intervjuer vi gjorde med vår kund på polishögskolan. Vi kunde sedan komplettera
-med polisens egna dokumentation och regler för rapportskrivning och
-anonymiserade rapporter skrivna av polisaspiranterna som vi fått tillgång till
-under utvecklingens gång. I slutet av utvecklingen hade vi skapat en färdig
-prototyp som vi gjorde användartester på med elever från polishögskolan för att
-kunna förbättra webbapplikationens användargränssnitt och felmeddelandena som
-genereras från backend baserat på deras feedback och våra observationer.
+Applikationen utvecklades i två olika delar. Vi utvecklade en backend som
+hanterar analysen av rapporterna och en frontend som är en webbapplikation med
+ett användargränssnitt som studenterna ska använda för att lämna in rapporter
+och få dem analyserade. Båda delarna utvecklades iterativt, i början utvecklade
+vi applikationen baserat på de önskemål som framkommit under de intervjuer vi
+gjorde med vår kund på polishögskolan. Vi kunde sedan komplettera med polisens
+egna dokumentation och regler för rapportskrivning och anonymiserade rapporter
+skrivna av polisstudenter som vi fått tillgång till under utvecklingens gång. I
+slutet av utvecklingen hade vi skapat en färdig prototyp som vi gjorde
+användartester på med studenter från polishögskolan för att kunna förbättra
+webbapplikationens användargränssnitt och felmeddelandena som genereras från
+backend baserat på deras feedback och våra observationer.
 
 \begin{figure}[H]
     \centering
@@ -659,7 +659,7 @@ strukturen och style sheet språket Cascading Style Sheets (CSS) ramverket
 Bootstrap för en enhetlig design. Det är i frontend som användaren skickar in
 sin rapport i docx-format och får tillbaka en analys av rapporten. Vi utvecklade
 frontends användargränssnitt med integration i Canvas som mål och vi strävade
-därför efter att så mycket som möjligt efterliknat Canvas grafiska gränssnitt
+därför efter att så mycket som möjligt efterlikna Canvas grafiska gränssnitt
 där man lämnar in uppgifter. Frontend är beroende av backend för att fungera
 eftersom det är backend som har ansvar för att göra själva analyserna av
 rapporterna. Frontend är därför bara ett gränssnitt som sköter kommunikationen
@@ -675,15 +675,16 @@ mellan backend och användaren.
 
 När en användare skickar in en rapport till frontend skickas den direkt vidare
 till backend för analys. Ifall rapporten är felfri meddelas användaren om detta
-men rapporten innehöll fel öppnas en modal dialog för användaren där listan på
-fel visas samt den analyserade rapporten i sin helhet som referens. Klickar
-användaren på något av felen i listan så markeras felet i referensrapporten
-vilket gör rättningsproccessen intuitiv och snabb. Felmeddelande är utformade så
-att användaren ska lära sig att undvika felen i framtiden, detta är viktigt
-eftersom de tänkta användarna är elever som ska lära sig skriva rapporter. Detta
-är anledningen till att vi inte har skapat ett system som automatiskt korrigerar
-felen i rapporterna. Om fel hittas som användaren inte kan eller vill korrigera
-ges möjligheten att skicka in rapporten utan att rätta felen.
+men om rapporten innehöll fel öppnas en modal dialog för användaren där listan
+på fel visas samt den analyserade rapporten i sin helhet som referens. För att
+göra rättningsproccessen intuitiv och snabb kan användare klicka på något av
+felen i listan för att markera felet i referensrapporten. Felmeddelanden är
+utformade så att användaren ska lära sig att undvika felen i framtiden, detta är
+viktigt eftersom de tänkta användarna är studenter som ska lära sig skriva
+rapporter. Detta är anledningen till att vi inte har skapat ett system som
+automatiskt korrigerar felen i rapporterna. Om fel hittas som användaren inte
+kan eller vill korrigera ges möjligheten att skicka in rapporten utan att rätta
+felen.
 
 \begin{figure}[H]
     \centering
@@ -702,7 +703,7 @@ ges möjligheten att skicka in rapporten utan att rätta felen.
 \subsubsection{Backend}
 
 Backend utvecklades i Python och webbramverket Flask för att ta emot och skicka
-data. Backend implementerar en webbAPI som kan ta emot rapporter i docx-format
+data. Backend exponerar en webbAPI som kan ta emot rapporter i docx-format
 och skicka tillbaka en analys av rapporten. Vi utvecklade backend
 fristående så att den fungerar utan vår frontend eftersom vi ville att det
 skulle vara så lätt som möjligt att integrera i andra system som inte är
@@ -723,18 +724,18 @@ frontend eventuellt kan visa upp varje fels position i rapporten.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{backenderd}
-    \caption{ERD diagram som visar klasser och dess relationer i backend}
+    \caption{ERD-diagram som visar klasser och dess relationer i backend}
     \label{fig:erdbackend}
 \end{figure}
 
 \subsubsection{Beroenden}
 
-Applikationen använder en hel del externa verktyg för att göra analyser på
-polisrapporterna. Anledningen till att vi här går igenom alla beroenden är inte
+Applikationen använder en två externa verktyg för att göra analyser på
+polisrapporterna. Anledningen till att vi här går igenom beroenden är inte
 enbart för att den enskilde läsaren ska förstå hur applikationen fungerar utan
 även för att göra det enklare för eventuella framtida utvecklare att
 vidareutveckla applikationen. Följande rubriker beskriver vilka beroendena är
-och varför vi använder dem. 
+och varför vi använder dem.
 
 \paragraph*{Sparv}
 Sparv är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
@@ -743,10 +744,10 @@ specialanpassat XML-format som den sedan skickar vidare till Sparv för
 annotering. De typer av annotationer vi använder från Sparv i våra analyser är:
 
 \begin{itemize}
-\item \textbf{Grundform}: Ordens grundform, ex. \textit{Bananernas grundform är
-    banan}
-\item \textbf{Ordklass}: Ordens klass, ex. \textit{Kalle är ett egennamn och
-    tjugotre är ett räkneord}
+\item \textbf{Grundform}: Ordens grundform, ex. \textit{Bananernas} grundform är
+  \textit{banan}
+\item \textbf{Ordklass}: Ordens klass, ex. \textit{Kalle} är ett
+  \textit{egennamn} och \textit{tjugotre} är ett \textit{räkneord}
 \item \textbf{Attitydvärde}: Ifall ett ord är positivt, negativt eller neutralt
 \item \textbf{Namnigenkänning}: Kategoriserar textstycken i en grupp
   fördefinierade kategorier så som geografiska platser, föremål, tidpunkter och
@@ -770,18 +771,18 @@ förklarar:
 
 Ett annat irriterande problem med rättstavningsprogram är att felstavningar av
 vissa ord kan leda till att det blir ett nytt ord som är korrekt stavat men ändå
-fel i sammanhanget, dessa fel upptäcks inte av rättstavningsprogram som
-enbart jämför ord mot ett lexikon. Stava har löst båda dessa problemen genom att
-utföra en morfologisk analys av texten och kan därmed tolka varje enskilt ords
+fel i sammanhanget, dessa fel upptäcks inte av rättstavningsprogram som enbart
+jämför ord mot ett lexikon. Stava har löst båda dessa problemen genom att utföra
+en morfologisk analys av texten och kan därmed tolka varje enskilt ords
 betydelse i sammanhangen. Stava kommer med ett standardlexikon men tillåter
 också att man lägger till egna lexikon vilket vi gjorde med ord som är speciella
 för polisrapporter. När vi analyserar texter med Stava använder vi utöver
 standardinställningarna några extra regler som gör att programmet känner igen
-namn, förkortningar och ger rättningsförslag. Extra reglerna innebär att Stava
-använder mycket mer datorkraft relativt mot att bara köra standardkontrollerna
-men vi tog beslutat att det var värt det eftersom flaskpositiva och missade
-stavfel minskar korrektheten och rättssäkerheten i rapporterna som lämnas in med
-applikationen.
+namn, förkortningar och ger rättningsförslag. Dessa extra regler innebär att
+Stava använder mycket mer datorkraft relativt mot att bara köra
+standardkontrollerna men vi tog beslutet att det var värt det eftersom
+falskpositiva och missade stavfel minskar korrektheten och rättssäkerheten i
+rapporterna som lämnas in med applikationen.
 
 \subsubsection{Textanalys av rapporter}
 % [Lista på de olika analyserna vi kör på rapporterna med referens till varifrån vi har tagit reglerna de bygger på]
@@ -813,12 +814,13 @@ Tonalitet                                   & Nej          & Ja               & 
 
 \paragraph*{Korrekt rubrik}
 % Fixa referens till polisen i Växjös lista på rapportrubriker
-En polisrapport ska uppdelad i olika fördefinierade rubriker \citep{durtva:2017}. 
-Om en rubrik som inte finns med i listan på de fördefinerade rubrikerna hittas skapas ett felmeddelande som 
-beskriver felet och ett rättningsförslag på en rubrik som kan användas istället.
-Rättningsförslaget är tas fram genom jämföra Levenshteinavståndet mellan den 
-felaktiga rubriken med var och en av de fördefinerade rubrikerna. Den fördefinerade rubrik som har kortast avstånd
-till den felaktiga rubriken blir rättningsförslaget.
+En polisrapport ska uppdelad i olika fördefinierade rubriker
+\citep{durtva:2017}. Om en rubrik som inte finns med i listan på de
+fördefinerade rubrikerna hittas skapas ett felmeddelande som beskriver felet och
+ett rättningsförslag på en rubrik som kan användas istället. Rättningsförslaget
+är tas fram genom att jämföra Levenshteinavståndet mellan den felaktiga rubriken
+med var och en av de fördefinerade rubrikerna. Den fördefinerade rubrik som har
+kortast avstånd till den felaktiga rubriken blir rättningsförslaget.
 
 \paragraph*{Rubrikers beroende}
 En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
@@ -852,14 +854,15 @@ av text som ger ett numeriskt värde på läsbarheten:
 \item \textbf{Nominalkvot (NK)}: Mäter informationstätheten i text med följande
   formel: (substantiv + prepositioner + particip) / (pronomen + verb + adverb).
   \cite{abrahamsson:2011} skriver att normalvärdet för NK ligger på 100 vilket
-  kan jämföras med en tidningstext. Desto högre NK är desto mer informationstät
-  är texten vilket innebär att den är svårare att läsa.
+  kan jämföras med en tidningstext. Ett lågt NK innebär att texten är
+  talspråklig och framåtdrivande och ett högt att texten är informationstät och
+  tar lång tid att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
   texten med formeln: unika ord / ord *100. Enligt \cite{abrahamsson:2011} är
   det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
-  textens längd. En text på fem unika ord som är lättläst är lättläst men kommer
-  ändå få ett väldigt högt OVIX värde medans en längre svårläst text på 20 000
-  ord varav 2000 är unika kommer få ett lägre värde.
+  textens längd. En text på fem unika ord som är lättläst kommer få ett väldigt
+  högt OVIX-värde medan en längre svårläst text på 20 000 ord varav 2000 är
+  unika kommer få ett lägre värde.
 \item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med
   följande formel där långa ord är ord med fler än 6 bokstäver: (ord / meningar)
   + (långa ord * 100 / ord). Ett resultat under 25 är barnboksnivå, 25-30 är
@@ -872,11 +875,11 @@ rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi best
 oss för att använda LIX eftersom \cite{abrahamsson:2011} skriver att det är det
 vanligaste sättet i Sverige att mäta läsbarhet.
 
-För att komma fram till värdena för en LIX intervall som är godkänd i en rapport
-undersökte vi LIX värdet i 80 godkända polisrapporter. Medelvärdet på LIX för
+För att komma fram till värdena för en LIX-intervall som är godkänd i en rapport
+undersökte vi LIX-värdet i 80 godkända polisrapporter. Medelvärdet på LIX för
 dessa rapporter var 44.6 som hamnar ungefär i mitten av sakinformation
 intervallen. Vi har därför valt sakinformation intervallen som gränsen för när
-vi varnar om att en text har för hög eller lågt LIX värde.
+vi varnar om att en text har för hög eller lågt LIX-värde.
 
 \subsubsection{Verktyg och utvecklingsmiljö}
 
@@ -886,11 +889,11 @@ applikationen. Vi skrev i huvudsak applikationen i Python 3.7.3 med YAML som
 konfigureringsspråk för backend samt HTML, CSS och Javascript för
 användargränssnittet i frontend. För att vi skulle hålla reda på exakt version
 av beroenden för applikationen använder vi Pipenv som är det officiellt
-rekommenderade systemet för att hantera paket som applikationen är beroende av 
-och virtuella miljöer förprogram skrivna i Python. Vi använde statisk typ 
-kontroll i all Python kodeftersom kodbasen växte snabbt och blev uppdelad mellan 
-många olika filer och då går det snabbare och är det lättare att förstå koden 
-ifall metoder och variabler deklareras med typer.
+rekommenderade systemet för att hantera paket som applikationen är beroende av
+och virtuella miljöer förprogram skrivna i Python. Vi använde statisk typ
+kontroll i all Python-kod eftersom kodbasen växte snabbt och blev uppdelad
+mellan många olika filer och då går det snabbare och är det lättare att förstå
+koden ifall metoder och variabler deklareras med typer.
 
 
 \subsection{Resultat av användartester}
