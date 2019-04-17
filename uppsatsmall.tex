@@ -13,7 +13,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
 
-% section related stuff
+% Section related stuff
 \usepackage{titlesec}
 % First level sections on new page
 \newcommand{\sectionbreak}{\clearpage}
@@ -24,9 +24,10 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-
+% Better figure and table placements
 \usepackage{float}
 
+% Format quotes
 \usepackage{csquotes}
 
 \begin{document}
@@ -63,7 +64,8 @@
   av uppfattningen att vår forskning tillför något nytt inom det
   datavetenskapliga respektive det sociologiska fälten.
 
-  Syftet med arbetet är att verka som de första stegen mot en webbapplikation som understödjer svensk polisdokumentationen.
+  Syftet med arbetet är att verka som de första stegen mot en webbapplikation
+  som understödjer svensk polisdokumentationen.
 \end{sammanfattning}
 
 \begin{abstract}
@@ -73,7 +75,7 @@
   between man and computer. In this study, we instead want to focus on which
   impact natural language processing can have on the human learning process.
 
-  At the same time, the context for our research have a future impact on one of
+  At the same time, the context for our research has a future impact on one of
   the most basic principles for a legally secure society, namely the writing of
   the police report.
 
@@ -104,7 +106,7 @@ spridningen av korpusar, samlingar av texter som är lagrade i elektroniskt
 maskinläsbara format \citep{nugues:2014}. Genom de språkteknologiska framstegen
 som gjorts på senare år har korpusbaserad språkinlärning också blivit allt
 vanligare. Samtidigt är de flesta korpusverktyg utformade för språklig
-forskning, och inte pedagogiska syften \cite{zhu:2015}.
+forskning, och inte pedagogiska syften \citep{zhu:2015}.
 
 Det finns flera anledningar att se närmare på detta utvecklingsområde. Att fylla
 ett vakuum hade inte bara lett till ett berikande av det språkteknologiska
@@ -324,7 +326,7 @@ Personer i detta projektets arbetsmiljö utgörs således av polisstudenter liks
 lärare. Studenterna har behov av hjälpmedel i utformningen av polisrapporter på
 ett rättssäkert sätt, medan lärarna å sin sida behöver få hjälp med
 rättningsprocessen av dessa. Båda rollerna kännetecknas av ett mindre tekniskt
-kunnande och intresse, vilket skapar behovet av ett användarvänlig system.
+kunnande och intresse, vilket skapar behovet av ett användarvänligt system.
 
 Organisationen som de ingår i är polisutbildningen vid Malmö universitet vars
 strategi bland annat är att utbilda studenter till färdiga polisaspiranter med
@@ -369,8 +371,8 @@ fyra stora iterationer:
   400 anonymiserade rapporter, där 80 redan var godkända av lärare och resten
   hade inte hade rättats. Vi testade rapporterna mot vårt textanalysverktyg för
   att identifiera fel som inte beskrivs i den officiella polisdokumentationen,
-  så som felformatteringar och inkorrekta filformat, samt eventuella buggar i
-  applikationen. Här kunde de godkända rapporterna också hjälpa oss att
+  så som felaktiga formatteringar och inkorrekta filformat, samt eventuella
+  buggar i applikationen. Här kunde de godkända rapporterna också hjälpa oss att
   identifiera de gränsvärden som var användbara för vår tonalitetsanalys och
   läsbarhetsanalys.
 \item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig
@@ -411,7 +413,7 @@ bidrar de också samtidigt till innehållet i kunskapsbasen för vidare framtida
 forskning \cite{hevner:2004}.
 
 Det finns andra alternativa metoder som kunde använts för att underbygga vårt
-arbetet, men som samtidigt av olika anledningar inte heller framstått lika
+arbete, men som samtidigt av olika anledningar inte heller framstått lika
 passande som Information Systems Research Framework.
 
 En av dem är så kallad action research, en metod som kännetecknas av att den
@@ -565,7 +567,7 @@ och om igen. Experter varnar dock för risken att övergeneralisera resultaten o
 projicera dem på en större population utan att provstorleken är tillräcklig nog
 \citep{tullis:2013}. För att minimera risken för detta ville vi vaska fram så
 optimala testdeltagare som möjligt. Då de tilltänkta slutanvändarna av vår
-applikationen i huvudsak är polisstudenter tedde sig logiskt att vi också
+applikation i huvudsak är polisstudenter tedde sig logiskt att vi också
 utförde våra tester på dem. Med bistånd från Per Esbjörnsson lyckades vi få tag
 på fem polisstudenter som deltog i vår undersökning.
 
@@ -770,7 +772,7 @@ Ett annat irriterande problem med rättstavningsprogram är att felstavningar av
 vissa ord kan leda till att det blir ett nytt ord som är korrekt stavat men ändå
 fel i sammanhanget, dessa fel upptäcks inte av rättstavningsprogram som
 enbart jämför ord mot ett lexikon. Stava har löst båda dessa problemen genom att
-utföra en mosfologisk analys av texten och kan därmed tolka varje enskilt ords
+utföra en morfologisk analys av texten och kan därmed tolka varje enskilt ords
 betydelse i sammanhangen. Stava kommer med ett standardlexikon men tillåter
 också att man lägger till egna lexikon vilket vi gjorde med ord som är speciella
 för polisrapporter. När vi analyserar texter med Stava använder vi utöver
@@ -778,7 +780,7 @@ standardinställningarna några extra regler som gör att programmet känner ige
 namn, förkortningar och ger rättningsförslag. Extra reglerna innebär att Stava
 använder mycket mer datorkraft relativt mot att bara köra standardkontrollerna
 men vi tog beslutat att det var värt det eftersom flaskpositiva och missade
-stavfel minskar korrektheten och rättsäkerheten i rapporterna som lämnas in med
+stavfel minskar korrektheten och rättssäkerheten i rapporterna som lämnas in med
 applikationen.
 
 \subsubsection{Textanalys av rapporter}
@@ -791,19 +793,19 @@ WORKINP
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
-Regel                                & Lokalisering & Rättningsförslag & Referens \\ \hline
-Felformatterade och saknade rubriker & Nej          & Ja               &          \\ \hline
-Korrekt rubrik                       & Ja           & Ja               &          \\ \hline
-Rubrikers beroende                   & Ja           & Ja               &          \\ \hline
-Rubrikers ordning                    & Ja           & Ja               &          \\ \hline
-Namnigenkänning                      & Ja           & Ja               &          \\ \hline
-Läsbarhet                            & Nej          & Ja               &          \\ \hline
-Känsliga ord                         & Ja           & Ja               &          \\ \hline
-Oönskade ord                         & Ja           & Ja               &          \\ \hline
-Polisförkortningar                   & Ja           & Ja               &          \\ \hline
-Stavning                             & Ja           & Ja               &          \\ \hline
-Grammatik                            & Ja           & Ja               &          \\ \hline
-Tonalitet                            & Nej          & Ja               &          \\ \hline
+Regel                                       & Lokalisering & Rättningsförslag & Referens \\ \hline
+Felaktigt formatterade och saknade rubriker & Nej          & Ja               &          \\ \hline
+Korrekt rubrik                              & Ja           & Ja               &          \\ \hline
+Rubrikers beroende                          & Ja           & Ja               &          \\ \hline
+Rubrikers ordning                           & Ja           & Ja               &          \\ \hline
+Namnigenkänning                             & Ja           & Ja               &          \\ \hline
+Läsbarhet                                   & Nej          & Ja               &          \\ \hline
+Känsliga ord                                & Ja           & Ja               &          \\ \hline
+Oönskade ord                                & Ja           & Ja               &          \\ \hline
+Polisförkortningar                          & Ja           & Ja               &          \\ \hline
+Stavning                                    & Ja           & Ja               &          \\ \hline
+Grammatik                                   & Ja           & Ja               &          \\ \hline
+Tonalitet                                   & Nej          & Ja               &          \\ \hline
 \end{tabular}
 \caption{Lista regler för rapportskrivning vi har implementerat}
 \label{rulestable}
@@ -811,12 +813,12 @@ Tonalitet                            & Nej          & Ja               &        
 
 \paragraph{Korrekt rubrik}
 % Fixa referens till polisen i Växjös lista på rapportrubriker
-En polisrapport ska vara uppdelade i olika fördefinerade rubriker.
+En polisrapport ska vara uppdelade i olika fördefinierade rubriker.
 \cite{durtva:2017} har en lista på valida rubriker för en polisrapport och ifall
 en rubrik i en rapport inte matchar dem markeras rubriken som felaktig.
 
 \paragraph{Rubrikers beroende}
-En rubrik i en polisrapport kan vara beroenda av andra rubriker, t.ex ifall
+En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
 rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också
 finns i rapporten. Vi har under ett möte med \cite{perintervju:2019} tagit fram
 en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande
@@ -851,27 +853,27 @@ av text som ger ett numeriskt värde på läsbarheten:
   är texten vilket innebär att den är svårare att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
   texten med formeln: unika ord / ord *100. Enligt \cite{abrahamsson:2011} är
-  det svårt att tolka värdet formelen resulterar i eftersom det helt beror på
+  det svårt att tolka värdet formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst är lättläst men kommer
-  ändå få ett väldigt högt OVIX värde medans en längre svårläst text på 20000
+  ändå få ett väldigt högt OVIX värde medans en längre svårläst text på 20 000
   ord varav 2000 är unika kommer få ett lägre värde.
 \item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med
-  följande formel där långa ord är ord med med fler än 6 bokstäver: (ord /
-  meningar) + (långa ord * 100 / ord). Ett resultat under 25 är barnboksnivå,
-  25-30 är enkla texter, 30-40 är normaltext, 40-50 är saktext, 50-60 är
-  facktext och över 60 är svåra facktexter \citep{abrahamsson:2011}.
+  följande formel där långa ord är ord med fler än 6 bokstäver: (ord / meningar)
+  + (långa ord * 100 / ord). Ett resultat under 25 är barnboksnivå, 25-30 är
+  enkla texter, 30-40 är normaltext, 40-50 är sakinformation, 50-60 är facktext
+  och över 60 är svåra facktexter \citep{abrahamsson:2011}.
 \end{itemize}
 
 OVIX värdets beroende av längden på texten gör att det inte är lämpligt eftersom
 rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi bestämde
-oss för att använda LIX eftersom \cite{abrahamsson:2011} skrivar att det är det
+oss för att använda LIX eftersom \cite{abrahamsson:2011} skriver att det är det
 vanligaste sättet i Sverige att mäta läsbarhet.
 
 För att komma fram till värdena för en LIX intervall som är godkänd i en rapport
 undersökte vi LIX värdet i 80 godkända polisrapporter. Medelvärdet på LIX för
-dessa rapporter var 44.6 som hamnar ungefär i mitten av saktext intervallen. Vi
-har därför valt saktext intervallen som gränsen för när vi varnar om att en text
-har för hög eller lågt LIX värde.
+dessa rapporter var 44.6 som hamnar ungefär i mitten av sakinformation
+intervallen. Vi har därför valt sakinformation intervallen som gränsen för när
+vi varnar om att en text har för hög eller lågt LIX värde.
 
 \subsubsection{Verktyg och utvecklingsmiljö}
 
@@ -918,7 +920,7 @@ var därefter avslutat.
 \subsubsection{SUS}
 
 Deltagarna fick skriftligen fylla i ett SUS-formulär, vilket består av tio
-frågor enligt en likertskala som deltagare får besvara efter att
+frågor enligt en Likertskala som deltagare får besvara efter att
 användbarhetstest är avklarat. SUS har en poängskala från 0-100, där det
 slutgiltiga resultatet räknas ut genom att ta bort 1 från poängen för varje av
 de udda numrerade frågorna samt genom att ta bort 5 för varje av de jämnt
@@ -962,7 +964,7 @@ sett en motivering till varför sådana ska undvikas. Samma deltagare skulle ock
 vilja att felmeddelande visades i en kronologisk ordning utifrån vart i
 dokumentet de återfanns, samt att olika färgkoder skulle kunna användas för att
 gradera hur pass allvarliga de var. Personen såg även att vyn automatiskt
-scrollade ner till det aktuella felet efter att deltagaren klickat på felet
+skrollade ner till det aktuella felet efter att deltagaren klickat på felet
 utöver att bara markera dess plats i texten. Två deltagare hade velat kunna
 kopiera text i felmeddelandena, och då i synnerhet när det fanns
 rättningsförslag, för att effektivisera korrigeringsprocessen. De ville att man
@@ -1008,13 +1010,13 @@ De andra önskemålen implementerades inte med följande motiveringar:
   rättningsförslagen så blir rapporten korrekt men han lär sig troligtvis inte
   så mycket. [Kanske REF]
 \item \textbf{Rätta rapporten i webbapplikationen}: Användaren får en lista på
-  fel i webbapplikationen men måste använda sin egna ordbehandlare för att rätta
+  fel i webbapplikationen men måste använda sin egen ordbehandlare för att rätta
   felen. Att låta användaren rätta rapporten direkt i webbapplikationen ligger
   utan vårt scope, kravet på applikationen var att den skulle kunna analysera en
   rapport i docx format. Det hade faktiskt varit en bra feature att ha men vi
   hade helt enkelt inte tid att implementera en ordbehandlare i
   webbapplikationen full kompatibilitet med Microsoft Word och LibreOffice som
-  är de verktyg eleverna använder när de skriver rapporter på sina egna datorer.
+  är de ordbehandlare eleverna använder när de skriver rapporter.
 \item \textbf{Exakt position där platsbeskrivning och tidpunkt saknas}: Vi kan
   identifiera under vilken rubrik de saknas men inte med full säkerhet
   identifiera exakt var i texten. I de flesta rapporter som vi analyserat kan
