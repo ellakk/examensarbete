@@ -1,15 +1,15 @@
 \documentclass[swedish]{maucsthesis}
 %\documentclass[english]{maucsthesis}
 % Choose if you write in Swedish or English. (Don't write in English!)
-\usepackage{natbib}
-\bibliographystyle{agsm}
 
 %
 % Select character encoding
 %\usepackage[utf8]{inputenc} % depends on system character encoding, most Linux use utf8, your mileage may vary!
 \usepackage[T1]{fontenc} % Use this character encoding with Overleaf (www.overleaf.com)!
 
+% Nordic chars in equations
 \usepackage{lmodern}
+
 % For the picture
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
@@ -110,10 +110,10 @@ hjälpmedel för vår egen språkutveckling. Även om applikationer som berör
 språkbehandling länge varit mer långsamma i sin utvecklingen än annan jämförbar
 digital teknik har detta område ökat markant på senare år inte minst tack vare
 spridningen av korpusar, samlingar av texter som är lagrade i elektroniskt
-maskinläsbara format \citep{nugues:2014}. Genom de språkteknologiska framstegen
+maskinläsbara format \cite{nugues:2014}. Genom de språkteknologiska framstegen
 som gjorts på senare år har korpusbaserad språkinlärning också blivit allt
 vanligare. Samtidigt är de flesta korpusverktyg utformade för språklig
-forskning, och inte pedagogiska syften \citep{zhu:2015}.
+forskning, och inte pedagogiska syften \cite{zhu:2015}.
 
 Det finns flera anledningar att se närmare på detta utvecklingsområde. Att fylla
 ett vakuum hade inte bara lett till ett berikande av det språkteknologiska
@@ -207,8 +207,8 @@ senaste decenniet och som är av intresse för oss.
 I en studie som genomfördes vid Zürichs universitet gjordes ett försök att
 implementera lingvistiskt redigeringsstöd för att underlätta skrivprocessen för
 skribenter. I den vetenskapliga undersökningen som ledde fram till processen
-fann \cite{Piotrowski:2009} att mycket lite forskning fanns tillgänglig om att
-stödja skapandet av textinnehåll. I det som \citeauthor{Piotrowski:2009} kom att
+fann Piotrowski och Mahlow~\cite{Piotrowski:2009} att mycket lite forskning fanns tillgänglig om att
+stödja skapandet av textinnehåll. I det som Piotrowski och Mahlow~\cite{Piotrowski:2009} kom att
 kalla LingURed-projektet utvecklade de en uppsättning språkmedvetna
 redigeringsverktyg som kunde analysera teckensträngar utifrån dess språkliga
 struktur. Även om dessa verktyg inte skulle kunna ge lingvistisk vägledning åt
@@ -217,7 +217,7 @@ författarna så hjälpte de dem att skapa meningar med färre fel.
 \cite{zhu:2015} har noterat att sedan dess har antalet korpusar, som är stora
 samlingar av texter som kan analyseras automatiskt för lingvistiska mönster och
 strukturer, ökat. De flesta korpus är dock avsedda för lingvistisk forskning och
-inte för utbildning. Med detta i åtanke byggde \citeauthor{zhu:2015} ett
+inte för utbildning. Med detta i åtanke byggde Zhu \cite{zhu:2015} ett
 digitalt korpusverktyg som kallades Text X-Ray som skulle hjälpa både lärare och
 studenter att analysera sin egna skrivkorpusar och att jämföra dem med andra.
 Under våren 2013 genomfördes en studie med flera engelskspråkiga lärare på
@@ -237,7 +237,7 @@ digitalt. Språkteknologi och datalingvistik är båda fält som ständigt utfor
 av IT-industrin och som når nya resultat. Idealiskt, och kanske inom en snar
 framtid, ska exempelvis datorer kunna analysera stora mängder text, parsa
 skriftliga meningar och utföra morfologisk redigering till perfektion med hjälp
-av digital språkbehandling \citep{nugues:2014}.
+av digital språkbehandling \cite{nugues:2014}.
 
 Idag finns det olika verktyg som kan utföra automatiska analyser av språkliga
 attribut i texter. Dessa program, som innehåller så kallad "lingvistisk kunskap"
@@ -248,7 +248,7 @@ termbanker, databaser, ordböcker samt olika digitala verktyg för att analysera
 språk. Dessa verktyg är oftast utrustade med funktionaliteter som stavnings- och
 grammatiska analyseringsverktyg samt så kallade läsbarhetsindex (LIX) för att beräkna hur många och vilka grammatiska
 fel som är vanligt förekommande i en skriftlig text, se \cref{läsbarhet} för en utförlig beskrivning av LIX. Sådana program har kunnat
-spara tid i rättningsprocesser \citep{wengelin:2017}.
+spara tid i rättningsprocesser \cite{wengelin:2017}.
 
 \subsection{Rapportskrivning}
 
@@ -264,7 +264,7 @@ allmänheten. Polisrapporter utgör också ofta grunden för juridiska ärenden.
 polisrapporter skrivs på ett begripligt och korrekt sätt \cite{ask:2013}.
 Ordvalen i rapporterna är också av särskild vikt då poliser bör använda ett
 språk som är objektivt, detta för att rapporten ska kunna uppnå rättssäkerhet
-\citep{ask:2018}. En viktig aspekt för att uppnå det är att ett etiskt
+\cite{ask:2018}. En viktig aspekt för att uppnå det är att ett etiskt
 förhållningssätt präglar texten. Bland annat förutsätts det att nedsättande
 formuleringar inte bör förekomma i polisrapporter, annat än om dessa är tydligt
 citerades från ett vittne. I sådana fall bör de nedsättande termerna omgärdas av
@@ -304,13 +304,12 @@ anges liksom korrekt anmälningstid och brottstid.
 \subsection{Ramverk}
 
 När forskning bedrivs som är baserad på informationssystem liknande det vi
-utvecklar och utvärderar i detta projekt rekommenderar \cite{hevner:2004} att
+utvecklar och utvärderar i detta projekt rekommenderar Hevner et al.~\cite{hevner:2004} att
 processen bäst görs via konceptuella ramverk som positionerar och jämför
 beteendevetenskapliga och designvetenskapliga paradigmer med varandra. En sådan
 process underbygger förståelsen, genomförandet och utvärderingen av
 informationssystemforskning. Nedan presenteras en representation av the
-Information Systems Research Framework som tagits fram av
-\citeauthor{hevner:2004}.
+Information Systems Research Framework som tagits fram av Hevner et al.~\cite{hevner:2004}.
 
 \begin{figure}[H]
     \centering
@@ -357,7 +356,7 @@ utvärderandet av artefakten, så har arbetet i detta projekt kommit att bestå 
 fyra stora iterationer:
 
 \begin{enumerate}
-\item Den första utgick från vårt initiala möte med Per Esbjörnsson och
+\item Den första utgick från vårt initiala möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31] och
   konkretiserades genom den kravinsamling som kom att bli resultatet av denna.
   Utifrån de önskemål och krav på artefakten som beskrevs av Per samt det
   officiella polismaterial som relaterar till hur rapportskrivning ska se ut
@@ -426,7 +425,7 @@ En av dem är så kallad action research, en metod som kännetecknas av att den
 genomförs under en pågående utbildningssession. Detta är en iterativ metod där
 forskaren, i detta fallet en lärare, ständigt utforskar strategier och medvetet
 analyserar resultat med avsikt att göra justeringar samtidigt som utbildningen
-fortskrider \citep{clement:2004}. Då vårt arbete innefattar faktiska lärare och
+fortskrider \cite{clement:2004}. Då vårt arbete innefattar faktiska lärare och
 sker inom kontexten av en utbildning kan action research i teorin ses som ett
 passande alternativ för denna studie. Rent praktiskt inser vi dock att det vore
 svårt rent logistiskt och tidsmässigt att samordna en sådan utbildningssession
@@ -564,14 +563,14 @@ det som avgör vilken metod som är bäst lämpad är hur många deltagare som b
 och vilka mätvärden som ska användas. Det allra vanligaste är ett så kallat
 labbtest där en mindre grupp användare deltar. I sådana test ber vanligtvis
 moderatorn en deltagare att utföra ett antal uppgifter på systemet som ska
-testas, därefter ställer moderatorn frågor om upplevelsen \citep{tullis:2013}.
+testas, därefter ställer moderatorn frågor om upplevelsen \cite{tullis:2013}.
 
-En känd studie av \citep{nielsen:2000} har påvisat att endast fem användare
+En känd studie av Nielsen~\cite{nielsen:2000} har påvisat att endast fem användare
 behövs för att generera ett optimalt användbarhetstest. Med fler deltagare
 påvisar test mindre och mindre värdefulla belägg eftersom samma saker visas om
 och om igen. Experter varnar dock för risken att övergeneralisera resultaten och
 projicera dem på en större population utan att provstorleken är tillräcklig nog
-\citep{tullis:2013}. För att minimera risken för detta ville vi vaska fram så
+\cite{tullis:2013}. För att minimera risken för detta ville vi vaska fram så
 optimala testdeltagare som möjligt. Då de tilltänkta slutanvändarna av vår
 applikation i huvudsak är polisstudenter tedde sig logiskt att vi också
 utförde våra tester på dem. Med bistånd från Per Esbjörnsson lyckades vi få tag
@@ -579,16 +578,16 @@ på fem polisstudenter som deltog i vår undersökning.
 
 Ett av de grundläggande kraven på UX-mätvärden är att de på ett direkt eller
 indirekt sätt måste vara observerbara samt att de kan omvandlas till ett tal
-eller räknas ihop i ett numeriskt format \citep{tullis:2013}. Av denna anledning
+eller räknas ihop i ett numeriskt format \cite{tullis:2013}. Av denna anledning
 utvecklade vi ett mindre formulär där deltagarna skulle betygsätta sina
 erfarenheter under testet på en skala från 1 till 5.
 
 Ett av de grundläggande kraven på UX-mätvärden är att de på ett direkt eller
 indirekt sätt måste vara observerbara samt att de kan omvandlas till ett tal
-eller räknas ihop i ett numeriskt format \citep{tullis:2013}. Av denna anledning
+eller räknas ihop i ett numeriskt format \cite{tullis:2013}. Av denna anledning
 bestämde vi oss för att använda oss av The System Usability Scale (SUS) för att
 deltagarna ska betygsätta sina erfarenheter under testet. SUS beskrivs av
-\citep{laubheimer:2018} som det mest välkända frågeformuläret i UX-sammanhang.
+Laubheimer~\cite{laubheimer:2018} som det mest välkända frågeformuläret i UX-sammanhang.
 
 För att än mer tydliggöra vad som kan förbättras med applikationen bestämde vi
 oss för att kombinera SUS med att deltagarna också ombads att besvara ett par
@@ -766,7 +765,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
 Stava är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
 Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
-stavningsprogram traditionellt sätt har svårt att hantera, \cite{kann:1997}
+stavningsprogram traditionellt sätt har svårt att hantera, Kann~\cite{kann:1997}
 förklarar:
 
 \begin{displayquote}
@@ -821,14 +820,14 @@ Tonalitet                                   & Nej          & Ja               & 
 \paragraph*{Felaktigt formatterade och saknade rubriker}
 
 Rubrikerna i en polisrapport ska vara skrivna i versaler och enbart bestå av 
-alfanumeriska tecken \citep{durtva:2017}. Ifall en rapport bryter mot denna regel 
+alfanumeriska tecken \cite{durtva:2017}. Ifall en rapport bryter mot denna regel 
 eller om rubrikerna saknas helt skapas ett felmeddelande som beskriver det godkända
 formatet på rubriker.
 
 \paragraph*{Korrekt rubrik}
 % Fixa referens till polisen i Växjös lista på rapportrubriker
 En polisrapport ska uppdelad i olika fördefinierade rubriker
-\citep{durtva:2017}. Om en rubrik som inte finns med i listan på de
+\cite{durtva:2017}. Om en rubrik som inte finns med i listan på de
 fördefinerade rubrikerna hittas skapas ett felmeddelande som beskriver felet och
 ett rättningsförslag på en rubrik som kan användas istället. Rättningsförslaget
 är tas fram genom att jämföra Levenshteinavståndet mellan den felaktiga rubriken
@@ -838,22 +837,22 @@ kortast avstånd till den felaktiga rubriken blir rättningsförslaget.
 \paragraph*{Rubrikers beroende}
 En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
 rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också
-finns i rapporten. Vi har under ett möte med \cite{perintervju:2019} tagit fram
-en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande
+finns i rapporten. Vi har under ett möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31]
+tagit fram en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande
 som beskriver vilken rubrik som saknas.
 
 \paragraph*{Rubrikers ordning}
 En del av de rubriker som får användas i en polisrapport har en förutbestämd
-ordning \citep{durtva:2017}, t.ex ska INLEDNING alltid vara först, BILAGOR sist
+ordning \cite{durtva:2017}, t.ex ska INLEDNING alltid vara först, BILAGOR sist
 och HÄNDELSEFÖRLOPP ska alltid komma efter HÄNDELSE eller BROTT. När
 analysverktyget upptäcker att rubriker är i oordning genereras felmeddelande som
 meddelar användaren vilka dessa rubriker är.
 
 \paragraph*{Namnigenkänning}\label{namnigenkänning}
-Sparv använder verktyget hfst-sweNER \citep{borin:2016} för att identifiera
+Sparv använder verktyget hfst-sweNER \cite{borin:2016} för att identifiera
 och annotera delar av text som faller in i förbestämde kategorier, detta kallas för Named Entity Recognition (NER). 
 hfst-sweNER testar text mot tusentals olika mönster för att avgöra ifall texten 
-eller delar av den faller in under någon av följande huvudkategorier \citep{kokkinakis:2014}:
+eller delar av den faller in under någon av följande huvudkategorier \cite{kokkinakis:2014}:
 
 \begin{itemize}
 \item \textbf{Person (PRS)}: Personnamn, djurnamn etc.
@@ -867,12 +866,12 @@ eller delar av den faller in under någon av följande huvudkategorier \citep{ko
 \end{itemize}
 
 Vi har implementerat två olika typer av regler med hjälp av NER annotationer.
-Den första är en regel som Per gick \cite{perintervju:2019} under vårt andra möte.
+Den första är en regel som kommer från vårt andra möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-02-25].
 Han berättade under att en del rubriker kan ha vissa egenskaper, t.ex. rubriken INLEDNING ska ha datum och plats där
 anmälan togs emot. 
 
 Den andra regeln är att datum, pengar och räkneord ska vara formatterade på
-ett speciellt sätt i rapporter \citep{rfsip}, t.ex. datum ska enbart 
+ett speciellt sätt i rapporter \cite{rfsip}, t.ex. datum ska enbart 
 skrivas ``Den 21 januari 2019`` eftersom det sättet är mest läsbart.
 
 Ifall en rapport bryter mot dessa regler skapas ett felmeddelade som beskriver
@@ -884,20 +883,20 @@ Under första mötet med \cite{perintervju:2019} berättade han att en del av
 rapporterna var svårlästa. Han framförde en önskan om att vårt analysverktyg
 skulle kunna identifiera dessa rapporter.
 
-\cite{abrahamsson:2011} har i sitt arbete som behandlar hur man kan göra texter
+Abrahamsson~\cite{abrahamsson:2011} har i sitt arbete som behandlar hur man kan göra texter
 mer lättlästa tittat närmre på följande tre sätt att kvantitativt mäta läsbarhet
 av text som ger ett numeriskt värde på läsbarheten:
 
 \begin{itemize}
 \item \textbf{Nominalkvot (NK)}: Mäter informationstätheten i text med följande
   formel: $$NK=(Substantiv + Prepositioner + Particip) / (Pronomen + Verb + Adverb)$$
-  \cite{abrahamsson:2011} skriver att normalvärdet för NK ligger på 100 vilket
+  Abrahamsson~\cite{abrahamsson:2011} skriver att normalvärdet för NK ligger på 100 vilket
   kan jämföras med en tidningstext. Ett lågt NK innebär att texten är
   talspråklig och framåtdrivande och ett högt att texten är informationstät och
   tar lång tid att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
   texten med formeln: $$OVIX=Unika Ord / Ord *100$$
-  Enligt \cite{abrahamsson:2011} är
+  Enligt Abrahamsson~\cite{abrahamsson:2011} är
   det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst kommer få ett väldigt
   högt OVIX-värde medan en längre svårläst text på 20 000 ord varav 2000 är
@@ -907,7 +906,7 @@ av text som ger ett numeriskt värde på läsbarheten:
   $$LIX=(Ord / Meningar) + LångaOrd * 100 / Ord)$$
   Ett resultat under 25 är barnboksnivå, 25-30 är
   enkla texter, 30-40 är normaltext, 40-50 är sakinformation, 50-60 är facktext
-  och över 60 är svåra facktexter \citep{abrahamsson:2011}.
+  och över 60 är svåra facktexter \cite{abrahamsson:2011}.
 \end{itemize}
 
 Eftersom OVIX är delvis baserat på textens längd är det inte ett lämpligt mått då
@@ -1099,6 +1098,7 @@ Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (
 \newpage
 \addcontentsline{toc}{section}{Referenser}
 
-\bibliography{bibliography.bib}
+\bibliographystyle{plain}
+\bibliography{bibliography}
 
 \end{document}
