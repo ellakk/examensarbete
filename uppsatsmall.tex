@@ -9,6 +9,7 @@
 %\usepackage[utf8]{inputenc} % depends on system character encoding, most Linux use utf8, your mileage may vary!
 \usepackage[T1]{fontenc} % Use this character encoding with Overleaf (www.overleaf.com)!
 
+\usepackage{lmodern}
 % For the picture
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
@@ -29,6 +30,12 @@
 
 % Format quotes
 \usepackage{csquotes}
+
+% Clickable TOC
+\usepackage{hyperref}
+
+% Better in-doc refs
+\usepackage{cleveref}
 
 \begin{document}
 
@@ -239,9 +246,8 @@ tvärvetenskapliga forskningsområdet språkteknologi. Det finns många lingvist
 resurser som språkteknologi täcker, inte minst en mängd lexikon, ordböcker,
 termbanker, databaser, ordböcker samt olika digitala verktyg för att analysera
 språk. Dessa verktyg är oftast utrustade med funktionaliteter som stavnings- och
-grammatiska analyseringsverktyg samt så kallade läsbarhetsindexar (LIX)
-*hänvsining till annat avsnitt* för att beräkna hur många och vilka grammatiska
-fel som är vanligt förekommande i en skriftlig text. Sådana program har kunnat
+grammatiska analyseringsverktyg samt så kallade läsbarhetsindex (LIX) för att beräkna hur många och vilka grammatiska
+fel som är vanligt förekommande i en skriftlig text, se \cref{läsbarhet} för en utförlig beskrivning av LIX. Sådana program har kunnat
 spara tid i rättningsprocesser \citep{wengelin:2017}.
 
 \subsection{Rapportskrivning}
@@ -360,13 +366,13 @@ fyra stora iterationer:
   kunde därför börja skissa på en tidig design.
 \item Den andra iterationen bestod av den litteraturstudie vi gjorde för att
   undersöka existerande forskningen som gjorts inom området, och som finns
-  närmare beskrivet i avsnitten \ref{relateradforskning} samt \ref{språkteknologi}.
+  närmare beskrivet i \cref{relateradforskning} samt \cref{språkteknologi}.
   Utifrån denna studie kunde vi justera våra forskningsmål i enlighet med det
   empiriska material vi fann. Dessa resultaten ledde också till en insikt kring
   hur implementeringen av de olika reglerna för rapportskrivning kunde ske.
 \item Den tredje iterationen bestod av en första instansiering av artefakten,
   vilket var i form av en tidig prototyp av APIet och webbapplikationen, se
-  figur \ref{fig:tidigprototyp}. Under den inledande fasen av iterationen fick
+  \cref{fig:tidigprototyp}. Under den inledande fasen av iterationen fick
   vi tillgång till övningsmaterial bestående av uppgiftsbeskrivningar och cirka
   400 anonymiserade rapporter, där 80 redan var godkända av lärare och resten
   hade inte hade rättats. Vi testade rapporterna mot vårt textanalysverktyg för
@@ -378,8 +384,8 @@ fyra stora iterationer:
 \item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig
   instansiering av applikationen. Denna versionen var ett resultat av de
   ändringar som gjortsvid utvärderingen efter användarstudien, vilka beskrivs i
-  avsnitt \ref{önskvärdafunktioner}, och beskrivs i sin helhet i
-  avsnitt \ref{applikationen}.
+  \cref{önskvärdafunktioner}, och beskrivs i sin helhet i
+  \cref{applikationen}.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -402,7 +408,7 @@ språkstrategi i utformningen av polisrapporter medan är instansieringen ett
 arbetssystem som visar användningen av metoden, i detta fall den applikation vi
 konstruerar. Vidare finner vi våra teorier som är genomgående i fundament och
 metodologier i den vetenskapliga litteratur vi tillskansat oss genom
-litteraturstudien som beskrivs i nedanstående avsnitt. Under utvecklingen har vi
+litteraturstudien som beskrivs i \cref{litteraturstudie}. Under utvecklingen har vi
 tillgång till en rad anonymiserade studentrapporter som vi kör genom
 applikationen för att finna vanliga fel, detta ser vi som dataanalysteknik som
 den definieras i metodologifältet.
@@ -426,7 +432,7 @@ passande alternativ för denna studie. Rent praktiskt inser vi dock att det vore
 svårt rent logistiskt och tidsmässigt att samordna en sådan utbildningssession
 som samtidigt också hade varit användbar för vår forskning.
 
-\subsection{Litteraturstudie}
+\subsection{Litteraturstudie}\label{litteraturstudie}
 
 I detta avsnittet presenterar vi den litteratur i form av artiklar och böcker
 som valts och hur vi hittade dem i förhållande till vårt forskningsmål och
@@ -619,7 +625,7 @@ inte speglat den kontext i vilket en lärare kan tänkas använda systemet vilke
 också underminerar antagandet att en lärare som testsubjekt skulle bidragit till
 våra observationer av testet.
 
-Som vi skriver i avsnitt \ref{avgränsning} har vi tilldelats drygt 11 veckor
+Som vi skriver i \cref{avgränsning} har vi tilldelats drygt 11 veckor
 för utveckling av artefakten. Det finns en risk att denna tidsram kan vara
 alltför snäv och att vi till följd av detta missar att implementera kraven på
 artefakten som vi samlat in genom kravinsamlingen. Som vi ser det är denna risk
@@ -751,7 +757,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
 \item \textbf{Attitydvärde}: Ifall ett ord är positivt, negativt eller neutralt
 \item \textbf{Namnigenkänning}: Kategoriserar textstycken i en grupp
   fördefinierade kategorier så som geografiska platser, föremål, tidpunkter och
-  många fler
+  många fler. Beskrivs mer ingående i \cref{namnigenkänning}
 \item \textbf{Läsbarhetsindex (LIX)}: Ett mått som kan användas för att få en
   uppfattning om hur svår eller lätt en text är att läsa
 \end{itemize}
@@ -812,6 +818,13 @@ Tonalitet                                   & Nej          & Ja               & 
 \label{rulestable}
 \end{table}
 
+\paragraph*{Felaktigt formatterade och saknade rubriker}
+
+Rubrikerna i en polisrapport ska vara skrivna i versaler och enbart bestå av 
+alfanumeriska tecken \citep{durtva:2017}. Ifall en rapport bryter mot denna regel 
+eller om rubrikerna saknas helt skapas ett felmeddelande som beskriver det godkända
+formatet på rubriker.
+
 \paragraph*{Korrekt rubrik}
 % Fixa referens till polisen i Växjös lista på rapportrubriker
 En polisrapport ska uppdelad i olika fördefinierade rubriker
@@ -836,11 +849,36 @@ och HÄNDELSEFÖRLOPP ska alltid komma efter HÄNDELSE eller BROTT. När
 analysverktyget upptäcker att rubriker är i oordning genereras felmeddelande som
 meddelar användaren vilka dessa rubriker är.
 
-\paragraph*{Namnigenkänning}
+\paragraph*{Namnigenkänning}\label{namnigenkänning}
+Sparv använder verktyget hfst-sweNER \citep{borin:2016} för att identifiera
+och annotera delar av text som faller in i förbestämde kategorier, detta kallas för Named Entity Recognition (NER). 
+hfst-sweNER testar text mot tusentals olika mönster för att avgöra ifall texten 
+eller delar av den faller in under någon av följande huvudkategorier \citep{kokkinakis:2014}:
 
-....
+\begin{itemize}
+\item \textbf{Person (PRS)}: Personnamn, djurnamn etc.
+\item \textbf{Location (LOC)}: Geografiska platser, gator  etc.
+\item \textbf{Organization (ORG)}: Företag, politiska organisationer etc.
+\item \textbf{Artifact (OBJ)}: Mat, dryck, fordon etc.
+\item \textbf{Work and Art (WRK)}: Filmer, böcker etc.
+\item \textbf{Event (EVN)}: Sport, Festivaler, konferenser etc.
+\item \textbf{Measure/Numerical (MSR)}:  Mått, ålder etc.
+\item \textbf{Temporal(TME)}: Datum, klockslag etc.
+\end{itemize}
 
-\paragraph*{Läsbarhet}
+Vi har implementerat två olika typer av regler med hjälp av NER annotationer.
+Den första är en regel som Per gick \cite{perintervju:2019} under vårt andra möte.
+Han berättade under att en del rubriker kan ha vissa egenskaper, t.ex. rubriken INLEDNING ska ha datum och plats där
+anmälan togs emot. 
+
+Den andra regeln är att datum, pengar och räkneord ska vara formatterade på
+ett speciellt sätt i rapporter \citep{rfsip}, t.ex. datum ska enbart 
+skrivas ``Den 21 januari 2019`` eftersom det sättet är mest läsbart.
+
+Ifall en rapport bryter mot dessa regler skapas ett felmeddelade som beskriver
+vad det är som saknas eller rätt format på det som är felformatterat.
+
+\paragraph*{Läsbarhet}\label{läsbarhet}
 
 Under första mötet med \cite{perintervju:2019} berättade han att en del av
 rapporterna var svårlästa. Han framförde en önskan om att vårt analysverktyg
@@ -852,20 +890,22 @@ av text som ger ett numeriskt värde på läsbarheten:
 
 \begin{itemize}
 \item \textbf{Nominalkvot (NK)}: Mäter informationstätheten i text med följande
-  formel: (substantiv + prepositioner + particip) / (pronomen + verb + adverb).
+  formel: $$NK=(Substantiv + Prepositioner + Particip) / (Pronomen + Verb + Adverb)$$
   \cite{abrahamsson:2011} skriver att normalvärdet för NK ligger på 100 vilket
   kan jämföras med en tidningstext. Ett lågt NK innebär att texten är
   talspråklig och framåtdrivande och ett högt att texten är informationstät och
   tar lång tid att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
-  texten med formeln: unika ord / ord *100. Enligt \cite{abrahamsson:2011} är
+  texten med formeln: $$OVIX=Unika Ord / Ord *100$$
+  Enligt \cite{abrahamsson:2011} är
   det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst kommer få ett väldigt
   högt OVIX-värde medan en längre svårläst text på 20 000 ord varav 2000 är
   unika kommer få ett lägre värde.
 \item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med
-  följande formel där långa ord är ord med fler än 6 bokstäver: (ord / meningar)
-  + (långa ord * 100 / ord). Ett resultat under 25 är barnboksnivå, 25-30 är
+  följande formel där långa ord är ord med fler än 6 bokstäver: 
+  $$LIX=(Ord / Meningar) + LångaOrd * 100 / Ord)$$
+  Ett resultat under 25 är barnboksnivå, 25-30 är
   enkla texter, 30-40 är normaltext, 40-50 är sakinformation, 50-60 är facktext
   och över 60 är svåra facktexter \citep{abrahamsson:2011}.
 \end{itemize}
@@ -883,7 +923,7 @@ vi varnar om att en text har för hög eller lågt LIX-värde.
 
 \subsubsection{Verktyg och utvecklingsmiljö}
 
-Båda applikationerna utvecklades i GNU Emacs 26.1 men det ska inte vara några
+Både frontend och backend utvecklades i GNU Emacs 26.1 men det ska inte vara några
 problem att använda andra utvecklingsmiljöer för att vidareutveckla
 applikationen. Vi skrev i huvudsak applikationen i Python 3.7.3 med YAML som
 konfigureringsspråk för backend samt HTML, CSS och Javascript för
@@ -1021,12 +1061,12 @@ De andra önskemålen implementerades inte med följande motiveringar:
   utan vårt scope, kravet på applikationen var att den skulle kunna analysera en
   rapport i docx-format. Det hade faktiskt varit en bra feature att ha men vi
   hade helt enkelt inte tid att implementera en ordbehandlare i
-  webbapplikationen full kompatibilitet med Microsoft Word och LibreOffice som
+  webbapplikationen som är fullt kompatibel med Microsoft Word och LibreOffice som
   är de ordbehandlare studenterna använder när de skriver rapporter.
 \item \textbf{Exakt position där platsbeskrivning och tidpunkt saknas}: Vi kan
   identifiera under vilken rubrik de saknas men inte med full säkerhet
   identifiera exakt var i texten. I de flesta rapporter som vi analyserat kan
-  man inte ens som människa inte säga exakt var i texten de ska in eftersom de
+  man inte ens som människa säga exakt var i texten de ska in eftersom de
   ofta passar in på flera ställen. Vi tror att det är bättre ifall vi överlåter
   ansvaret till användaren att bestämma hur dessa fel ska korrigeras.
 \item \textbf{Motivera gammaldags ord och uttryck}: För att användargränssnittet
@@ -1039,7 +1079,7 @@ De andra önskemålen implementerades inte med följande motiveringar:
   rapportskrivning. När vi utvecklade applikationen skapade vi felmeddelandena
   så att de är så korta och lättförståeliga som möjligt eftersom det är svårt
   att presentera långa felmeddelanden i ett användargränssnitt på ett snyggt och
-  lättläst sätt, speciellt när det är många fel som visas.
+  lättläst sätt, speciellt när det är många fel som visas samtidigt.
 \end{itemize}
 
 \section{Analys}
