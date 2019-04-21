@@ -7,10 +7,10 @@
 %\usepackage[utf8]{inputenc} % depends on system character encoding, most Linux use utf8, your mileage may vary!
 \usepackage[T1]{fontenc} % Use this character encoding with Overleaf (www.overleaf.com)!
 
-% Nordic chars in equations
-\usepackage{lmodern}
+% For using \text in equations
+\usepackage{amsmath}
 
-% For the picture
+% For the pictures
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
 
@@ -356,7 +356,7 @@ utvärderandet av artefakten, så har arbetet i detta projekt kommit att bestå 
 fyra stora iterationer:
 
 \begin{enumerate}
-\item Den första utgick från vårt initiala möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31] och
+\item Den första utgick från vårt initiala möte med Per Esbjörnsson och
   konkretiserades genom den kravinsamling som kom att bli resultatet av denna.
   Utifrån de önskemål och krav på artefakten som beskrevs av Per samt det
   officiella polismaterial som relaterar till hur rapportskrivning ska se ut
@@ -728,8 +728,8 @@ frontend eventuellt kan visa upp varje fels position i rapporten.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{backenderd}
-    \caption{ERD-diagram som visar klasser och dess relationer i backend}
+    \includegraphics[width=0.85\textwidth]{backendklasser}
+    \caption{Diagram som visar klasser och dess relationer i backend}
     \label{fig:erdbackend}
 \end{figure}
 
@@ -761,7 +761,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
   uppfattning om hur svår eller lätt en text är att läsa
 \end{itemize}
 
-\paragraph*{Stava}
+\paragraph*{Stava}\label{stava}
 Stava är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
 Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
@@ -793,7 +793,12 @@ rapporterna som lämnas in med applikationen.
 % [Lista på de olika analyserna vi kör på rapporterna med referens till varifrån vi har tagit reglerna de bygger på]
 % [Beskriv algoritmerna vi använder för att komma fram till resultat av analyserna..]
 % [Användarguide som bilaga]
-WORKINP
+
+Vi har med hjälp av Per Esbjörnsson, polisdokumentation och inlämnade polisrapporter implementerat
+regler som en rapport inte får bryta mot. Varje rapport som lämnas in analyseras i backend för att undersöka
+ifall och hur den bryter mot någon av reglerna.
+För varje fel som hittas skapas ett felmeddelande, detta meddelande beskriver vad som är fel
+samt om möjligt var felet finns och rättningsförslag på hur man kan fixa det.
 
 \begin{table}[H]
 \centering
@@ -811,7 +816,7 @@ Oönskade ord                                & Ja           & Ja               &
 Polisförkortningar                          & Ja           & Ja               &          \\ \hline
 Stavning                                    & Ja           & Ja               &          \\ \hline
 Grammatik                                   & Ja           & Ja               &          \\ \hline
-Tonalitet                                   & Nej          & Ja               &          \\ \hline
+Tonalitet                                   & Nej          & Nej              &          \\ \hline
 \end{tabular}
 \caption{Lista över regler för rapportskrivning vi har implementerat}
 \label{rulestable}
@@ -825,6 +830,7 @@ eller om rubrikerna saknas helt skapas ett felmeddelande som beskriver det godk�
 formatet på rubriker.
 
 \paragraph*{Korrekt rubrik}
+
 % Fixa referens till polisen i Växjös lista på rapportrubriker
 En polisrapport ska uppdelad i olika fördefinierade rubriker
 \cite{durtva:2017}. Om en rubrik som inte finns med i listan på de
@@ -835,6 +841,7 @@ med var och en av de fördefinerade rubrikerna. Den fördefinerade rubrik som ha
 kortast avstånd till den felaktiga rubriken blir rättningsförslaget.
 
 \paragraph*{Rubrikers beroende}
+
 En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
 rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också
 finns i rapporten. Vi har under ett möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31]
@@ -842,6 +849,7 @@ tagit fram en lista på dessa beroende. Ifall ett beroende saknas skapas ett fel
 som beskriver vilken rubrik som saknas.
 
 \paragraph*{Rubrikers ordning}
+
 En del av de rubriker som får användas i en polisrapport har en förutbestämd
 ordning \cite{durtva:2017}, t.ex ska INLEDNING alltid vara först, BILAGOR sist
 och HÄNDELSEFÖRLOPP ska alltid komma efter HÄNDELSE eller BROTT. När
@@ -849,6 +857,7 @@ analysverktyget upptäcker att rubriker är i oordning genereras felmeddelande s
 meddelar användaren vilka dessa rubriker är.
 
 \paragraph*{Namnigenkänning}\label{namnigenkänning}
+
 Sparv använder verktyget hfst-sweNER \cite{borin:2016} för att identifiera
 och annotera delar av text som faller in i förbestämde kategorier, detta kallas för Named Entity Recognition (NER). 
 hfst-sweNER testar text mot tusentals olika mönster för att avgöra ifall texten 
@@ -879,7 +888,7 @@ vad det är som saknas eller rätt format på det som är felformatterat.
 
 \paragraph*{Läsbarhet}\label{läsbarhet}
 
-Under första mötet med \cite{perintervju:2019} berättade han att en del av
+Under första mötet med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31] berättade han att en del av
 rapporterna var svårlästa. Han framförde en önskan om att vårt analysverktyg
 skulle kunna identifiera dessa rapporter.
 
@@ -895,7 +904,7 @@ av text som ger ett numeriskt värde på läsbarheten:
   talspråklig och framåtdrivande och ett högt att texten är informationstät och
   tar lång tid att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
-  texten med formeln: $$OVIX=Unika Ord / Ord *100$$
+  texten med formeln: $$OVIX=\text{Unika Ord} / Ord *100$$
   Enligt Abrahamsson~\cite{abrahamsson:2011} är
   det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst kommer få ett väldigt
@@ -903,13 +912,13 @@ av text som ger ett numeriskt värde på läsbarheten:
   unika kommer få ett lägre värde.
 \item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med
   följande formel där långa ord är ord med fler än 6 bokstäver: 
-  $$LIX=(Ord / Meningar) + LångaOrd * 100 / Ord)$$
+  $$LIX=(Ord / Meningar) + \text{Långa Ord} * 100 / Ord)$$
   Ett resultat under 25 är barnboksnivå, 25-30 är
   enkla texter, 30-40 är normaltext, 40-50 är sakinformation, 50-60 är facktext
   och över 60 är svåra facktexter \cite{abrahamsson:2011}.
 \end{itemize}
 
-Eftersom OVIX är delvis baserat på textens längd är det inte ett lämpligt mått då
+Eftersom OVIX delvis är baserat på textens längd är det inte ett lämpligt mått då
 rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi bestämde
 oss för att använda LIX eftersom \cite{abrahamsson:2011} skriver att det är det
 vanligaste sättet i Sverige att mäta läsbarhet.
@@ -919,6 +928,54 @@ undersökte vi LIX-värdet i 80 godkända polisrapporter. Medelvärdet på LIX f
 dessa rapporter var 44.6 som hamnar ungefär i mitten av sakinformation
 intervallen. Vi har därför valt sakinformation intervallen som gränsen för när
 vi varnar om att en text har för hög eller lågt LIX-värde.
+
+\paragraph*{Känsliga ord}
+
+Per Esbjörnsson berättade~[Personlig kommunikation P Esbjörnsson 2019-01-31] att
+ett fel många studenter gör när de skriver en rapport om ett brott där en misstänkt
+har använt rasistiska, homofobiska eller andra nedsättande och känsliga termer, är att 
+de inte citerar dessa termer i rapporten. T.ex. \textit{Sara berättade att gärningsmannen kallade henne för jävla jude} är fel och ska skrivas: \textit{Sara berättade att gärningsmannen kallade henne för ``jävla jude``}. Denna regel har implementerats
+genom att vi söker efter känsliga ord som inte omgärdas av citattecken och när det hittas skapas ett felmeddelande som beskriver felet.
+Polisen hade ingen lista över känsliga ord utan vi har helt enkelt gjort en själva
+på ord vi vet är känsliga eller nedsättande, vi har självklart inte fått med alla 
+och listan bör därför updateras löpande.
+
+\paragraph*{Oönskade ord och polisförkortningar}
+
+Ehrenberg-Sundin~\cite{sundin:1992} har tagit fram en lista på stela ord och former som 
+fortfarande förekommer i myndighetsspråk men som ska undvikas i rapporter. 
+Även vissa sammansatta verb och polisförkortningar ska undvikas \cite{rfsip}.
+När vårt analysverktyg identifierar någon av dessa i en rapport så skapas ett felmeddelande
+som beskriver varför termen eller formen ska bytas ut och vad den kan bytas ut mot.
+
+\paragraph*{Stavning och grammatik}
+
+Vårt analysverktyg använder verktyget Stava för stavning och grammatik, se avsnitt \ref{stava}.
+För att undvika att falskpositiva fel rapporteras till användarna rapporterar vi inte
+stavfel på följande, av Sparv identifierade ordklasser: egennamn, utländska ord och förkortningar.
+Dessa ordklasser identifieras ofta av traditionella rättstavningsprogram som felstavade \cite{kann:1997} trots att de är korrekta
+och när vi gjorde analyser på testrapporter upptäckte vi att en del smet igenom Stava också.
+När vi kombinerade Stava och ordklasserna från Sparv markerades inte ett enda ord falskpositivt i testanalyser på 40 rapporter.
+När vårt analysverktyg hittar felstavade och grammatiskt inkorrekta termer skapas ett felmeddelande och rättningsförslag
+ifall Stava har identifierat ett sådant.
+
+\paragraph{Tonalitet}
+
+Per Esbjörnsson [Personlig kommunikation P Esbjörnsson 2019-01-31] berättade att det är viktigt att 
+rapporterna håller ett neutralt språk, även Rikspolisstyrelsen~\cite{rfsip} skriver att texten i 
+rapporter ska var formellt korrekt, båda språkligt och innehållsmässigt. För att skapa numeriska värden på rapporters tonalitet används följande formler:
+$$\text{Positivt Mätvärde}=\text{Positiva Ord} / Ord$$
+$$\text{Negativt Mätvärde}=\text{Negativa Ord} / Ord$$
+
+När vi skulle ta fram värden på när en rapport har fel tonalitet, alltså när den är för negativt eller för positivt skriven fick vi problem.
+Vi gjorde mänganalyser på inlämnade rapporter för att hitta lämpliga värden upptäckte vi att de negativa och positiva värden var helt beroende på
+brotten som beskrevs i rapporterna. De värden vi tog fram genom att analysera 80 godkända rapporter som beskrev samma brott var bara användbart
+på just den typen av brott, t.ex. en rapport om att en kvinna mördats och våldtagits kommer ha andra värden helt andra värden jämfört med en rapport om en
+stulen cykel. Vi har därför valt att stänga av tonalitetsanalysen när vi analyserar rapporter. För att få analysen att fungera i framtiden
+behöver vi dela upp värdena som analysverktygt varnar för beroende på vilket eller vilka brott som beskrivs. När vi skapade analysverktyget
+hade vi bara tillgång till rapporter som beskrev tre olika typer av brott, vi hoppas att vi eller någon som vidareutvecklar applikationen
+kan fortsätta detta arbete, mer om detta i avsnitt \cref{slutsatserochvidareforskning}.
+
 
 \subsubsection{Verktyg och utvecklingsmiljö}
 
@@ -1087,7 +1144,7 @@ uppföljning med studenterna som utförde användartestet över applikationen so
 uppdaterats efter en fjärde iteration.
 \section{Diskussion}
 Hur väl har vi uppnått våra forskningsmål och frågeställningar?
-\section{Slutsatser och vidare forskning}
+\section{Slutsatser och vidare forskning}\label{slutsatserochvidareforskning}
 Då kravinsamlingen som gjordes med Per Esbjörnsson genererade fler önskemål än
 vad som bedöms görbara inom vår avgränsning tänker vi skriva lite om möjliga
 infallsvinklar kring detta.
