@@ -10,6 +10,8 @@
 % For using \text in equations
 \usepackage{amsmath}
 
+\bibliographystyle{vancouver}
+
 % For the pictures
 \usepackage{graphicx}
 \graphicspath{ {./bilder/} }
@@ -831,14 +833,25 @@ formatet på rubriker.
 
 \paragraph*{Korrekt rubrik}
 
-% Fixa referens till polisen i Växjös lista på rapportrubriker
 En polisrapport ska uppdelad i olika fördefinierade rubriker
 \cite{durtva:2017}. Om en rubrik som inte finns med i listan på de
-fördefinerade rubrikerna hittas skapas ett felmeddelande som beskriver felet och
+fördefinerade \cite{per:2018} rubrikerna hittas skapas ett felmeddelande som beskriver felet och
 ett rättningsförslag på en rubrik som kan användas istället. Rättningsförslaget
 är tas fram genom att jämföra Levenshteinavståndet mellan den felaktiga rubriken
 med var och en av de fördefinerade rubrikerna. Den fördefinerade rubrik som har
 kortast avstånd till den felaktiga rubriken blir rättningsförslaget.
+
+Levenshteinavståndet bestäms genom att mäta det minsta antalet insättningar, borttagningar och ersättningar
+som behövs göras för att två strängar ska bli lika \cite{navarro:2001}.
+Den mattematiska formlen ser ut som följer, där a och b är de strängar vi vill mäta distansen mellan:
+\[\qquad\operatorname{lev}_{a,b}(i,j) = \begin{cases}
+  \max(i,j) & \text{ if } \min(i,j)=0, \\
+  \min \begin{cases}
+          \operatorname{lev}_{a,b}(i-1,j) + 1 \\
+          \operatorname{lev}_{a,b}(i,j-1) + 1 \\
+          \operatorname{lev}_{a,b}(i-1,j-1) + 1_{(a_i \neq b_j)}
+       \end{cases} & \text{ otherwise.}
+\end{cases}\]
 
 \paragraph*{Rubrikers beroende}
 
