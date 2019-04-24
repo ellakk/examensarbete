@@ -52,24 +52,24 @@
 \subject{datavetenskap}
 \studyprogram{informationsarkitektur}
 
-\seminardate{2019-04-24}
+\seminardate{2019-05-00}
 
 \supervisor{Johan Holmberg}
 \examiner{Vicke Viking}
 \maketitle % This constructs MaU title page from info above
 
 \begin{sammanfattning}
-  Språkteknologi är ett forskningsområde inom vilket det ständigt görs nya framsteg. En
-  betydande del av den textanalys som sker inom detta fält har dock som mål att
+  Digital språkbehandling (\textit{natural language processing}) är ett forskningsområde inom vilket det ständigt görs nya framsteg. En
+  betydande del av den textanalys som sker inom detta fält har som mål att
   uppnå en fullgod tillämpning kring dialogen mellan människa och dator. I denna
-  studie vill vi istället fokusera på den inverkan språkteknologi kan ha på den
-  mänskliga inlärningsprocessen. Vårt praktiska testområde har samtidigt en
+  studie vill vi dock fokusera på den inverkan digital språkbehandling kan ha på den
+  mänskliga inlärningsprocessen. Vårt praktiska testområde har också en
   framtida inverkan på en av de mest grundläggande förutsättningarna för ett
   rättssäkert samhälle, nämligen den polisiära rapportskrivningen.
 
-  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av både
-  språkteknologi liksom officiell polisrapportskrivning och därefter
-  implementera dem i en pedagogisk webbplattform ämnad för polisstudenter är vi
+  Genom att skapa en teoretisk idébas som förenar viktiga aspekter av
+  digital språkbehandling och polisrapportskrivning samt därefter
+  implementerar dem i en pedagogisk webbplattform ämnad för polisstudenter är vi
   av uppfattningen att vår forskning tillför något nytt inom det
   datavetenskapliga respektive det samhällsvetenskapliga fälten.
 
@@ -105,33 +105,30 @@
 \startpagecount
 
 \section{Inledning}
-Med datorns intåg i det mänskliga medvetandet föddes också en strävan att användas
-dess möjligheter som ett potentiellt verktyg för behandling av språk. Dels för
+Med datorns intåg i det mänskliga medvetandet föddes också en strävan att använda
+dess möjligheter som ett potentiellt verktyg för språkbehandling. Dels för
 att utveckla nya teorier inom detta fält men också som en automatisering och ett
 hjälpmedel för vår egen språkutveckling. Även om applikationer som berör
 språkbehandling länge varit mer långsamma i sin utvecklingen än annan jämförbar
 digital teknik har detta område ökat markant på senare år inte minst tack vare
 spridningen av korpusar, samlingar av texter som är lagrade i elektroniskt
-maskinläsbara format \cite{nugues:2014}. Genom de språkteknologiska framstegen
+maskinläsbara format \cite{nugues:2014}. Genom den digitala språkbehandlingens framsteg
 som gjorts på senare år har korpusbaserad språkinlärning också blivit allt
 vanligare. Samtidigt är de flesta korpusverktyg utformade för språklig
 forskning, och inte pedagogiska syften \cite{zhu:2015}.
 
-Det finns flera anledningar att se närmare på detta utvecklingsområde. Att fylla
-ett vakuum hade inte bara lett till ett berikande av det språkteknologiska
-fältet utan hade även kunnat fungera som praktiskt stöd i undervisningssyften.
+Det finns flera anledningar att se närmare på detta utvecklingsområde. Att hjälpa till att fylla detta vakuum hade inte bara lett till ett berikande av det digital språkbehandlingsfältet utan även kunnat fungera som praktiskt stöd i undervisningssyften.
 En applikation med denna typ av funktionalitet kan utöver lingvistiska analyser
 också fungera som hjälpmedel för att kontrollera att direktiv av olika slag
-implementerats i texten.
+implementerats i text.
 
 Vid den nyinrättade polisutbildningen i Malmö och sett till aspekten av dess
 lärares upplevda problematik med studenternas rapportskrivning finns en
 praktiskt lämplig kontext för detta forskningsområde. På just polisrapporter
-ställs höga krav på att de är skrivna enligt det svensk polisförordning fastställt som korrekt vis, samtidigt som en automatiserad
-kontroll av rapporter också kan tänkas underlätta lärarnas arbetsbörda.
+ställs höga krav på att de är skrivna enligt det som svensk polisförordning fastställt som korrekt rapportskrivning, samtidigt som en automatiserad kontroll av rapporter också kan tänkas underlätta lärarnas arbetsbörda.
 
 De slutgiltiga målen för en applikation av detta slag är dels att bidra till
-teoriutveckling och vidare språkteknologisk forskning, samt att hjälpa till att
+teoriutveckling och vidare forskning inom digital språkbehandling, samt att hjälpa till att
 öka rättssäkerheten i svensk polisdokumentation.
 
 \subsection{Forskningsmål}
@@ -139,10 +136,10 @@ teoriutveckling och vidare språkteknologisk forskning, samt att hjälpa till at
 Syftet med projektet är att undersöka om en applikation för textanalys kan
 hjälpa studenter på svenska polisutbildningar att skapa mer rättssäkra
 polisrapporter. Studenter ska kunna ladda upp sina rapporter i den webbaserade
-applikationen där sedan stavningskontroll samt grammatiska, språkliga och
-tonalitetsanalyser genomförs. Applikationen ska även kontrollera att rapporten
+applikationen där stavningskontroll samt grammatiska, språkliga och
+tonalitetsanalyser sedan genomförs. Applikationen ska även kontrollera att rapporten
 är skriven i enlighet med den svenska polismyndighetens riktlinjer så att den
-uppfyller rättssäkerhetsaspekten. Efter det att denna analys har gjorts ska
+uppfyller rättssäkerhetsaspekten. Efter analysen gjorts ska
 återkoppling skickas till studenterna om de fel och brister som bör åtgärdas innan
 polisrapporten kan vidarebefordras till en lärare.
 
@@ -157,8 +154,7 @@ polisrapporten kan vidarebefordras till en lärare.
 
 \subsection{Avgränsning}\label{avgränsning}
 
-Vid en intervju som ägde rum den 31 januari 2019 med Per Esbjörnsson, lärare vid polisutbildningen i Malmö, rangordnade
-han kraven på applikationen enligt följande:
+Vid en intervju [Personlig kommunikation P Esbjörnsson 2019-01-31] med Per Esbjörnsson, lärare vid polisutbildningen i Malmö, rangordnade han kraven på applikationen enligt följande:
 
 \begin{enumerate}
 \item Applikationen ska kontrollera att rubrikerna är korrekta
@@ -171,14 +167,14 @@ han kraven på applikationen enligt följande:
 Det sista kravet är baserat på Esbjörnssons önskan om att då rapporten når
 läraren så ska denne också erhålla information om eventuella fel som noterades
 och hur många gånger rapporten analyserades. Vi har emellertid beslutat att
-detta kommer ligga utanför projektets omfattning på grund av den korta tiden vi
-har tilldelats för att utveckling av applikationen, strax över elva veckor, och
+detta kommer ligga utanför projektets avgränsning på grund av den korta tiden vi
+har tilldelats för utveckling av applikationen, strax över elva veckor, och
 dess placering i kravlistan. Under mötet uttryckte Esbjörnsson också en
 önskan att applikationen ska kunna integreras i Canvas, vilket är den
-läroplattform som används av studenter och lärare vid polisutbildningen i Malmö.Detta kommer att ligga utanför projektets avgränsning då
+läroplattform som används av studenter och lärare vid polisutbildningen i Malmö. Detta kommer också att ligga utanför projektets avgränsning då
 polisutbildningen i Malmö väntas ändra läroplattform från Canvas till ett internt
 system i början av nästa termin. Vårt mål är emellertid att applikationen ska
-vara så oberoende att en integration är möjlig i det nya systemet.
+vara så oberoende av plattform att en integration är möjlig i det nya systemet.
 
 \subsection{Bakgrund}
 I december 2017 meddelade den svenska regeringen att 10 000 nya poliser skulle
@@ -194,10 +190,10 @@ intervjuteknik. Enligt Esbjörnsson blev det
 redan under den första kursen, \textit {Grunder i polisiärt arbete}, uppenbart att de
 främsta problemen som studenterna tampades med var att skriva polisrapporter på
 ett korrekt och rättssäkert sätt. Problemen inkluderade att skriva korrekta
-rubriker i enlighet med klassificering, grammatisk, att hålla passande
+rubriker i enlighet med klassificering, grammatik, att hålla passande
 tonaliteten samt att undvika nedsättande termer i rapporterna. För lärarna vid
 polisutbildningen i Malmö blev rättningsprocessen av polisrapporterna en
-tidskrävande uppgift som stal tid från annan viktig utbildning.
+tidskrävande uppgift som stal tid från annan viktig utbildning [Personlig kommunikation P Esbjörnsson 2019-01-31].
 
 \subsection{Relaterad forskning}\label{relateradforskning}
 
@@ -207,47 +203,44 @@ senaste decenniet och som är av intresse för oss.
 I en studie som genomfördes vid Zürichs universitet gjordes ett försök att
 implementera lingvistiskt redigeringsstöd för att underlätta skrivprocessen för
 skribenter. I den vetenskapliga undersökningen som ledde fram till processen
-fann Piotrowski och Mahlow~\cite{Piotrowski:2009} att mycket lite forskning fanns tillgänglig om att
-stödja skapandet av textinnehåll. I det som Piotrowski och Mahlow~\cite{Piotrowski:2009} kom att
+fann Piotrowski och Mahlow~\cite{Piotrowski:2009} att mycket lite forskning fanns tillgänglig kring stöd vid skapande av textinnehåll. I det som Piotrowski och Mahlow~\cite{Piotrowski:2009} kom att
 kalla LingURed-projektet utvecklade de en uppsättning språkmedvetna
 redigeringsverktyg som kunde analysera teckensträngar utifrån dess språkliga
-struktur. Även om dessa verktyg inte skulle kunna ge lingvistisk vägledning åt
+struktur. Även om dessa verktyg inte kom att ge lingvistisk vägledning åt
 författarna så hjälpte de dem att skapa meningar med färre fel.
 
-\cite{zhu:2015} har noterat att sedan dess har antalet korpusar, som är stora
+Zhu\cite{zhu:2015} har noterat att sedan dess har antalet korpusar, som är stora
 samlingar av texter som kan analyseras automatiskt för lingvistiska mönster och
-strukturer, ökat. De flesta korpus är dock avsedda för lingvistisk forskning och
+strukturer, ökat. De flesta korpusar är dock avsedda för lingvistisk forskning och
 inte för utbildning. Med detta i åtanke byggde Zhu \cite{zhu:2015} ett
-digitalt korpusverktyg som kallades Text X-Ray som skulle hjälpa både lärare och
-studenter att analysera sin egna skrivkorpusar och att jämföra dem med andra.
+digitalt korpusverktyg som kallades Text X-Ray, och som skulle hjälpa både lärare och
+studenter att analysera sin egna skrivkorpusar samt att jämföra dem med andra.
 Under våren 2013 genomfördes en studie med flera engelskspråkiga lärare på
 högskolor över hela världen för att avgöra om Text X-Ray skulle ha en inverkan
 vid riktiga utbildningstillfällen. Funktionerna som verktyget erbjöd var bland
 annat att belysa grammatiska fel för att öka elevernas förmåga att rätta problem
-som hällde grundläggande meningsstruktur. Text X-Ray mätte även och visade
+som gällde grundläggande meningsstruktur. Text X-Ray mätte och visade även
 komplexiteten i en skriftlig mening sett till dess längd.
 
-\subsection{Språkteknologi}\label{språkteknologi}
+\subsection{Digital språkbehandling}\label{språkteknologi}
 
-Då lingvistik definieras som studien av mänskliga språk kan datalingvistik ses
-som teorierna och modellerna av detta område i en maskinell representation. Det
-grundläggande syftet bakom datalingvistik är att konstruera modeller av
+Då lingvistik definieras som studien av mänskliga språk kan datalingvistik ses som teorierna och modellerna av detta område i en maskinell representation. Det
+grundläggande syftet bakom är att konstruera modeller av
 språkstrukturer så att automatiseringen av språkbehandling exempelvis kan göras
-digitalt. Språkteknologi och datalingvistik är båda fält som ständigt utforskas
+digitalt. Digital språkbehandling och datalingvistik är båda fält som ständigt utforskas
 av IT-industrin och som når nya resultat. Idealiskt, och kanske inom en snar
 framtid, ska exempelvis datorer kunna analysera stora mängder text, tolka
 skriftliga meningar och utföra morfologisk redigering till perfektion med hjälp
 av digital språkbehandling \cite{nugues:2014}.
 
 Idag finns det olika verktyg som kan utföra automatiska analyser av språkliga
-attribut i texter. Dessa program, som innehåller så kallad "lingvistisk kunskap"
-i form av vokabulärer av grammatiska strukturer, är baserad på det
-tvärvetenskapliga forskningsområdet språkteknologi. Det finns många lingvistiska
-resurser som språkteknologi täcker, inte minst en mängd lexikon, ordböcker,
+attribut i texter. Dessa program, som innehåller så kallad lingvistisk kunskap
+i form av vokabulärer av grammatiska strukturer, är baserade på det
+tvärvetenskapliga forskningsområdet digital språkbehandling. Det finns många lingvistiska
+resurser som digital språkbehandling täcker, inte minst en mängd lexikon, ordböcker,
 termbanker, databaser, ordböcker samt olika digitala verktyg för att analysera
 språk. Dessa verktyg är oftast utrustade med funktionaliteter som stavnings- och
-grammatiska analyseringsverktyg samt så kallade läsbarhetsindex (LIX) för att beräkna hur många och vilka grammatiska
-fel som är vanligt förekommande i en skriftlig text, se \cref{läsbarhet} för en utförlig beskrivning av LIX. Sådana program har kunnat
+grammatiska analyseringsverktyg samt så kallade läsbarhetsindex (LIX) för att beräkna hur många och vilka grammatiska fel som är vanligt förekommande i en skriftlig text, se \cref{läsbarhet} för en utförlig beskrivning av LIX. Sådana program har kunnat
 spara tid i rättningsprocesser \cite{wengelin:2017}.
 
 \subsection{Rapportskrivning}
@@ -343,7 +336,7 @@ beteendevetenskapliga paradigmerna behandlar forskning genom utveckling och
 rättfärdigande av teorierna. Samma teorier som hjälper till att förklara eller
 förutsäga fenomen i förhållande till affärsbehoven.
 
-Vår tes är att en språkteknologisk applikation som genomför automatisk
+Vår tes är att en digital språkbehandlingsapplikation som genomför automatisk
 textkontroll av en rapport och återkopplar brister i denna med konstruktiv
 respons kan möta de aktuella affärsbehoven för detta projekt. Ett av våra
 antaganden är också att studenter genom de felmeddelanden som applikationen
@@ -351,36 +344,29 @@ antaganden är också att studenter genom de felmeddelanden som applikationen
 för polisrapporter. Artefakten varpå vi vill rättfärdiga dessa teorier är
 applikationen vi byggt, konstruktionen av denna beskrivs i avsnittet Utveckling.
 
-I enlighet med ramverkets rekommendation om en iterativ process i utvecklingen och utvärderandet av artefakten har vårt arbete kommit att bestå av fyra stora iterationer:
+I enlighet med ramverkets rekommendation om en iterativ process i utvecklingen och utvärderandet av artefakten kommer vårt arbete att bestå av fyra stora iterationer:
 
 \begin{enumerate}
-\item Den första utgick från vårt initiala möte med Esbjörnsson och
-  konkretiserades genom den kravinsamling som kom att bli resultatet av denna.
-  Utifrån de önskemål och krav på artefakten som beskrevs av Esbjörnsson samt det
+\item Den första ska utgå från vårt initiala möte med Esbjörnsson och konkretiseras genom den kravinsamling som kommer bli resultatet av denna.
+  Utifrån de önskemål och krav på artefakten som beskrivs av Esbjörnsson samt det
   officiella polismaterial som relaterar till hur rapportskrivning ska se ut
-  kunde vi sätta upp ramar kring omfattningen av vårt problemområde. I samband
-  med mötet fick vi också reda på var och hur artefakten ska integreras och
-  kunde därför börja skissa på en tidig design.
-\item Den andra iterationen bestod av den litteraturstudie vi gjorde för att
-  undersöka existerande forskningen som gjorts inom området, och som finns
+  kommer vi kunna sätta upp ramar kring omfattningen av vårt problemområde.
+\item Den andra iterationen kommer bestå av den litteraturstudie vi gör för att undersöka existerande forskningen som gjorts inom området, och som finns
   närmare beskrivet i \cref{relateradforskning} samt \cref{språkteknologi}.
-  Utifrån denna studie kunde vi justera våra forskningsmål i enlighet med det
-  empiriska material vi fann. Dessa resultaten ledde också till en insikt kring
-  hur implementeringen av de olika reglerna för rapportskrivning kunde ske.
-\item Den tredje iterationen bestod av en första instansiering av artefakten,
-  vilket var i form av en tidig prototyp av backend och frontend, se
-  \cref{fig:tidigprototyp}. Under den inledande fasen av iterationen fick
-  vi tillgång till övningsmaterial bestående av uppgiftsbeskrivningar och cirka
-  400 anonymiserade rapporter, där 80 redan var godkända av lärare och resten
-  hade inte hade rättats. Vi testade rapporterna mot vårt textanalysverktyg för
+  Utifrån denna studie kommer vi kunna justera våra forskningsmål i enlighet med det
+  empiriska material vi finner. Dessa resultaten kommer också kunna leda till en insikt kring
+  hur implementeringen av de olika reglerna för rapportskrivning kan ske.
+\item Den tredje iterationen kommer bestå av en första instansiering av artefakten, vilket är i form av en tidig prototyp av backend och frontend, se
+  \cref{fig:tidigprototyp}. Under den inledande fasen av iterationen kommer vi få tillgång till övningsmaterial bestående av uppgiftsbeskrivningar och cirka
+  400 anonymiserade rapporter, där 80 redan är godkända av lärare och resten inte rättats. Vi kommer testa rapporterna mot vårt textanalysverktyg för
   att identifiera fel som inte beskrivs i den officiella polisdokumentationen,
-  så som felaktiga formatteringar och inkorrekta filformat, samt eventuella
-  buggar i applikationen. Här kunde de godkända rapporterna också hjälpa oss att
-  identifiera de gränsvärden som var användbara för vår tonalitetsanalys och
+  så som felaktiga formateringar och inkorrekta filformat, samt eventuella
+  buggar i applikationen. Här kan de godkända rapporterna också hjälpa oss att
+  identifiera de gränsvärden som är användbara för vår tonalitetsanalys och
   läsbarhetsanalys.
-\item Resultatet av den fjärde iterationen bestod av en andra och slutgiltig
-  instansiering av applikationen. Denna versionen var ett resultat av de
-  ändringar som gjortsvid utvärderingen efter användarstudien, vilka beskrivs i
+\item Resultatet av den fjärde iterationen kommer bestå av en andra och slutgiltig
+  instansiering av applikationen. Denna versionen kommer vara ett resultat av de
+  ändringar som görs vid utvärderingen efter användarstudien, vilka beskrivs i
   \cref{önskvärdafunktioner}, och beskrivs i sin helhet i
   \cref{applikationen}.
 \end{enumerate}
@@ -392,9 +378,9 @@ I enlighet med ramverkets rekommendation om en iterativ process i utvecklingen o
     \label{fig:tidigprototyp}
 \end{figure}
 
-Mindre iterationer förekom i samtliga av de iterationer som beskrivs ovan. Ju
-längre in i processens skede vi kom desto mer frekventa blev dessa mindre
-iterationer då vi bland annat genom instansieringarna kunde identifiera fler
+Mindre iterationer kommer förekomma i samtliga av de iterationer som beskrivs ovan. Ju
+längre in i processens skede vi kommer desto mer frekventa blir dessa mindre
+iterationer då vi bland annat genom instansieringarna kan identifiera fler
 nödvändiga funktionaliteter. Kunskapsbasen som presenteras i ramverket består av
 fundament och metodologier. Sammansatt gör dessa komponenter att forskningen kan
 uppnås. Medan fundamentet skapar teorier, ramverk, instrument, konstruktioner,
@@ -415,6 +401,7 @@ Då beteendevetenskap och designvetenskap tillämpas på ett företagets behov
 bidrar de också samtidigt till innehållet i kunskapsbasen för vidare framtida
 forskning \cite{hevner:2004}.
 
+\subsubsection{Förkastade metoder}
 Det finns andra alternativa metoder som kunde använts för att underbygga vårt
 arbete, men som samtidigt av olika anledningar inte heller framstått lika
 passande som Information Systems Research Framework.
@@ -492,7 +479,7 @@ databaser vi hade till vårt förfogande. Söktermerna var följande:
 
 Sökningarna gjordes också på svenska med sökorden översatta enligt följande: \textit
 {digital textanalys (digital text analysis), datorlingvistik, datalingvistik
-(computational linguistics), språkteknologi (natural language processing)} och
+(computational linguistics), digital språkbehandling (natural language processing)} och
 \textit {polis (police)}.
 
 \subsubsection{Databaser}
@@ -543,14 +530,12 @@ LLBA    & S5      & 24439    & 9              & 0                \\ \hline
 \label{searchtable}
 \end{table}
 
-\subsection{Utveckling}
-
 % beskrivning av iterationsfaser
 
 \subsection{Användartester}
 
 Då vi eftersträvar att applikationen ska vara användarvänlig och ha hög verkningsgrad bör vi
-försöka att generera mätvärden av typen UX (user experience) som kan säkerställa
+försöka att generera mätvärden av typen UX (\textit {user experience}) som kan säkerställa
 att applikationen når upp till dessa egenskaper. UX-mätvärden är baserade på ett
 pålitligt mätsystem och påvisar fakta om själva användarupplevelsen. I slutändan
 ska UX-mätvärden representera en del av användarupplevelsen, detta kan vara i
@@ -598,10 +583,10 @@ som möjligt finns det också begränsningar av slutsatserna som vi kommer kunna
 dra av vår forskning.
 
 Som det framgått i denna uppsats är vår studie nära knuten till det
-språkteknologiska forskningsområdet. Sett till det empiriska material som vi
+den digitala språkbehandlingenska forskningsområdet. Sett till det empiriska material som vi
 funnit under sökprocessen i vår litteraturanalys finns det en mängd betydliga
 studier gjorda inom detta fält. Däremot har vi märkt ett underskott på
-relaterade studier av just den sortens processer, språkteknologi i kombination
+relaterade studier av just den sortens processer, digitala språkbehandling i kombination
 med skriftligt utlärande, som vi själva utvecklar i detta projekt. Däremot
 hoppas vi att vår forskning ska kunna ligga till grund för liknande studier inom
 dessa fält.
@@ -657,8 +642,8 @@ backend baserat på deras feedback och våra observationer.
 
 \subsubsection{Frontend}
 
-Frontend utvecklades i markup språket Hyper Text Markup Language (HTML) för
-strukturen och style sheet språket Cascading Style Sheets (CSS) ramverket
+Frontend utvecklades i markup-språket Hyper Text Markup Language (\textit{HTML}) för
+strukturen och style sheet-språket Cascading Style Sheets (\textit{CSS}) ramverket
 Bootstrap för en enhetlig design. Det är i frontend som användaren skickar in
 sin rapport i docx-format och får tillbaka en analys av rapporten. Vi utvecklade
 frontends användargränssnitt med integration i Canvas som mål och vi strävade
@@ -680,7 +665,7 @@ När en användare skickar in en rapport till frontend skickas den direkt vidare
 till backend för analys. Ifall rapporten är felfri meddelas användaren om detta
 men om rapporten innehöll fel öppnas en modal dialog för användaren där listan
 på fel visas samt den analyserade rapporten i sin helhet som referens. För att
-göra rättningsproccessen intuitiv och snabb kan användare klicka på något av
+göra rättningsproccessen intuitiv och snabb kan användaren klicka på något av
 felen i listan för att markera felet i referensrapporten. Felmeddelanden är
 utformade så att användaren ska lära sig att undvika felen i framtiden, detta är
 viktigt eftersom de tänkta användarna är studenter som ska lära sig skriva
@@ -714,7 +699,7 @@ intresserad av ett användargränssnitt utan enbart APIn för att analysera
 rapporter.
 
 När en rapport tas emot i backend konverteras dess innehåll till en stor
-textsträng som vår dokument tolkare konverterar till Python objekt. Varje
+textsträng som vår dokument-tolkare konverterar till Python-objekt. Varje
 rubrik, mening, ord och identifierade namnigenkänningskategorier blir objekt
 vars egenskaper kommer från Sparvs textannotationer. Backend gör sedan en analys
 på dessa objekt som undersöker ifall rapporten följer de regler som vi har
@@ -722,7 +707,7 @@ implementerat utifrån polisens dokumentation för rapportskrivning. De regler s
 rapporten bryter mot skickas till rapportens avsändare i en lista som innehåller
 felmeddelande, position och rättningsförslag för varje fel i rapporten. En
 textrepresentation av rapporten skickas ihop med felmeddelanden så att eventuell
-frontend eventuellt kan visa upp varje fels position i rapporten.
+frontend får möjligheten att visa upp felpositionerna i rapporten.
 
 \begin{figure}[H]
     \centering
@@ -733,7 +718,7 @@ frontend eventuellt kan visa upp varje fels position i rapporten.
 
 \subsubsection{Beroenden}
 
-Applikationen använder en två externa verktyg för att göra analyser på
+Applikationen använder två externa verktyg för att göra analyser på
 polisrapporterna. Anledningen till att vi här går igenom beroenden är inte
 enbart för att den enskilde läsaren ska förstå hur applikationen fungerar utan
 även för att göra det enklare för eventuella framtida utvecklare att
@@ -751,7 +736,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
   \textit{banan}
 \item \textbf{Ordklass}: Ordens klass, ex. \textit{Kalle} är ett
   \textit{egennamn} och \textit{tjugotre} är ett \textit{räkneord}
-\item \textbf{Attitydvärde}: Ifall ett ord är positivt, negativt eller neutralt
+\item \textbf{Sentiment}: Ett värde mellan -1 och 1. Ett positivt värde innebär att ordet har ett positivt sentiment och negativt innebär att ordet har ett negativt sentiment.
 \item \textbf{Namnigenkänning}: Kategoriserar textstycken i en grupp
   fördefinierade kategorier så som geografiska platser, föremål, tidpunkter och
   många fler. Beskrivs mer ingående i \cref{namnigenkänning}
@@ -790,7 +775,7 @@ rapporterna som lämnas in med applikationen.
 \subsubsection{Textanalys av rapporter}
 % [Användarguide som bilaga]
 
-Vi har med hjälp av Per Esbjörnsson, polisdokumentation och inlämnade polisrapporter implementerat
+Vi har med hjälp av Esbjörnsson, polisdokumentation och inlämnade polisrapporter identifierat, och sedan implementerat
 regler som en rapport inte får bryta mot. Varje rapport som lämnas in analyseras i backend för att undersöka
 ifall och hur den bryter mot någon av reglerna.
 För varje fel som hittas skapas ett felmeddelande, detta meddelande beskriver vad som är fel
@@ -803,7 +788,7 @@ samt om möjligt var felet finns och rättningsförslag på hur man kan fixa det
 Regel                                       & Lokalisering & Rättningsförslag\\ \hline
 Felaktigt formatterade och saknade rubriker & Nej          & Ja               \\ \hline
 Korrekt rubrik                              & Ja           & Ja               \\ \hline
-Rubrikers beroende                          & Ja           & Ja               \\ \hline
+Rubrikers inbördes beroenden                 & Ja           & Ja               \\ \hline
 Rubrikers ordning                           & Ja           & Ja               \\ \hline
 Namnigenkänning                             & Ja           & Ja               \\ \hline
 Läsbarhet                                   & Nej          & Ja               \\ \hline
@@ -827,7 +812,7 @@ formatet på rubriker.
 
 \paragraph*{Korrekt rubrik}
 
-En polisrapport ska uppdelad i olika fördefinierade rubriker
+En polisrapport ska vara uppdelad i olika fördefinierade rubriker
 \cite{durtva:2017}. Om en rubrik som inte finns med i listan på de
 fördefinerade \cite{per:2018} rubrikerna hittas skapas ett felmeddelande som beskriver felet och
 ett rättningsförslag på en rubrik som kan användas istället. Rättningsförslaget
@@ -837,7 +822,7 @@ kortast avstånd till den felaktiga rubriken blir rättningsförslaget.
 
 Levenshteinavståndet bestäms genom att mäta det minsta antalet insättningar, borttagningar och ersättningar
 som behövs göras för att två strängar ska bli lika \cite{navarro:2001}.
-Den mattematiska formlen ser ut som följer, där a och b är de strängar vi vill mäta distansen mellan:
+Det mattematiska uttrycket ser ut som följer, där a och b är de strängar vi vill mäta distansen mellan:
 \[\qquad\operatorname{lev}_{a,b}(i,j) = \begin{cases}
   \max(i,j) & \text{ if } \min(i,j)=0, \\
   \min \begin{cases}
@@ -847,11 +832,11 @@ Den mattematiska formlen ser ut som följer, där a och b är de strängar vi vi
        \end{cases} & \text{ otherwise.}
 \end{cases}\]
 
-\paragraph*{Rubrikers beroende}
+\paragraph*{Rubrikers inbördes beroenden}
 
 En rubrik i en polisrapport kan vara beroende av andra rubriker, t.ex ifall
 rubriken BROTTPLATSUNDERSÖKNING finns med kräver det att rubriken BROTTET också
-finns i rapporten. Vi har under ett möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31]
+finns i rapporten. Vi har under ett möte med Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31]
 tagit fram en lista på dessa beroende. Ifall ett beroende saknas skapas ett felmeddelande
 som beskriver vilken rubrik som saknas.
 
@@ -882,7 +867,7 @@ eller delar av den faller in under någon av följande huvudkategorier \cite{kok
 \end{itemize}
 
 Vi har implementerat två olika typer av regler med hjälp av NER annotationer.
-Den första är en regel som kommer från vårt andra möte med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-02-25].
+Den första är en regel som kommer från vårt andra möte med Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-02-25].
 Han berättade under att en del rubriker kan ha vissa egenskaper, t.ex. rubriken INLEDNING ska ha datum och plats där
 anmälan togs emot. 
 
@@ -895,7 +880,7 @@ vad det är som saknas eller rätt format på det som är felformatterat.
 
 \paragraph*{Läsbarhet}\label{läsbarhet}
 
-Under första mötet med Per Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31] berättade han att en del av
+Under första mötet med Esbjörnsson~[Personlig kommunikation P Esbjörnsson 2019-01-31] berättade han att en del av
 rapporterna var svårlästa. Han framförde en önskan om att vårt analysverktyg
 skulle kunna identifiera dessa rapporter.
 
@@ -911,7 +896,7 @@ av text som ger ett numeriskt värde på läsbarheten:
   talspråklig och framåtdrivande och ett högt att texten är informationstät och
   tar lång tid att läsa.
 \item \textbf{Ordvariationsindex (OVIX)}: Mäter hur många unika ord som finns i
-  texten med formeln: $$OVIX=\frac{\text{Unika Ord}} {Ord *100}$$
+  texten med formeln: $$OVIX=\frac{Unika~Ord} {Ord *100}$$
   Enligt Abrahamsson~\cite{abrahamsson:2011} är
   det svårt att tolka värdet som formlen resulterar i eftersom det helt beror på
   textens längd. En text på fem unika ord som är lättläst kommer få ett väldigt
@@ -919,33 +904,33 @@ av text som ger ett numeriskt värde på läsbarheten:
   unika kommer få ett lägre värde.
 \item \textbf{Läsbarhetsindex (LIX)}: Mäter hur avancerad en text är med
   följande formel där långa ord är ord med fler än 6 bokstäver: 
-  $$LIX=\frac{Ord}{Meningar} + \frac{\text{Långa ord} \cdot 100}{Ord}$$
+  $$LIX=\frac{Ord}{Meningar} + \frac{L\text{å}nga~ord \cdot 100}{Ord}$$
   Ett resultat under 25 är barnboksnivå, 25-30 är
   enkla texter, 30-40 är normaltext, 40-50 är sakinformation, 50-60 är facktext
   och över 60 är svåra facktexter \cite{abrahamsson:2011}.
 \end{itemize}
 
 Eftersom OVIX delvis är baserat på textens längd är det inte ett lämpligt mått då
-rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK, vi bestämde
+rapporterna som lämnas in är av olika längd. Kvar är då LIX och NK. Vi bestämde
 oss för att använda LIX eftersom \cite{abrahamsson:2011} skriver att det är det
 vanligaste sättet i Sverige att mäta läsbarhet.
 
 För att komma fram till värdena för en LIX-intervall som är godkänd i en rapport
 undersökte vi LIX-värdet i 80 godkända polisrapporter. Medelvärdet på LIX för
-dessa rapporter var 44.6 som hamnar ungefär i mitten av sakinformation
-intervallen. Vi har därför valt sakinformation intervallen som gränsen för när
-vi varnar om att en text har för hög eller lågt LIX-värde.
+dessa rapporter var 44.6 som hamnar ungefär i mitten av sakinformation-intervallen. Vi har därför valt sakinformation-intervallen som gränsen för när
+vi varnar om att en text har för högt eller lågt LIX-värde.
 
 \paragraph*{Känsliga ord}
 
-Per Esbjörnsson berättade~[Personlig kommunikation P Esbjörnsson 2019-01-31] att
+Esbjörnsson berättade~[Personlig kommunikation P Esbjörnsson 2019-01-31] att
 ett fel många studenter gör när de skriver en rapport om ett brott där en misstänkt
 har använt rasistiska, homofobiska eller andra nedsättande och känsliga termer, är att 
-de inte citerar dessa termer i rapporten. T.ex. \textit{Sara berättade att gärningsmannen kallade henne för jävla jude} är fel och ska skrivas: \textit{Sara berättade att gärningsmannen kallade henne för ``jävla jude``}. Denna regel har implementerats
+de inte citerar dessa termer i rapporten. T.ex. \textit{Sara berättade att gärningsmannen kallade henne för jävla fitta} är fel och ska skrivas: \textit{Sara berättade att gärningsmannen kallade henne för ``jävla fitta``}. Denna regel har implementerats
 genom att vi söker efter känsliga ord som inte omgärdas av citattecken och när det hittas skapas ett felmeddelande som beskriver felet.
 Polisen hade ingen lista över känsliga ord utan vi har helt enkelt gjort en själva
 på ord vi vet är känsliga eller nedsättande, vi har självklart inte fått med alla 
-och listan bör därför updateras löpande.
+och listan bör därför uppdateras löpande. För att slippa ha med alla möjliga böjningar
+av varje känsligt ord i listan, matchar vi enbart grundform mot grundform.
 
 \paragraph*{Oönskade ord och polisförkortningar}
 
@@ -968,11 +953,9 @@ ifall Stava har identifierat ett sådant.
 
 \paragraph{Tonalitet}
 
-Per Esbjörnsson [Personlig kommunikation P Esbjörnsson 2019-01-31] berättade att det är viktigt att 
+Esbjörnsson [Personlig kommunikation P Esbjörnsson 2019-01-31] berättade att det är viktigt att 
 rapporterna håller ett neutralt språk, även Rikspolisstyrelsen~\cite{rfsip} skriver att texten i 
-rapporter ska var formellt korrekt, båda språkligt och innehållsmässigt. För att skapa numeriska värden på rapporters tonalitet används följande formler:
-$$\text{Positivt Mätvärde}=\text{Positiva Ord} / Ord$$
-$$\text{Negativt Mätvärde}=\text{Negativa Ord} / Ord$$
+rapporter ska var formellt korrekt, båda språkligt och innehållsmässigt. För att skapa numeriska värden på rapporters tonalitet följer vi Saif et al.~\cite{saif:2016} exempel för att mäta tonalitet på Twitter-meddelanden och summerar sentiment-värdet på alla ord i rapporten och summan representerar då värdet på rapportens tonalitet.
 
 När vi skulle ta fram värden på när en rapport har fel tonalitet, alltså när den är för negativt eller för positivt skriven fick vi problem.
 Vi gjorde mänganalyser på inlämnade rapporter för att hitta lämpliga värden upptäckte vi att de negativa och positiva värden var helt beroende på
@@ -993,8 +976,8 @@ konfigureringsspråk för backend samt HTML, CSS och Javascript för
 användargränssnittet i frontend. För att vi skulle hålla reda på exakt version
 av beroenden för applikationen använder vi Pipenv som är det officiellt
 rekommenderade systemet för att hantera paket som applikationen är beroende av
-och virtuella miljöer förprogram skrivna i Python. Vi använde statisk typ
-kontroll i all Python-kod eftersom kodbasen växte snabbt och blev uppdelad
+och virtuella miljöer förprogram skrivna i Python. Vi använde statisk typkontroll
+i all Python-kod eftersom kodbasen växte snabbt och blev uppdelad
 mellan många olika filer och då går det snabbare och är det lättare att förstå
 koden ifall metoder och variabler deklareras med typer.
 
@@ -1009,7 +992,7 @@ med en deltagare åt gången.
 
 De placerades vid en bärbar dator, varpå applikationen samt en polisrapport
 visades. Rapporten hade framtagits av oss utifrån det urval av studentmaterial
-som Per Esbjörnsson bifogat, och texten var preparerad med ett tiotal vanliga
+som Esbjörnsson bifogat, och texten var preparerad med ett tiotal vanliga
 fel som vi observerat utifrån dessa. Felen inkluderade bland annat oriktiga
 rubriker, nedsättande termer utan citationstecken och geografisk information som
 utelämnats.
@@ -1028,13 +1011,15 @@ var därefter avslutat.
 
 \subsubsection{SUS}
 
-Deltagarna fick skriftligen fylla i ett SUS-formulär, vilket består av tio
-frågor enligt en Likertskala som deltagarna får besvara efter att
-användbarhetstest är avklarat. SUS har en poängskala från 0-100, där det
-slutgiltiga resultatet räknas ut genom att ta bort 1 från poängen för varje av
-de udda numrerade frågorna samt genom att ta bort 5 för varje av de jämnt
-numrerade frågorna. De nya värdena läggs sedan till det totala värdet och
-multipliceras med 2,5.
+Deltagarna fick efter användbarhetstestet skriftligen fylla i ett SUS-formulär, vilket består av tio
+numrerade frågor enligt en Likertskala i intervallen 1-5. SUS har en poängskala från 0-100, där det
+slutgiltiga resultatet räknas ut i följande steg:
+
+\begin{enumerate}
+\item För varje udda numrerad fråga, ta bort 1 från det valda värdet
+\item För varje jämt numrerad fråga, subtrahera det valda värdet från 5
+\item Summera de nya värdena och multiplicera med 2.5.
+\end{enumerate}
 
 Vår uträkning visade att det slutgiltiga värdet blev 83,5 poäng av 101 möjliga.
 Resultatet får således ses som ett gott omdöme då det är en god bit över det
@@ -1070,7 +1055,7 @@ termer enbart skulle resultera i ett enda felmeddelande så att det blir tydligt
 att dessa ska omgärdas av samma citattecken. Vår applikation avger också
 felmeddelanden om gammaldags ord och uttryck, vilket en deltagare gärna hade
 sett en motivering till varför sådana ska undvikas. Samma deltagare skulle också
-vilja att felmeddelande visades i en kronologisk ordning utifrån vart i
+vilja att felmeddelande visades i en kronologisk ordning utifrån var i
 dokumentet de återfanns, samt att olika färgkoder skulle kunna användas för att
 gradera hur pass allvarliga de var. Personen såg även att vyn automatiskt
 skrollade ner till det aktuella felet efter att deltagaren klickat på felet
@@ -1090,8 +1075,8 @@ användarintervjuerna:
   och felmeddelanden med ligger så pass nära gränsen för modalrutan att det är
   väldigt lätt att missa och trycka precis utanför modalrutan och stänga ner den
   av misstag. Lösningen blev att låsa modalrutan och enbart stänga ner den ifall
-  användaren trycker på stäng knappen. När vi utvecklade frontend använde vi en
-  stationär dator med mus vilket gör det lättare att göra precisions klick.
+  användaren trycker på stäng-knappen. När vi utvecklade frontend använde vi en
+  stationär dator med mus vilket gör det lättare att göra precisionsklick.
 \item \textbf{Felmeddelande i kronologisk ordning}: Felmeddelandenas ordning var
   baserad på ordning som analyserna kördes i backend. Detta ledde till att alla
   rubriksfel hamnade först, sedan kom alla stavfel och så vidare. Det blir mer
@@ -1106,18 +1091,17 @@ användarintervjuerna:
   samma citat vilket inte var uppenbart när de genererar flera felmeddelanden.
   Vi har löst detta genom att kolla ifall de känsliga termer ligger bredvid
   varandra och då genereras bara ett felmeddelande som nämner bägge termerna.
+  
+\item \textbf{Kopierbara felmeddelanden}: Det var vår mening att göra så att
+  felmeddelandena inte går att kopiera eftersom användarna då bara kan kopiera
+  och klistra våra rättningsförslag. Vi trodde att det är viktigt att engagera användaren i
+  rättningen av rapporten så att han verkligen förstår vad som är fel. Vi har dock inte kunnat hitta några vetenskapliga
+  belägg för det och har därför implementerat detta förslag.
 \end{itemize}
 
 De andra önskemålen implementerades inte med följande motiveringar:
 
 \begin{itemize}
-\item \textbf{Kopierbara felmeddelanden}: Det var vår mening att göra så att
-  felmeddelandena inte går att kopiera eftersom användarna då bara kan kopiera
-  och klistra våra rättningsförslag. Det är viktigt att engagera användaren i
-  rättningen av rapporten eftersom ett av målen med applikationen är att lära ut
-  rapportskrivning, ifall användaren bara kopierar och klistra in alla
-  rättningsförslagen så blir rapporten korrekt men han lär sig troligtvis inte
-  så mycket. [Kanske REF]
 \item \textbf{Rätta rapporten i webbapplikationen}: Användaren får en lista på
   fel i webbapplikationen men måste använda sin egen ordbehandlare för att rätta
   felen. Att låta användaren rätta rapporten direkt i webbapplikationen ligger
@@ -1152,7 +1136,7 @@ uppdaterats efter en fjärde iteration.
 \section{Diskussion}
 Hur väl har vi uppnått våra forskningsmål och frågeställningar?
 \section{Slutsatser och vidare forskning}\label{slutsatserochvidareforskning}
-Då kravinsamlingen som gjordes med Per Esbjörnsson genererade fler önskemål än
+Då kravinsamlingen som gjordes med Esbjörnsson genererade fler önskemål än
 vad som bedöms görbara inom vår avgränsning tänker vi skriva lite om möjliga
 infallsvinklar kring detta.
 Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (bättre) sätt att kolla på det.
