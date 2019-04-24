@@ -142,7 +142,7 @@
   \ifodd\value{page}\else\mbox{}\newpage\fi
   \section*{Sammanfattning}
 }{
-  \newpage
+
 }
 
 \renewenvironment{abstract}{
