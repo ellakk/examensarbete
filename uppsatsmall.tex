@@ -699,7 +699,7 @@ rapporter.
 När en rapport tas emot i backend konverteras dess innehåll till en stor
 textsträng som vår dokument-tolkare konverterar till Python-objekt. Varje
 rubrik, mening, ord och identifierade namnigenkänningskategori blir objekt
-vars egenskaper kommer från Sparvs textannotationer. Backend gör sedan en analys
+vars egenskaper kommer från Sparvs textannotationer, beskrivs mer ingående i \cref{sparv}. Backend gör sedan en analys
 på dessa objekt som undersöker ifall rapporten följer de regler som vi har
 implementerat utifrån polisens dokumentation för rapportskrivning. De regler som
 rapporten bryter mot skickas till rapportens avsändare i en lista som innehåller
@@ -723,8 +723,8 @@ enbart för att den enskilde läsaren ska förstå hur applikationen fungerar ut
 vidareutveckla applikationen. Följande rubriker beskriver vilka beroendena är
 och varför vi använder dem.
 
-\paragraph*{Sparv}
-Sparv är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
+\paragraph*{Sparv}\label{sparv}
+Sparv \cite{sprakbanken:2019} är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
 för att annotera texter \cite{borin:2016}. Vår applikation konverterar rapporterna till ett
 specialanpassat XML-format som den sedan skickar vidare till Sparv för
 annotering. De typer av annotationer vi använder från Sparv i våra analyser är:
@@ -734,7 +734,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
   \textit{banan}
 \item \textbf{Ordklass}: Ordens klass, ex. \textit{Kalle} är ett
   \textit{egennamn} och \textit{tjugotre} är ett \textit{räkneord}
-\item \textbf{Sentiment}: Ett värde mellan -1 och 1. Ett positivt värde innebär att ordet har ett positivt sentiment och negativt innebär att ordet har ett negativt sentiment.
+\item \textbf{Sentiment}: Ett flyttal mellan -1 och 1. Ett positivt värde innebär att ordet har ett positivt sentiment och negativt innebär att ordet har ett negativt sentiment.
 \item \textbf{Namnigenkänning}: Kategoriserar textstycken i en grupp
   fördefinierade kategorier så som geografiska platser, föremål, tidpunkter och
   många fler. Beskrivs mer ingående i \cref{namnigenkänning}
@@ -743,7 +743,7 @@ annotering. De typer av annotationer vi använder från Sparv i våra analyser �
 \end{itemize}
 
 \paragraph*{Stava}\label{stava}
-Stava är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
+Stava \cite{kann:2016} är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
 Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
 stavningsprogram traditionellt sätt har svårt att hantera, Kann~\cite{kann:1997}
@@ -764,11 +764,12 @@ betydelse i sammanhangen. Stava kommer med ett standardlexikon men tillåter
 också att man lägger till egna lexikon vilket vi gjorde med ord som är speciella
 för polisrapporter. När vi analyserar texter med Stava använder vi utöver
 standardinställningarna några ytterligare regler som gör att programmet känner igen
-namn, förkortningar och ger rättningsförslag. Dessa extra regler innebär att
+namn, förkortningar och ger rättningsförslag, reglerna aktiveras genom att köra stava med 
+argumenten \textit{-r -f -n}. En fullständig lista med alla regler kan läsas på \cite{kann:2016}. Dessa extra regler innebär att
 Stava använder mycket mer datorkraft relativt mot att bara köra
 standardkontrollerna. Vi tog beslutet att det var värt det eftersom
 falskpositiva och missade stavfel minskar korrektheten och rättssäkerheten i
-rapporterna som lämnas in med applikationen.
+rapporterna som lämnas in med applikationen. 
 
 \subsubsection{Textanalys av rapporter}
 % [Användarguide som bilaga]
