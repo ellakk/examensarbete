@@ -1176,7 +1176,7 @@ kravet att hjälpa polisstudenter att skriva rättsäkra rapporter.
 
 Anledningen till att vi gjorde ett test på redan rättade rapporter var för att undersöka ifall vår applikation kan hitta fel som lärare på polishögskolan missat eller släpper igenom.
 Det kan också vara av intresse att ta reda på vilka typer av fel det är, ifall det bara är stavfel och grammatiska fel sker störst skada på rapportens läsbarhet men ifall
-tex. datum och tid för när anmälan är gjord saknas så invalideras hela rapporten och är därmed inte rättsäker.
+t.ex datum och tid för när anmälan är gjord saknas så invalideras hela rapporten och är därmed inte rättsäker.
 
 Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
 
@@ -1206,6 +1206,9 @@ Genomsnitt  & 4,3 & 0,1            \\ \hline
 \label{gradedtable}
 \end{table}
 
+Felen som hittades är fördelade mellan följande regler, se \cref{textanalysavrapporter} för detaljerad beskrivning av
+de olika reglerna:
+
 \begin{itemize}
 \item \textbf{Korrekt rubrik}:  10
 \item \textbf{Rubrikers inbördes beroende}: 3
@@ -1216,6 +1219,16 @@ Genomsnitt  & 4,3 & 0,1            \\ \hline
 \item \textbf{Grammatik}: 8
 \item \textbf{Felaktigt formatterade och saknade rubriker}: 1
 \end{itemize}
+
+Som \cref{ungradedtable} visar hittades ganska många fel i de rättade rapporterna. 
+Ett rubriksfel som hittades var en rapport som använda rubriken händelse för att beskriva ett brott vilket
+är helt fel eftersom rubriken händelse ska bara användas när rapporten beskriver något som hänt men som inte är ett brott.
+Nästan alla rapporter innehöll rubriker som inte är med i polisens lista på godkända rubriker, kanske har studenterna
+inte förstått att man inte får hitta på rubrikerna själva men då borde lärarna uppmärksamma eleverna på detta så
+eleverna lär sig. Nästan hälften av alla rapporter innehöll olika interna förkortningar på polistermer.
+Det är ganska allvarliga fel som hittats i rapporterna som ändå har godkänts. Hade vår applikation använts
+vid inlämningen av rapporterna hade dessa fel uppmärksammats för eleverna vilket troligtvis hade resulterat
+i att rapporten blivit korrekt skriven och att eleverna i framtiden hade undvikit att göra samma fel igen.
 
 
 \section{Diskussion}
