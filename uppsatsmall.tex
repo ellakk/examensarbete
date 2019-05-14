@@ -1134,11 +1134,22 @@ falskpositiva.
 
 \subsubsection{Orättade rapporter}
 
+Anledningen till att vi gjort detta experiment är för att visa att vårt verktyg är användbart som verktyg för att rätta rapporter.
+Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
+
+\begin{itemize}
+\item \textbf{Rapport}: Identifierare för vilken rapport det är
+\item \textbf{Fel(A)}: Verkligt antal fel vi identifierat som bryter mot de regler vi implementerat i vårt analysverktyg, fel som bryter mot andra regler är ej inkluderade
+\item \textbf{Andra fel(A)}: Hur många fel vi identifierat i rapporten som bryter mot regler för rapportskrivning men som vi inte har implementerat i vårt analysverktyg
+\item \textbf{Fel(B)}: Hur många fel vårt analysverktyg hittade i rapporten, falskpositiva är inte inkluderade
+\item \textbf{Falskpositiva(B)}: Hur många fel av de rapporterade felen som var falskpositiva
+\end{itemize}
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-Rapport    & Regelbrott & Andra fel & Rapporterade fel & Falskpositiva \\ \hline
+Rapport    & Fel(A) & Andra fel(A) & Fel(B) & Falskpositiva(B) \\ \hline
 1          & 10         & 0         & 10               & 1             \\ \hline
 2          & 6          & 0         & 6                & 0             \\ \hline
 3          & 4          & 1         & 4                & 0             \\ \hline
@@ -1155,28 +1166,57 @@ Genomsnitt & 7,4        & 1,1       & 7,4              & 0,2           \\ \hline
 \label{ungradedtable}
 \end{table}
 
+Precis som \cref{ungradedtable} visar hittade vårt analysverktyg alla regelbrott som bryter mot de regler vi implementerat. De två falskpositiva felen som identifierades är båda två stavfel: ``torshammare'' och ``bomberkaraktär''. 
+Värt att notera är att bägge falskpositiva felen hade kunnat skrivas om för att göra signalementen de beskriver klarare. De felen som identifierats men som inte bryter mot 
+de regler vi har implementerat i applikationen är ungefär jämt fördelat mellan två mellanslag i rad och att punkt saknas i sista meningen under en rubrik som kräver det.
+Detta visar att vår applikation är effektiv när det kommer till att identifiera de regelbrott Esbjörnsson och vi själva har identifierat som viktigast att följa när det kommer till rapportskrivning och vi uppfyller därmed
+kravet att hjälpa polisstudenter att skriva rättsäkra rapporter.
+
 \subsubsection{Rättade rapporter}
+
+Anledningen till att vi gjorde ett test på redan rättade rapporter var för att undersöka ifall vår applikation kan hitta fel som lärare på polishögskolan missat eller släpper igenom.
+Det kan också vara av intresse att ta reda på vilka typer av fel det är, ifall det bara är stavfel och grammatiska fel sker störst skada på rapportens läsbarhet men ifall
+tex. datum och tid för när anmälan är gjord saknas så invalideras hela rapporten och är därmed inte rättsäker.
+
+Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
+
+\begin{itemize}
+\item \textbf{Rapport}: Identifierare för vilken rapport det är
+\item \textbf{Fel}: Hur många fel vårt analysverktyg hittade i rapporten, falskpositiva är inte inkluderade
+\end{itemize}
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
-Rapport    & Fel & Falskpositiva \\ \hline
-1          & 4   & 0             \\ \hline
-2          & 4   & 0             \\ \hline
-3          & 2   & 0             \\ \hline
-4          & 2   & 0             \\ \hline
-5          & 4   & 0             \\ \hline
-6          & 5   & 0             \\ \hline
-7          & 5   & 0             \\ \hline
-8          & 8   & 1             \\ \hline
-9          & 4   & 0             \\ \hline
-10         & 5   & 0             \\ \hline
-Genomsnitt & 4,3 & 0,1           \\ \hline
+Rapport    & Fel & Falskpositiva  \\ \hline
+11          & 4   & 0             \\ \hline
+12          & 4   & 0             \\ \hline
+13          & 2   & 0             \\ \hline
+14          & 2   & 0             \\ \hline
+15          & 4   & 0             \\ \hline
+16          & 5   & 0             \\ \hline
+17          & 5   & 0             \\ \hline
+18          & 8   & 1             \\ \hline
+19          & 4   & 0             \\ \hline
+20          & 5   & 0             \\ \hline
+Genomsnitt  & 4,3 & 0,1            \\ \hline
 \end{tabular}
 \caption{Fel analysverktyget hittade i rättade rapporter}
 \label{gradedtable}
 \end{table}
+
+\begin{itemize}
+\item \textbf{Korrekt rubrik}:  10
+\item \textbf{Rubrikers inbördes beroende}: 3
+\item \textbf{Rubrikers ordning}: 6
+\item \textbf{Läsbarhet}: 1
+\item \textbf{Polisförkortningar}: 11
+\item \textbf{Stavning}: 3
+\item \textbf{Grammatik}: 8
+\item \textbf{Felaktigt formatterade och saknade rubriker}: 1
+\end{itemize}
+
 
 \section{Diskussion}
 Hur väl har vi uppnått våra forskningsmål och frågeställningar?
