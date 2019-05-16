@@ -1161,7 +1161,7 @@ De andra önskemålen implementerades inte med följande motiveringar:
 
 \subsection{Applikationens effektivitet}
 
-För att bestämma hur användbart och effektivt vårt analysverktyg är har vi genomfört två experiment.
+För att undersöka hur användbart och effektivt vårt analysverktyg är har vi genomfört två experiment.
 I det första experimentet jämför vi antalet fel verktyget kan hitta mot det riktiga
 antalet fel och kollar hur många fel som finns i rapporterna men som inte bryter mot
 reglerna som finns definierade i analysverktyget. 
@@ -1178,7 +1178,7 @@ Anledningen till att vi gjort detta experiment är för att visa att vårt verkt
 Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
 
 \begin{itemize}
-\item \textbf{Rapport}: Identifierare för vilken rapport det är
+\item \textbf{Rapport}: Identifierare för vilken rapport det är, se \cref{b:rapporter}
 \item \textbf{Fel(A)}: Verkligt antal fel vi identifierat som bryter mot de regler vi implementerat i vårt analysverktyg, fel som bryter mot andra regler är ej inkluderade. De som har identifierat felen i rapporterna är Per Esbjörnsson och Lotta efternamn vid Malmös polisutbildning samt vi som har skrivit applikationen, Kalle Lindqvist och Henrik Svensson. Eftersom \cref{gradedtable} visar att mänskliga rättare överlag missar ganska många fel så körde vi även analysverktyget på rapporterna för att ta fram det verkliga antalet fel.
 \item \textbf{Andra fel(A)}: Hur många fel Lotta Efternamn och Per Esbjörnsson identifierat i rapporten som bryter mot regler för rapportskrivning men som vi inte har implementerat i vårt analysverktyg.
 \item \textbf{Fel(B)}: Hur många fel vårt analysverktyg hittade i rapporten, falskpositiva är inte inkluderade
@@ -1206,22 +1206,20 @@ Genomsnitt & 7,4        & 1,1       & 7,4              & 0,2           \\ \hline
 \label{ungradedtable}
 \end{table}
 
-Precis som \cref{ungradedtable} visar hittade vårt analysverktyg alla regelbrott som bryter mot de regler vi implementerat. De två falskpositiva felen som identifierades är båda två stavfel: ``torshammare'' och ``bomberkaraktär''. 
+Precis som \cref{ungradedtable} visar hittade vårt analysverktyg alla regelbrott som bryter mot de regler vi implementerat. De två falskpositiva felen som identifierades är båda två stavfel: ``Torshammare'' och ``bomberkaraktär''. 
 Värt att notera är att bägge falskpositiva felen hade kunnat skrivas om för att göra signalementen de beskriver klarare. De felen som identifierats men som inte bryter mot 
 de regler vi har implementerat i applikationen är ungefär jämt fördelat mellan två mellanslag i rad och att punkt saknas i sista meningen under en rubrik som kräver det.
-Detta visar att vår applikation är effektiv när det kommer till att identifiera de regelbrott Esbjörnsson och vi själva har identifierat som viktigast att följa när det kommer till rapportskrivning och vi uppfyller därmed
-kravet att hjälpa polisstudenter att skriva rättsäkra rapporter.
 
 \subsubsection{Rättade rapporter}
 
 Anledningen till att vi gjorde ett test på redan rättade rapporter var för att undersöka ifall vår applikation kan hitta fel som lärare på polishögskolan missat eller släpper igenom.
 Det kan också vara av intresse att ta reda på vilka typer av fel det är, ifall det bara är stavfel och grammatiska fel sker störst skada på rapportens läsbarhet men ifall
-t.ex datum och tid för när anmälan är gjord saknas så invalideras hela rapporten och är därmed inte rättsäker.
+t.ex datum och tid för när anmälan är gjord saknas så invalideras hela rapporten.
 
 Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
 
 \begin{itemize}
-\item \textbf{Rapport}: Identifierare för vilken rapport det är
+\item \textbf{Rapport}: Identifierare för vilken rapport det är, se \cref{b:rapporter} 
 \item \textbf{Fel}: Hur många fel vårt analysverktyg hittade i rapporten, falskpositiva är inte inkluderade
 \end{itemize}
 
@@ -1266,7 +1264,7 @@ Ett rubriksfel som hittades var en rapport som använda rubriken händelse för 
 Nästan alla rapporter innehöll rubriker som inte är med i polisens lista på godkända rubriker, kanske har studenterna
 inte förstått att man inte får hitta på rubrikerna själva men då borde lärarna uppmärksamma eleverna på detta så
 eleverna lär sig. Nästan hälften av alla rapporter innehöll olika interna förkortningar på polistermer.
-Det är ganska allvarliga fel som hittats i rapporterna som ändå har godkänts. Hade vår applikation använts
+Det är ganska allvarliga fel som hittats i rapporterna trots att de har godkänts. Hade vår applikation använts
 vid inlämningen av rapporterna hade dessa fel uppmärksammats för eleverna vilket troligtvis hade resulterat
 i att rapporten blivit korrekt skriven och att eleverna i framtiden hade undvikit att göra samma fel igen.
 
@@ -1289,7 +1287,7 @@ Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (
 
 \appendix
 
-\section{Bilaga: Användartester}
+\section{Appendix: Användartester}
 
 \subsection{SUS-formulär}
 
@@ -1304,31 +1302,31 @@ Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{bilaga/sus/ps1.jpg}
-  \caption{Person 1 svar på SUS-formuläret}
+  \caption{Person 1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{bilaga/sus/ps2.jpg}
-  \caption{Person 2 svar på SUS-formuläret}
+  \caption{Person 2}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{bilaga/sus/ps3.jpg}
-  \caption{Person 3 svar på SUS-formuläret}
+  \caption{Person 3}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{bilaga/sus/ps4.jpg}
-  \caption{Person 4 svar på SUS-formuläret}
+  \caption{Person 4}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{bilaga/sus/ps5.jpg}
-  \caption{Person 5 svar på SUS-formuläret}
+  \caption{Person 5}
 \end{figure}
 
 \subsection{Intervjusvar}
@@ -1387,10 +1385,130 @@ Vi skriver även om hur man kan se närmare på värden, dess gränser och ett (
 \item Copy-paste-funktionen som saknas.
 \end{enumerate}
 
-\section{Bilaga: Applikationen}
+\section{Appendix: Applikationen}
 
 \subsection{Polisrelaterade ord}
 
+\section{Appendix: Polisrapporter}\label{b:rapporter}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r1.png}
+  \caption{Rapport 1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r2.png}
+  \caption{Rapport 2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r3.png}
+  \caption{Rapport 3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r4.png}
+  \caption{Rapport 4}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r5.png}
+  \caption{Rapport 5}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r6.png}
+  \caption{Rapport 6}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r7.png}
+  \caption{Rapport 7}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r8.png}
+  \caption{Rapport 8}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r9.png}
+  \caption{Rapport 9}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r10.png}
+  \caption{Rapport 10}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r11.png}
+  \caption{Rapport 11}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r12.png}
+  \caption{Rapport 12}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r13.png}
+  \caption{Rapport 13}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r14.png}
+  \caption{Rapport 14}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r15.png}
+  \caption{Rapport 15}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r16.png}
+  \caption{Rapport 16}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r17.png}
+  \caption{Rapport 17}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r18.png}
+  \caption{Rapport 18}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r19.png}
+  \caption{Rapport 19}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{bilaga/rapporter/r20.png}
+  \caption{Rapport 20}
+\end{figure}
 
 \end{document}
