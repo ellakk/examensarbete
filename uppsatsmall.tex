@@ -36,8 +36,14 @@
 % Clickable TOC
 \usepackage{hyperref}
 
+% Hyperlinks
+\usepackage{hyperref}
+
 % Better in-doc refs
 \usepackage{cleveref}
+
+% Better captions
+\usepackage{caption}
 
 \begin{document}
 
@@ -555,6 +561,7 @@ I de fallen där sökningarna genererade resultat som ansågs att ta för lång 
 
 \begin{table}[H]
 \centering
+\caption{Resultat litteraturstudie}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 Databas & Sökning & Resultat & Lästa abstrakt & Hämtade artiklar \\ \hline
@@ -591,7 +598,7 @@ LLBA    & S4      & 10782    & 13             & 1                \\ \hline
 LLBA    & S5      & 24439    & 9              & 0                \\ \hline
 LLBA    & S6      & 20461    & 15              & 2                \\ \hline
 \end{tabular}
-\caption{Resultaten av våra söktermer i databaserna}
+\caption*{Resultaten av våra söktermer i databaserna}
 \label{searchtable}
 \end{table}
 \section{Resultat}
@@ -686,7 +693,7 @@ rapporter.
 När en rapport tas emot i backend konverteras dess innehåll till en stor
 textsträng som vår dokument-tolkare konverterar till Python-objekt. Varje
 rubrik, mening, ord och identifierade namnigenkänningskategori blir objekt
-vars egenskaper kommer från Sparvs textannotationer, beskrivs mer ingående i \cref{sparv}. Backend gör sedan en analys
+vars egenskaper kommer från Sparvs textannotationer som beskrivs mer ingående i \cref{sparv}. Backend gör sedan en analys
 på dessa objekt som undersöker ifall rapporten följer de regler som vi har
 implementerat utifrån polisens dokumentation för rapportskrivning. De regler som
 rapporten bryter mot skickas till rapportens avsändare i en lista som innehåller
@@ -712,7 +719,9 @@ och varför vi använder dem.
 
 \paragraph*{Sparv}\label{sparv}
 Sparv \cite{sprakbanken:2019} är ett verktyg som har utvecklats av Språkbanken vid Göteborgs universitet
-för att annotera texter \cite{borin:2016}. Vår applikation konverterar rapporterna till ett
+för att annotera texter \cite{borin:2016}, Sparvs hemsida kan besökas på följande adress:\newline \url{https://spraakbanken.gu.se/swe/forskning/infrastruktur/sparv}. 
+
+Vår applikation konverterar rapporterna till ett
 specialanpassat XML-format som den sedan skickar vidare till Sparv för
 annotering. XML-formatet Sparv använder finns inte dokumenterat i användarhandledningen men ett exempel
 hittas om man besöker Sparvs webbgränssnitt \cite{sparv:2019} och trycker på filken \textit{Exempelkorpus}. Koden där vi
@@ -749,7 +758,10 @@ De typer av annotationer vi använder från Sparv i våra analyser är:
 
 \paragraph*{Stava}\label{stava}
 Stava \cite{kann:2016} är ett stavningskontrollsprogram som är utvecklat av Viggo Kann och
-Joachim Hollman på KTH. Anledningen till att vi valde att använda Stava för
+Joachim Hollman på KTH, Stavas hemsida kan besökas på följande adress:\newline 
+\url{http://www.nada.kth.se/~viggo/stava/}. 
+
+Anledningen till att vi valde att använda Stava för
 stavningskontroll är att det är utvecklat för det svenska språket som många
 stavningsprogram traditionellt sätt har svårt att hantera, Kann~\cite{kann:1997}
 förklarar:
@@ -792,6 +804,7 @@ rättningsförslag när regeln inte följs.
 
 \begin{table}[H]
 \centering
+\caption{Reglers egenskaper}
 \begin{tabular}{|l|l|l|}
 \hline
 Regel                                       & Lokalisering & Rättningsförslag \\ \hline
@@ -808,7 +821,7 @@ Stavning                                    & Ja           & Ja               \\
 Grammatik                                   & Ja           & Ja               \\ \hline
 Tonalitet                                   & Nej          & Nej              \\ \hline
 \end{tabular}
-\caption{Lista över regler för rapportskrivning vi har implementerat}
+\caption*{Lista över regler för rapportskrivning vi har implementerat}
 \label{rulestable}
 \end{table}
 
@@ -818,6 +831,7 @@ Grammatik har ingen fil där den konfigureras utan vi kör helt på Stavas inbyg
 
 \begin{table}[H]
 \centering
+\caption{Reglers implementation}
 \begin{tabular}{|l|l|l|}
 \hline
 Regel                                       & Konfigurering             & Metod                                 \\ \hline
@@ -828,13 +842,13 @@ Rubrikers ordning                           & headlines.yaml            & test\_
 Namnigenkänning                             & headlines.yaml rules.yaml & test\_named\_entities                 \\ \hline
 Läsbarhet                                   & rules.yaml                & test\_reading\_attributes             \\ \hline
 Känsliga ord                                & forbidden\_words.yaml     & test\_forbidden\_words                \\ \hline
-Oönskade ord                                & unwanted\_words.yaml                & test\_unwanted\_words                 \\ \hline
+Oönskade ord                                & unwanted\_words.yaml      & test\_unwanted\_words                 \\ \hline
 Polisförkortningar                          & police\_abbreviations.yaml    & test\_police\_abbreviations \\ \hline
 Stavning                                    & rules.yaml                & test\_spelling                        \\ \hline
 Grammatik                                   &                           & test\_spelling                        \\ \hline
 Tonalitet                                   & rules.yaml                & text\_tonality                        \\ \hline
 \end{tabular}
-\caption{Information om konfigurering och implementation för våra regler}
+\caption*{Information om konfigurering och implementation för våra regler}
 \label{implementationconfigurationtable}
 \end{table}
 
@@ -1194,6 +1208,7 @@ Förklaring till tabellens kolumner där \textit{A} representerar de av människ
 
 \begin{table}[H]
 \centering
+\caption{Analys orättade rapporter}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 Rapport    & Fel(A) & Andra fel(A) & Fel(B) & Falskpositiva(B) \\ \hline
@@ -1209,7 +1224,7 @@ Rapport    & Fel(A) & Andra fel(A) & Fel(B) & Falskpositiva(B) \\ \hline
 10         & 5          & 0         & 5                & 0             \\ \hline
 Genomsnitt & 7,4        & 1,1       & 7,4              & 0,2           \\ \hline
 \end{tabular}
-\caption{Totala antalet fel och antalet fel analysverktyget hittade}
+\caption*{Totala antalet fel och antalet fel analysverktyget hittade}
 \label{ungradedtable}
 \end{table}
 
@@ -1232,6 +1247,7 @@ Förklaring till tabellens kolumner där \textit{A} representerar de av människ
 
 \begin{table}[H]
 \centering
+\caption{Analys rättade rapporter}
 \begin{tabular}{|l|l|l|}
 \hline
 Rapport    & Fel & Falskpositiva  \\ \hline
@@ -1247,7 +1263,7 @@ Rapport    & Fel & Falskpositiva  \\ \hline
 20          & 5   & 0             \\ \hline
 Genomsnitt  & 4,3 & 0,1            \\ \hline
 \end{tabular}
-\caption{Fel analysverktyget hittade i rättade rapporter}
+\caption*{Fel analysverktyget hittade i rättade rapporter}
 \label{gradedtable}
 \end{table}
 
