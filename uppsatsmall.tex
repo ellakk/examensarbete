@@ -249,7 +249,7 @@ språk. Dessa verktyg är oftast utrustade med funktionaliteter som stavnings- o
 grammatiska analyseringsverktyg samt så kallade läsbarhetsindex (LIX) för att beräkna hur många och vilka grammatiska fel som är vanligt förekommande i en skriftlig text, se \cref{läsbarhet} för en utförlig beskrivning av LIX. Sådana program har kunnat
 spara tid i rättningsprocesser \cite{wengelin:2017}.
 
-\subsection{Rapportskrivning}
+\subsection{Rapportskrivning}\label{rapportskrivning}
 
 Den svenska polisförordningen stipulerar att poliser ska uppträda på ett sätt
 som skapar tilltro hos allmänheten. Att ha en korrekt språklig kommunikation,
@@ -300,7 +300,7 @@ anges liksom korrekt anmälningstid och brottstidpunkt.
 
 \section{Metod}
 
-\subsection{Ramverk}
+\subsection{Ramverk}\label{ramverk}
 
 En stor del av det vetenskapliga arbete som bedrivs inom informationssystemsforskning vilar enligt Hevner et al.~\cite{hevner:2004} på två paradigmer, nämligen den beteendevetenskapliga samt den designvetenskapliga. Medan IT-artefakter som implementeras i en organisatorisk kontext är ett vanligt förekommande studieobjekt inom den beteendevetenskapliga forskningen, är skapandet och utvärderandet av artefakten en central del av den designvetenskapliga paradigmen.
 
@@ -479,6 +479,20 @@ artefakten som vi samlat in genom kravinsamlingen. Som vi ser det är denna risk
 återkommande vid varje större utvecklingsprojekt och således svår att hämma
 annat än genom noggrannhet i arbetet och god framförhållning till projektets
 slutdatum.
+
+I vårt andra användartest (\cref{anvandartester2}) blev vi tvungna att använda samma
+personer som deltog i det första användartestet (\cref{resultatanvändartester}).
+Det hade självklart varit bättre ifall de som gjorde det andra användartest inte
+var samma personer som gjorde det första men Esbjörnsson lyckades bara hitta två
+nya polisstudenter som hade möjlighet att göra testet och vi fick inte kontakt
+med någon av dem på mejl så vi gjorde antagandet att de ångrat sig och inte
+längre var intresserade. Anledningen till att det hade varit bättre med nya
+studenter är att det hade varit intressant att se hur de upplevde förändringarna
+som gjordes eftersom de studenter som föreslagit förändringarna nästan
+garanterat kommer vara positivt inställda till dem. Det finns dock ett värde i
+att undersöka ifall förändringarna uppfyllde studenternas förväntan och ifall de
+har förslag på hur de kan förbättras ytterligare samt ifall de har förslag på
+andra förbättringar.
 
 \section{Litteraturanalys}\label{litteraturstudie}
 
@@ -848,7 +862,7 @@ Stavning                                    & rules.yaml                & test\_
 Grammatik                                   &                           & test\_spelling                        \\ \hline
 Tonalitet                                   & rules.yaml                & text\_tonality                        \\ \hline
 \end{tabular}
-\caption*{Information om konfigurering och implementation för våra regler}
+\caption*{Information om konfigurering och implementation av regler för rapportskrivning}
 \label{implementationconfigurationtable}
 \end{table}
 
@@ -1035,7 +1049,7 @@ Git. Github gör det lätt för utvecklare att samarbeta under utvecklingen av k
 vilket är anledningen till att vi använt det.
 
 
-\subsection{Resultat av användartester}
+\subsection{Resultat av användartester}\label{resultatanvändartester}
 
 Användartesterna genomfördes den 9 april 2019 i ett grupprum vid Malmö
 universitet. Med bistånd från Esbjörnsson lyckades vi få tag
@@ -1062,7 +1076,7 @@ att deltagarna blev alltför osäkra. Detta inträffade dock inte särskilt ofta
 När korrigeringarna gjorts ombads de att återigen ladda upp dokumentet. Testet
 var därefter avslutat.
 
-\subsubsection{SUS}
+\subsubsection{SUS}\label{sus}
 
 Deltagarna fick efter användbarhetstestet skriftligen fylla i ett SUS-formulär, vilket består av tio
 numrerade frågor enligt en Likertskala i intervallen 1-5. SUS har en poängskala från 0-100, där det
@@ -1178,7 +1192,7 @@ De andra önskemålen implementerades inte med följande motiveringar:
   lättläst sätt, särskilt när det är många fel som visas samtidigt.
 \end{itemize}
 
-\section{Analys}
+\section{Analys}\label{analys}
 
 \subsection{Applikationens effektivitet}
 
@@ -1195,8 +1209,9 @@ falskpositiva.
 
 \subsubsection{Orättade rapporter}
 
-Anledningen till att vi gjort detta experiment är för att visa att vårt verktyg är användbart som verktyg för att rätta rapporter.
-Förklaring till tabellens kolumner där \textit{A} representerar de av människor hittade fel och \textit{B} är analysverktyget:
+Anledningen till att vi gjort detta experiment är för att visa att vår applikation är användbar som verktyg för att rätta rapporter.
+Förklaring till tabellens kolumner där \textit{A} representerar de fel som hittades av människor och \textit{B} är de fel
+som hittades av vår applikation:
 
 \begin{itemize}
 \item \textbf{Rapport}: Identifierare för vilken rapport det är, se \cref{b:rapporter}
@@ -1285,16 +1300,61 @@ Som \cref{ungradedtable} visar hittades ganska många fel i de rättade rapporte
 Ett rubriksfel som hittades var en rapport som använda rubriken händelse för att beskriva ett brott vilket
 är helt fel eftersom rubriken händelse ska bara användas när rapporten beskriver något som hänt men som inte är ett brott.
 Nästan alla rapporter innehöll rubriker som inte är med i polisens lista på godkända rubriker, kanske har studenterna
-inte förstått att man inte får hitta på rubrikerna själva men då borde lärarna uppmärksamma eleverna på detta så
-eleverna lär sig. Nästan hälften av alla rapporter innehöll olika interna förkortningar på polistermer.
+inte förstått att man inte får hitta på rubrikerna själva men då borde lärarna uppmärksamma studenterna på detta så
+studenterna lär sig. Nästan hälften av alla rapporter innehöll olika interna förkortningar på polistermer.
 Det är ganska allvarliga fel som hittats i rapporterna trots att de har godkänts. Hade vår applikation använts
-vid inlämningen av rapporterna hade dessa fel uppmärksammats för eleverna vilket troligtvis hade resulterat
-i att rapporten blivit korrekt skriven och att eleverna i framtiden hade undvikit att göra samma fel igen.
+vid inlämningen av rapporterna hade dessa fel uppmärksammats för studenterna vilket troligtvis hade resulterat
+i att rapporten blivit korrekt skriven och att studenterna i framtiden hade undvikit att göra samma fel igen.
 
+\subsection{Användartester v2}\label{anvandartester2}
+
+För att undersöka ifall förändringarna som genomfördes som resultat av det första användartestet (\cref{resultatanvändartester})
+överlag lett till en förbättring av användargränssnittet har vi gjort samma test en gång till på samma
+studenter.  Till skillnad mot det första användartestet har vi inte gjort några förändringar
+i applikationen baserat på detta användartest utan vi lämnar det till eventuella framtida utvecklare.
+
+
+\subsubsection{SUS}
+
+$$(\sum_{n = 0}^{i = 0}\frac{n}{i}) * x * y$$
+
+\subsubsection{Intervju}
+
+Lorem
+
+\subsubsection{Önskad funktionalitet}
+
+Lorem
 
 \section{Diskussion}
-Hur väl har vi uppnått våra forskningsmål och frågeställningar?
-\section{Slutsatser och vidare forskning}\label{slutsatserochvidareforskning}
+Syftet med denna forskning var att undersöka om digital språkbehandling kan främja polisstudenters rapportskrivning i hänseende till rättssäkerhetsaspekten, samt om rättningsprocessen av polisrapporter kan effektiviseras med hjälp av digital textanalys. I detta arbete har vi ställt följande frågor:
+\begin{itemize}
+\item \textbf{FF1} Hur går det att kontrollera att polisstudenters rapporter är skrivna i enlighet med den svenska polismyndighetens riktlinjer för att uppfylla rättssäkerhetsaspekter genom digital textanalys?
+\item \textbf{FF2} Hur kan rättningsarbetet för lärare vid polisutbildningarna bli mer effektivt med hjälp av digital textanalys?
+\end{itemize}
+I \cref{rapportskrivning} redogör vi beståndsdelarna som utgör begreppet rättssäkert inom kontexten av polisrapporter samt vilka kriterier som måste uppnås för att en rapport ska kunna klassificeras som rättssäker. Dessa kriterier konkretiseras genom de regler som stipulerats enligt den svenska polismyndigheten, och samtidigt representationer för affärsbehoven som de beskrivs i \cref{ramverk}.
+
+FF1 besvaras genom implementationerna av dessa regler i applikationen och rättfärdigas genom den digitala textanalys som genomförs i applikationen. I  \cref{textanalysavrapporter}beskrivs det hur applikationen kontrollerar att rapportens rubriker stämmer överens med polisdokumentationens fördefinerade rubriker, att rubriker är placerade i rätt kronologisk ordning samt i korrekt relation till varandra, att namn och datum inkluderats i de avsnitt som kräver dessa samt att så kallade känsliga ord och oönskade termer inte finns med i rapporten. Vidare kontrolleras också stavning och grammatik av rapporterna. Tillsammans utgör instansieringen av artefakten, den digitala textanalysen som genomförs och polismyndighetens regelverk för rättssäkra rapporter ett stabilt fundament.
+
+Då Information Systems Research Framework rekommenderar en iterativ process har utvärderingen av artefakten främst genom två användartester. Den första gav upphov till en rad nya potentiella funktionaliteter, se \cref{önskvärdafunktioner}, där vissa implementerades medan andra förkastades. Vi anser att dessa multipla tester och omdömena de resulterade i från slutanvändarna skänker en gedigen kvalité åt artefakten vi utvecklat. 
+
+Ytterligare legitimitet till studien sker alltså genom rättfärdigandet av vårt antagande att polisstudenter förståelse för vikten av rättssäkra polisrapporter kan fördjupas med hjälp av applikationens felmeddelanden efter genomförd textanalys. Denna tes verifierades i \cref{resultatanvändartester} samt \cref{anvandartester2} där testanvändarna ansåg applikationen vara ett bra hjälpmedel för rapportskrivning, samt i de goda poängen som våra SUS-test generade. Detta ger vidare bevis att affärsbehoven uppnås i instansieringen av vår artefakt och stärker metodologin som den är definierad enligt ramverket.
+
+Som vi förklarar i \cref{rapportskrivning} utgör rättssäkra polisrapporter en viktig del i såväl den polisiära yrkesutövningen som det svenska rättsväsendet. Att polisstudenter redan under utbildningen lär sig att skriva rapporter på korrekt vis leder till ett stärkning av dessa samhälleliga funktioner, samt skapar mer kvalificerade polisaspiranter. Genom att inkludera förklarande motiveringar till felmeddelandena samt eventuella rättningsförslag anser vi att vår forskning underbygger en större medvetenhet kring vikten av rättssäkra polisrapporter då polisstudenterna själva har möjlighet att reflektera över sitt skrivande. 
+
+FF2 besvaras genom de två experiment som genomförs i \cref{analys}. Vi har kunnat leda i bevis att applikationen hittar fler fel än vad lärare på polisutbildningen i Malmö gjort under deras rättningsprocess. Tabell 4 visar att applikationen inte bara identifierat samma fel som lärarna hittat utan även kunnat finna andra felaktigheter i rapporten. Dessa kvalitativa resultat som vi kunnat peka på är något som ytterligare stärker metodologin. 
+
+Vi har även kunnat leda i bevis att applikationen hittat fel i godkända polisrapporter som missats av lärare under rättningsprocessen. Vi har genom de genomförda textanalyserna alltså kunnat identifiera brister vid flertalet examinationstillfällen som hade kunnat undvikas och därmed gett en mer rigiditet till undervisningen. 
+
+Föregående experiment påvisar en mer effektiviserad rättningsprocess i antalet funna felaktigheter i rapporter men vi kan även visa på att den automatiserade textanalysen som görs i applikationen kan spara faktiskt arbetstid för lärare. Enligt Esbjörnsson [Personlig kommunikation
+P Esbjörnsson 2019-02-25] tar det honom i snitt tre minuter att rätta en rapport. En uppskattning av Esbjörnsson egen rättningsprocess i tid jämfört med den som kan bedrivas med hjälp av applikationen har lett oss fram till följande ekvation 
+
+
+En mer effektiviserad rättningsprocess gör att lärare får mer tid till annan utbildning, vilket vi i sin tur leder till en mer verkningsfull undervisning får såväl lärare som elever. Då universitetslärare är statligt anställda kan användandet av digital språkbehandling i form av applikationen spara skattepengar om vi ponerar att ökad arbetstid i form av en utdragen rättningsprocess av polisrapporter kan leda till övertid. 
+
+\subsection{Vidare forskning}
+
+\section{Slutsatser}\label{slutsatserochvidareforskning}
 Då kravinsamlingen som gjordes med Esbjörnsson genererade fler önskemål än
 vad som bedöms görbara inom vår avgränsning tänker vi skriva lite om möjliga
 infallsvinklar kring detta.
